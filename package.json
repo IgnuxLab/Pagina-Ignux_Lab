@@ -1,0 +1,18 @@
+{
+  "name": "ignuxlab",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "preview:prod": "astro preview --base /demo/ignuxlab/",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "aos": "^2.3.4",
+    "astro": "^5.12.9",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Solutions from '../components/Solutions.astro';
+import Clients from '../components/Clients.astro';
+import News from '../components/News.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Inicio">
+	<div class="page-container">
+		<Header />
+		<Hero />
+		<div class="section-separator"></div>
+		<Solutions />
+		<div class="section-separator"></div>
+		<Clients />
+		<div class="section-separator"></div>
+		<News />
+		<div class="section-separator"></div>
+		<Footer />
+	</div>
+</Layout>
+
+<style>
+	/* Los estilos principales ahora están en general.css */
+</style>

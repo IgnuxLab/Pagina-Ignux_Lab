@@ -1,0 +1,369 @@
+/* ===== HOW WE DO IT COMPONENT ===== */
+
+.how-we-do-it {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.how-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header de la sección */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: transparent;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-orange) 50%, var(--color-orange) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin: 0 0 1rem 0;
+}
+
+.section-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--color-orange);
+    margin: 0;
+    font-weight: 500;
+}
+
+.how-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+}
+
+.intro-container {
+    background: rgba(22, 20, 38, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-orange));
+    opacity: 0.8;
+}
+
+.intro-main {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.intro-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-orange));
+    margin: 2rem auto;
+    border-radius: 1px;
+    opacity: 0.6;
+}
+
+.intro-principle {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.how-intro strong {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* Grid de principios */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.principle-card {
+    background: rgba(22, 20, 38, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(216, 35, 255, 0.1);
+    will-change: auto;
+    transform: translateZ(0);
+}
+
+
+
+.principle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-orange), var(--color-accent));
+    opacity: 0.9;
+    box-shadow: 0 2px 10px rgba(216, 35, 255, 0.3);
+}
+
+.principle-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(216, 35, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 138, 76, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.principle-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(216, 35, 255, 0.4);
+    box-shadow: 
+        0 15px 40px rgba(216, 35, 255, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.principle-icon {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 0 10px rgba(216, 35, 255, 0.3));
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.principle-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    color: var(--color-orange);
+    margin: 0 0 1rem 0;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(255, 138, 76, 0.3);
+}
+
+.principle-text {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.principle-card:hover .principle-icon {
+    filter: drop-shadow(0 0 15px rgba(216, 35, 255, 0.5));
+    transform: scale(1.1);
+}
+
+.principles-footer {
+    text-align: center;
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+.footer-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin: 0;
+    font-style: italic;
+    text-shadow: 0 2px 10px rgba(216, 35, 255, 0.4);
+}
+
+.footer-text strong {
+    color: var(--color-orange);
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .how-we-do-it {
+        padding: 4rem 0;
+    }
+    
+    .how-container {
+        padding: 0 15px;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .how-intro {
+        margin-bottom: 3rem;
+    }
+    
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .principle-card {
+        padding: 1.5rem;
+    }
+    
+
+    
+    .principles-footer {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .how-we-do-it {
+        padding: 3rem 0;
+    }
+    
+    .how-container {
+        padding: 0 10px;
+    }
+    
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .how-intro {
+        margin-bottom: 2rem;
+    }
+    
+    .intro-container {
+        padding: 1.5rem;
+    }
+    
+    .intro-main {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .intro-principle {
+        font-size: 1rem;
+    }
+    
+    .principles-grid {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .principle-card {
+        padding: 1.2rem;
+    }
+    
+
+    
+    .principle-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .principle-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .principle-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .principles-footer {
+        margin-top: 2rem;
+    }
+    
+    .footer-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== OPTIMIZACIONES DE RENDIMIENTO ===== */
+/* Forzar aceleración por hardware para elementos críticos */
+.principle-card,
+.principle-icon {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Optimizar repaints para elementos con backdrop-filter */
+.principle-card {
+    will-change: auto;
+}
+
+/* Reducir la complejidad de sombras en móvil */
+@media (max-width: 768px) {
+    .principle-card {
+        box-shadow: 
+            0 4px 16px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+}

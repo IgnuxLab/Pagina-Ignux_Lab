@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../assets/styles/components/news-page.css';
+---
+
+<Layout title="Noticias">
+	<div class="page-container">
+		<Header />
+		
+		<main class="news-main">
+			<!-- Hero Banner -->
+			<section class="hero-banner">
+				<div class="hero-content">
+					<h1 class="hero-title">Noticias e Innovaciones</h1>
+					<div class="breadcrumb">
+						<a href={`${import.meta.env.BASE_URL}`} class="breadcrumb-link">Inicio</a>
+						<span class="separator">/</span>
+						<span class="breadcrumb-active">Noticias</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Sección del Video Principal -->
+			<section class="featured-video-section section-spacing" data-aos="fade-up">
+				<div class="container">
+					<div class="video-header" data-aos="fade-down" data-aos-delay="200">
+						<h2 class="section-title">Video Destacado</h2>
+						<p class="section-subtitle">
+							Descubre cómo IGNUX LAB conecta creatividad, innovación y tecnología
+						</p>
+					</div>
+					
+					<div class="featured-video-container" data-aos="zoom-in" data-aos-delay="400">
+						<div class="video-wrapper">
+							<div class="video-content">
+								<iframe 
+									id="featuredVideo"
+									src="https://www.youtube.com/embed/Z_cuyrCE6KI"
+									title="Video Destacado de IGNUX Lab"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+									allowfullscreen>
+								</iframe>
+							</div>
+							<div class="video-overlay" data-aos="fade-in" data-aos-delay="600">
+								<div class="video-info">
+									<h3 class="video-title">Innovación en Acción</h3>
+									<p class="video-description">
+										En IGNUX LAB, creemos que cada idea puede convertirse en una experiencia transformadora. 
+										Conoce cómo conectamos creatividad, innovación y tecnología para construir soluciones con propósito.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Separador de sección -->
+			<div class="section-separator"></div>
+
+			<!-- Sección de Noticias Recientes -->
+			<section class="news-grid-section section-spacing" data-aos="fade-up">
+				<div class="container">
+					<div class="section-header" data-aos="fade-down" data-aos-delay="200">
+						<h2 class="section-title">Últimas Noticias</h2>
+						<p class="section-subtitle">
+							Mantente al día con nuestros proyectos e innovaciones más recientes
+						</p>
+					</div>
+					
+					<div class="news-grid" data-aos="fade-up" data-aos-delay="400">
+						<!-- Noticia 1 -->
+						<article class="news-card featured" data-aos="slide-up" data-aos-delay="500">
+							<div class="news-image">
+								<img src={`${import.meta.env.BASE_URL}img/collaborative-process-of-multicultural-skilled-peo-AN9FZBQ.webp`} alt="Proyecto colaborativo">
+								<div class="news-category">Destacado</div>
+							</div>
+							<div class="news-content">
+								<div class="news-meta">
+									<span class="news-date">15 Enero 2024</span>
+									<span class="news-author">Equipo IGNUX</span>
+								</div>
+								<h3 class="news-title">Nuevo Laboratorio de Innovación Digital</h3>
+								<p class="news-excerpt">
+									Presentamos nuestro nuevo espacio dedicado al desarrollo de soluciones digitales innovadoras, 
+									equipado con tecnología de última generación para potenciar la creatividad y la colaboración.
+								</p>
+								<div class="news-tags">
+									<span class="tag">Innovación</span>
+									<span class="tag">Tecnología</span>
+									<span class="tag">Laboratorio</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Noticia 2 -->
+						<article class="news-card" data-aos="slide-up" data-aos-delay="600">
+							<div class="news-image">
+								<img src={`${import.meta.env.BASE_URL}img/varias/nosotros-1.jpg`} alt="Formación especializada">
+								<div class="news-category">Formación</div>
+							</div>
+							<div class="news-content">
+								<div class="news-meta">
+									<span class="news-date">10 Enero 2024</span>
+									<span class="news-author">Área Formación</span>
+								</div>
+								<h3 class="news-title">Programa de Formación en Metodologías Ágiles</h3>
+								<p class="news-excerpt">
+									Lanzamos nuestro nuevo programa de certificación en metodologías ágiles, 
+									diseñado para capacitar a profesionales en las mejores prácticas del sector.
+								</p>
+								<div class="news-tags">
+									<span class="tag">Formación</span>
+									<span class="tag">Metodologías</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Noticia 3 -->
+						<article class="news-card" data-aos="slide-up" data-aos-delay="700">
+							<div class="news-image">
+								<img src={`${import.meta.env.BASE_URL}img/soluciones.webp`} alt="Consultoría estratégica">
+								<div class="news-category">Consultoría</div>
+							</div>
+							<div class="news-content">
+								<div class="news-meta">
+									<span class="news-date">5 Enero 2024</span>
+									<span class="news-author">Área Consultoría</span>
+								</div>
+								<h3 class="news-title">Expansión del Área de Consultoría Estratégica</h3>
+								<p class="news-excerpt">
+									Ampliamos nuestro equipo de consultoría para ofrecer servicios especializados 
+									en transformación digital y estrategia empresarial.
+								</p>
+								<div class="news-tags">
+									<span class="tag">Consultoría</span>
+									<span class="tag">Estrategia</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Noticia 4 -->
+						<article class="news-card" data-aos="slide-up" data-aos-delay="800">
+							<div class="news-image">
+								<img src={`${import.meta.env.BASE_URL}img/varias/vision.jpg`} alt="Visión futuro">
+								<div class="news-category">Visión</div>
+							</div>
+							<div class="news-content">
+								<div class="news-meta">
+									<span class="news-date">28 Diciembre 2023</span>
+									<span class="news-author">Dirección</span>
+								</div>
+								<h3 class="news-title">Nuestra Visión para 2024: Innovación sin Límites</h3>
+								<p class="news-excerpt">
+									Compartimos nuestra hoja de ruta para el próximo año, centrada en la innovación 
+									disruptiva y el impacto social positivo a través de la tecnología.
+								</p>
+								<div class="news-tags">
+									<span class="tag">Visión</span>
+									<span class="tag">2024</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Noticia 5 -->
+						<article class="news-card" data-aos="slide-up" data-aos-delay="900">
+							<div class="news-image">
+								<img src={`${import.meta.env.BASE_URL}img/varias/nosotros-2.jpg`} alt="Equipo colaborativo">
+								<div class="news-category">Equipo</div>
+							</div>
+							<div class="news-content">
+								<div class="news-meta">
+									<span class="news-date">20 Diciembre 2023</span>
+									<span class="news-author">Recursos Humanos</span>
+								</div>
+								<h3 class="news-title">Crecimiento del Equipo: Nuevos Talentos se Unen</h3>
+								<p class="news-excerpt">
+									Damos la bienvenida a nuevos profesionales especializados que se incorporan 
+									a nuestro equipo para fortalecer nuestras capacidades de innovación.
+								</p>
+								<div class="news-tags">
+									<span class="tag">Equipo</span>
+									<span class="tag">Talento</span>
+								</div>
+							</div>
+						</article>
+
+						<!-- Noticia 6 -->
+						<article class="news-card" data-aos="slide-up" data-aos-delay="1000">
+							<div class="news-image">
+								<img src={`${import.meta.env.BASE_URL}img/varias/nosotros-3.jpg`} alt="Proyecto innovador">
+								<div class="news-category">Proyecto</div>
+							</div>
+							<div class="news-content">
+								<div class="news-meta">
+									<span class="news-date">15 Diciembre 2023</span>
+									<span class="news-author">Área Desarrollo</span>
+								</div>
+								<h3 class="news-title">Lanzamiento de Plataforma de Gestión Innovadora</h3>
+								<p class="news-excerpt">
+									Presentamos nuestra nueva plataforma de gestión integral que revoluciona 
+									la forma en que las empresas manejan sus procesos de innovación.
+								</p>
+								<div class="news-tags">
+									<span class="tag">Plataforma</span>
+									<span class="tag">Gestión</span>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- Separador final -->
+			<div class="section-separator"></div>
+		</main>
+
+		<Footer />
+	</div>
+</Layout>
+
+<script type="module" src={`${import.meta.env.BASE_URL}scripts/news.js`}></script>

@@ -1,0 +1,72 @@
+---
+import '@/assets/styles/components/news.css';
+---
+
+<section class="news section-spacing section-depth" data-aos="fade-up">
+    <div class="news-background" data-aos="zoom-in" data-aos-duration="1500">
+        <img src={`${import.meta.env.BASE_URL}img/collaborative-process-of-multicultural-skilled-peo-AN9FZBQ.webp`} alt="Equipo colaborativo IGNUX Lab" class="background-image">
+        <div class="overlay" data-aos="fade-in" data-aos-delay="500"></div>
+    </div>
+    
+    <div class="news-content" data-aos="fade-in" data-aos-delay="300">
+        <div class="news-text" data-aos="fade-right" data-aos-delay="600">
+            <div class="content-card">
+                <div class="card-header" data-aos="fade-down" data-aos-delay="800">
+                    <div class="title-container">
+                        <h2 class="news-title">Noticias</h2>
+                        <div class="title-decoration" data-aos="slide-right" data-aos-delay="1000"></div>
+                    </div>
+                </div>
+                
+                <p class="news-description" data-aos="fade-up" data-aos-delay="900">
+                    Mantente al día con las últimas novedades, innovaciones y proyectos que estamos desarrollando en IGNUX LAB. Descubre cómo conectamos creatividad, innovación y tecnología.
+                </p>
+                
+                <div class="news-preview-cards" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="preview-card" data-aos="slide-up" data-aos-delay="1200">
+                        <div class="preview-icon">📰</div>
+                        <div class="preview-content">
+                            <h4>Últimas Noticias</h4>
+                            <p>Proyectos recientes y novedades del laboratorio</p>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-card" data-aos="slide-up" data-aos-delay="1300">
+                        <div class="preview-icon">🎥</div>
+                        <div class="preview-content">
+                            <h4>Videos Exclusivos</h4>
+                            <p>Contenido multimedia de nuestros procesos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="news-cta-container" data-aos="fade-left" data-aos-delay="700">
+            <div class="news-stats" data-aos="fade-up" data-aos-delay="1000">
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Noticias Publicadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Videos Exclusivos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Visualizaciones</span>
+                </div>
+            </div>
+            
+            <div class="news-intro-section" data-aos="fade-up" data-aos-delay="1200">
+                <p class="news-intro-text">
+                    Explora todo nuestro contenido y mantente actualizado con las innovaciones de IGNUX LAB.
+                </p>
+                <a href={`${import.meta.env.BASE_URL}news`} class="news-button" data-aos="slide-up" data-aos-delay="1400">
+                    <span class="button-text">Ver todas las noticias</span>
+                    <span class="button-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

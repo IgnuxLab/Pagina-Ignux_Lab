@@ -1,0 +1,296 @@
+/* Animaciones personalizadas de AOS para IGNUX Lab */
+
+/* Animación personalizada para elementos que aparecen desde el lado derecho de manera más suave */
+[data-aos="slide-right"] {
+  transform: translate3d(-100px, 0, 0);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="slide-right"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* Animación personalizada para elementos que aparecen desde arriba */
+[data-aos="slide-up"] {
+  transform: translate3d(0, 100px, 0);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="slide-up"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* Efectos de pulso para elementos especiales */
+[data-aos="pulse"] {
+  animation: aosPulse 1.5s infinite;
+}
+
+@keyframes aosPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Mejoras para los efectos de rebote */
+[data-aos="bounce"] {
+  animation: aosBounce 2s infinite;
+}
+
+@keyframes aosBounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -15px, 0);
+  }
+  70% {
+    transform: translate3d(0, -7px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+/* Efectos de aparición escalonada para elementos en grids */
+.principles-grid .principle-card[data-aos] {
+  transition-delay: calc(var(--aos-delay, 0ms) + (var(--card-index, 0) * 100ms));
+}
+
+.labs-list .lab-item[data-aos] {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center bottom;
+}
+
+.labs-list .lab-item[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition-property: opacity, transform;
+}
+
+.labs-list .lab-item[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.vision-elements .vision-element[data-aos] {
+  transition-delay: calc(var(--aos-delay, 0ms) + (var(--element-index, 0) * 200ms));
+}
+
+/* Efectos especiales para los laboratorios */
+.lab-item[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0) scale(0.95);
+  transition-property: opacity, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lab-item[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.lab-item .lab-icon {
+  transition: transform 0.3s ease;
+}
+
+.lab-item[data-aos="fade-up"].aos-animate .lab-icon {
+  animation: labIconEntrance 0.8s ease-out 0.2s both;
+}
+
+@keyframes labIconEntrance {
+  0% {
+    transform: scale(0.5) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Mejoras para dispositivos móviles */
+@media (max-width: 768px) {
+  [data-aos] {
+    animation-duration: 0.6s !important;
+  }
+  
+  [data-aos-delay] {
+    animation-delay: 0.1s !important;
+  }
+}
+
+/* Efecto especial para el hero video */
+.hero-video[data-aos="zoom-in"] {
+  transition-duration: 2s;
+}
+
+.hero-video[data-aos="zoom-in"].aos-animate {
+  animation: heroVideoEntrance 2s ease-out;
+}
+
+@keyframes heroVideoEntrance {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Efectos especiales para contadores */
+.counter-item[data-aos="zoom-in"] {
+  transition-duration: 0.8s;
+}
+
+.counter-item[data-aos="zoom-in"].aos-animate {
+  animation: counterEntrance 0.8s ease-out;
+}
+
+@keyframes counterEntrance {
+  0% {
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Efectos para los logos de clientes */
+.carousel-slide[data-aos="zoom-in"] {
+  transition-duration: 0.6s;
+}
+
+.carousel-slide[data-aos="zoom-in"].aos-animate img {
+  animation: clientLogoEntrance 0.6s ease-out;
+}
+
+@keyframes clientLogoEntrance {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Mejoras para botones flotantes */
+.floating-button[data-aos="fade-left"] {
+  transition-duration: 1s;
+}
+
+.floating-button[data-aos="fade-left"].aos-animate {
+  animation: floatingButtonEntrance 1s ease-out;
+}
+
+@keyframes floatingButtonEntrance {
+  0% {
+    transform: translateX(100px) scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-10px) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Efectos de aparición suave para elementos de texto */
+.intro-text[data-aos="fade-up"],
+.vision-description-container[data-aos="fade-left"] {
+  transition-duration: 1.2s;
+}
+
+/* Efectos especiales para líneas decorativas */
+.title-accent-line[data-aos="slide-right"],
+.vision-accent-line[data-aos="slide-right"],
+.intro-divider[data-aos="slide-right"],
+.title-decoration[data-aos="slide-right"] {
+  transition-duration: 1s;
+  transform-origin: center center;
+}
+
+.title-accent-line[data-aos="slide-right"].aos-animate,
+.vision-accent-line[data-aos="slide-right"].aos-animate,
+.intro-divider[data-aos="slide-right"].aos-animate,
+.title-decoration[data-aos="slide-right"].aos-animate {
+  animation: lineGrow 1s ease-out;
+}
+
+@keyframes lineGrow {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Efectos para redes sociales */
+.social-btn[data-aos="zoom-in"] {
+  transition-duration: 0.5s;
+}
+
+.social-btn[data-aos="zoom-in"].aos-animate {
+  animation: socialButtonEntrance 0.5s ease-out;
+}
+
+@keyframes socialButtonEntrance {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(-90deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Efectos globales para mejorar la experiencia */
+body.aos-animate {
+  overflow-x: hidden;
+}
+
+/* Efectos para elementos con hover mejorado */
+[data-aos].aos-animate:hover {
+  transform: translateY(-2px) !important;
+  transition: transform 0.3s ease;
+}

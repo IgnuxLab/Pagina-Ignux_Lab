@@ -1,0 +1,69 @@
+---
+import '@/assets/styles/components/hero.css';
+---
+
+<section class="hero section-spacing-compact section-depth" data-aos="fade-in" data-aos-duration="1500">
+    <!-- Video de fondo -->
+    <video class="hero-video" autoplay muted loop playsinline data-aos="zoom-in" data-aos-duration="2000">
+        <source src={`${import.meta.env.BASE_URL}videos/hero.mp4`} type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    
+    <!-- Overlay para mejorar legibilidad -->
+    <div class="hero-overlay" data-aos="fade-in" data-aos-delay="500"></div>
+    
+    <!-- Contenido del hero -->
+    <div class="hero-content" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1200">
+        <!-- Texto descriptivo -->
+        <div class="hero-text" data-aos="fade-up" data-aos-delay="1000">
+            <p>
+                Nacimos de la chispa que une la tecnología con la creatividad, de la necesidad de transformar la cotidiano en extraordinario. Cada proyecto, cada línea de código, cada diseño, lleva impresa la intención de empujar los limites y hacer que lo digital también emocione.
+            </p>
+        </div>
+        
+        <!-- Botón desplegable desde el borde izquierdo (solo móviles) -->
+        <div class="hero-slide-toggle" data-aos="slide-right" data-aos-delay="1200">
+            <button class="slide-toggle-btn" aria-label="Mostrar más información">
+                <span class="slide-toggle-icon">+</span>
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Script para el botón desplegable del hero en móviles
+    document.addEventListener('DOMContentLoaded', function() {
+        const slideToggleBtn = document.querySelector('.slide-toggle-btn');
+        const heroText = document.querySelector('.hero-text');
+        const slideToggleContainer = document.querySelector('.hero-slide-toggle');
+        
+        if (slideToggleBtn && heroText && slideToggleContainer) {
+            // Mostrar el botón con animación después de un delay
+            setTimeout(() => {
+                slideToggleContainer.classList.add('visible');
+            }, 2000);
+            
+            slideToggleBtn.addEventListener('click', function() {
+                const isExpanded = heroText.classList.contains('expanded');
+                const toggleIcon = slideToggleBtn.querySelector('.slide-toggle-icon');
+                
+                if (toggleIcon) {
+                    if (isExpanded) {
+                        // Contraer
+                        heroText.classList.remove('expanded');
+                        slideToggleBtn.classList.remove('expanded');
+                        slideToggleContainer.classList.remove('expanded');
+                        toggleIcon.textContent = '+';
+                    } else {
+                        // Expandir
+                        heroText.classList.add('expanded');
+                        slideToggleBtn.classList.add('expanded');
+                        slideToggleContainer.classList.add('expanded');
+                        toggleIcon.textContent = '−';
+                    }
+                }
+            });
+        }
+    });
+</script>

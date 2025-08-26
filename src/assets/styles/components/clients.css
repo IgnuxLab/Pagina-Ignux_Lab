@@ -1,0 +1,495 @@
+/* ===== ESTILOS DEL COMPONENTE CLIENTS ===== */
+
+.clients {
+    position: relative;
+    overflow: hidden;
+}
+
+/* El contenedor ahora usa .section-container del CSS general */
+
+/* Header de la sección */
+.clients-header {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.clients-header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.clients-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--color-accent);
+    margin: 0;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: left;
+}
+
+.clients-description {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    text-align: left;
+}
+
+.clients-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--color-accent);
+    margin: 0;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: left;
+}
+
+/* Carrusel de clientes */
+.clients-carousel {
+    position: relative;
+    margin: 3rem 0;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: carouselEntrance 1.2s ease-out 0.5s forwards;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+    animation: infiniteScroll 30s linear infinite;
+    width: calc((200px + 2rem) * 28); /* 14 slides duplicados = 28 total */
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.carousel-slide {
+    flex: 0 0 200px;
+    height: 120px;
+    background: linear-gradient(135deg, rgba(52, 46, 89, 0.9), rgba(22, 20, 38, 0.95));
+    border: 1px solid rgba(216, 35, 255, 0.3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(216, 35, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.carousel-slide:hover::before {
+    left: 100%;
+}
+
+.carousel-slide:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--color-accent);
+    box-shadow: 0 25px 50px rgba(216, 35, 255, 0.2);
+}
+
+/* Placeholder para clientes */
+.client-placeholder {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--color-orange);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 138, 76, 0.5);
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0.9) contrast(1.1);
+    transition: all 0.4s ease;
+}
+
+.carousel-slide:hover img {
+    filter: brightness(1.1) contrast(1.2);
+    transform: scale(1.1);
+}
+
+/* Efectos de partículas flotantes */
+.carousel-slide::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(216, 35, 255, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease;
+    border-radius: 50%;
+}
+
+.carousel-slide:hover::after {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Controles del carrusel */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+.carousel-btn {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-orange));
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(216, 35, 255, 0.3);
+}
+
+.carousel-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.carousel-btn:hover::before {
+    left: 100%;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 35px rgba(216, 35, 255, 0.4);
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 1.2s forwards;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(216, 35, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-indicator.active {
+    background: var(--color-accent);
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(216, 35, 255, 0.6);
+}
+
+.carousel-indicator:hover {
+    background: var(--color-accent);
+    transform: scale(1.2);
+}
+
+/* Estadísticas del cliente */
+.client-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, rgba(52, 46, 89, 0.9), rgba(22, 20, 38, 0.95));
+    border: 1px solid rgba(216, 35, 255, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(145deg, rgba(216, 35, 255, 0.3), rgba(255, 138, 76, 0.2));
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(216, 35, 255, 0.2);
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Animación del carrusel infinito */
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50%));
+    }
+}
+
+/* Animaciones generales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes carouselEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.9) rotateX(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateX(0deg);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .carousel-track {
+        animation-duration: 25s;
+    }
+    
+    .carousel-slide {
+        flex: 0 0 180px;
+        height: 100px;
+        padding: 1rem;
+    }
+    
+    .client-stats {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .clients {
+        padding: 2rem 1rem;
+    }
+    
+    .clients-header {
+        margin-bottom: 2rem;
+    }
+    
+    .clients-header-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .clients-title {
+        text-align: center;
+    }
+    
+    .clients-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    .carousel-track {
+        gap: 1.5rem;
+        animation-duration: 20s;
+        width: calc((160px + 1.5rem) * 28);
+    }
+    
+    .carousel-slide {
+        flex: 0 0 160px;
+        height: 90px;
+        padding: 0.8rem;
+    }
+    
+    .carousel-controls {
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .client-stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-title {
+        font-size: 2rem;
+    }
+    
+    .clients-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .clients-description {
+        font-size: 1rem;
+    }
+    
+    .carousel-track {
+        gap: 1rem;
+        animation-duration: 15s;
+        width: calc((140px + 1rem) * 28);
+    }
+    
+    .carousel-slide {
+        flex: 0 0 140px;
+        height: 80px;
+        padding: 0.6rem;
+        border-radius: 15px;
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .client-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        margin-top: 2rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
