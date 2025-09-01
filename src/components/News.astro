@@ -1,5 +1,8 @@
 ---
 import '@/assets/styles/components/news.css';
+import newsData from '@/data/news.json';
+
+const { stats, featured } = newsData;
 ---
 
 <section class="news section-spacing section-depth" data-aos="fade-up">
@@ -45,15 +48,15 @@ import '@/assets/styles/components/news.css';
         <div class="news-cta-container" data-aos="fade-left" data-aos-delay="700">
             <div class="news-stats" data-aos="fade-up" data-aos-delay="1000">
                 <div class="stat-item">
-                    <span class="stat-number">25+</span>
+                    <span class="stat-number">{stats.published}+</span>
                     <span class="stat-label">Noticias Publicadas</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">15+</span>
+                    <span class="stat-number">{stats.videos}+</span>
                     <span class="stat-label">Videos Exclusivos</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">500+</span>
+                    <span class="stat-number">{stats.views}+</span>
                     <span class="stat-label">Visualizaciones</span>
                 </div>
             </div>
@@ -70,3 +73,4 @@ import '@/assets/styles/components/news.css';
         </div>
     </div>
 </section>
+
