@@ -1,19 +1,20 @@
 {
   "featured": {
     "id": "featured-1",
-    "category": "Destacado",
-    "title": "Nuevo Laboratorio de Innovación Digital",
-    "excerpt": "Presentamos nuestro nuevo espacio dedicado al desarrollo de soluciones digitales innovadoras, equipado con tecnología de última generación para potenciar la creatividad y la colaboración.",
+    "category": "Lanzamiento",
+    "title": "Lanzamiento de la marca IGNUX LAB",
+    "excerpt": "Mira el video oficial del lanzamiento de IGNUX LAB y descubre nuestra visión para impulsar la innovación con impacto.",
     "date": "2024-01-15",
     "author": "Equipo IGNUX",
+    "video": "https://ignuxlab.com/video-ignux/lanzamiento-ignuxlab.mp4#t=12",
     "image": "collaborative-process-of-multicultural-skilled-peo-AN9FZBQ.webp",
-    "tags": ["Innovación", "Tecnología", "Laboratorio"],
+    "tags": ["Lanzamiento", "Innovación", "IGNUX LAB"],
     "featured": true,
-    "content": "En IGNUX LAB continuamos expandiendo nuestras capacidades para ofrecer soluciones más innovadoras y efectivas. Nuestro nuevo laboratorio de innovación digital representa un hito importante en nuestro compromiso con la excelencia tecnológica. Este espacio está diseñado para fomentar la colaboración interdisciplinaria y acelerar el desarrollo de proyectos disruptivos que generen un impacto positivo en nuestros clientes y la sociedad."
+    "content": "Presentamos oficialmente la marca IGNUX LAB. Este hito refleja nuestro compromiso por conectar creatividad, innovación y tecnología para generar resultados medibles y transformar organizaciones."
   },
   "stats": {
     "published": 25,
-    "videos": 15,
+    "videos": 16,
     "views": 500
   },
   "recent": [

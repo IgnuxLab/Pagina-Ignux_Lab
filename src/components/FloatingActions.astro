@@ -405,12 +405,6 @@
             // Threshold diferente para móviles vs desktop
             const threshold = isMobile ? 200 : 300;
             
-            console.log('Verificando visibilidad:', {
-                isMobile,
-                currentScroll,
-                threshold,
-                shouldShow: currentScroll > threshold
-            });
             
             // Mostrar botón solo cuando se hace scroll hacia abajo más allá del threshold
             if (currentScroll > threshold) {
@@ -457,11 +451,5 @@
             checkScrollAndShowButton();
         }, 100);
         
-        // Debug: Log para verificar que el botón está funcionando
-        console.log('FloatingActions: Botón scroll-to-top inicializado', {
-            button: scrollTopBtn,
-            isMobile: window.innerWidth <= 768,
-            visible: scrollTopBtn.classList.contains('visible')
-        });
     });
 </script>

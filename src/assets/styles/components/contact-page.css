@@ -430,21 +430,31 @@
 }
 
 .info-icon.email {
-	background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+	background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+	color: #D823FF;
 }
 
 .info-icon.phone {
-	background: linear-gradient(135deg, #4ECDC4, #44A08D);
+	background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+	color: #D823FF;
 }
 
 .info-icon.location {
-	background: linear-gradient(135deg, #A8EDEA, #6DD5ED);
+	background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+	color: #D823FF;
 }
 
 .info-icon svg {
 	width: 24px;
 	height: 24px;
-	color: white;
+	color: #D823FF;
+}
+
+.info-icon img {
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+	display: block;
 }
 
 .info-title {
@@ -506,30 +516,42 @@
 }
 
 .social-link.linkedin {
-	background: linear-gradient(135deg, #0077B5, #005885);
+	background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+	color: #D823FF;
 }
 
 .social-link.instagram {
-	background: linear-gradient(135deg, #E4405F, #C13584, #833AB4);
+	background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+	color: #D823FF;
 }
 
 .social-link.twitter {
-	background: linear-gradient(135deg, #1DA1F2, #0d8bd9);
+	background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+	color: #D823FF;
 }
 
 .social-link.tiktok {
-	background: linear-gradient(135deg, #000000, #333333);
+	background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+	color: #D823FF;
 }
 
 .social-link svg {
 	width: 24px;
 	height: 24px;
-	color: white;
+	color: #D823FF;
+}
+
+.social-link img {
+	width: 35px;
+	height: 35px;
+	object-fit: contain;
+	display: block;
 }
 
 .social-link:hover {
 	transform: translateY(-3px) scale(1.1);
 	box-shadow: 0 10px 25px rgba(216, 35, 255, 0.3);
+	border: 2px solid rgba(216, 35, 255, 0.6);
 }
 
 /* ===== SECCIÓN DEL MAPA ===== */
@@ -806,6 +828,11 @@
 		height: 20px;
 	}
 	
+	.info-icon img {
+		width: 32px;
+		height: 32px;
+	}
+	
 	.social-section {
 		padding: 1.2rem;
 		border-radius: 15px;
@@ -823,6 +850,11 @@
 	.social-link svg {
 		width: 20px;
 		height: 20px;
+	}
+	
+	.social-link img {
+		width: 28px;
+		height: 28px;
 	}
 	
 	.map-section {

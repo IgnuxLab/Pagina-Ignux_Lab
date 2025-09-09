@@ -25,7 +25,7 @@ import '@/assets/styles/components/solutions.css';
         <div class="counters-section" data-aos="fade-up" data-aos-delay="400">
             <div class="counters-grid">
                 <div class="counter-item" data-target="500" data-suffix="+" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="counter-icon">🚀</div>
+                    <div class="counter-icon"><img src={`${import.meta.env.BASE_URL}img/icons/proyectos-exitosos-1.gif`} alt="Proyectos Exitosos"></div>
                     <div class="counter-number" data-count="0">0</div>
                     <div class="counter-suffix">+</div>
                     <div class="counter-label">Proyectos Exitosos</div>
@@ -35,7 +35,7 @@ import '@/assets/styles/components/solutions.css';
                 </div>
                 
                 <div class="counter-item" data-target="95" data-suffix="%" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="counter-icon">⭐</div>
+                    <div class="counter-icon"><img src={`${import.meta.env.BASE_URL}img/icons/satisfaccion-del-cliente.gif`} alt="Satisfacción del Cliente"></div>
                     <div class="counter-number" data-count="0">0</div>
                     <div class="counter-suffix">%</div>
                     <div class="counter-label">Satisfacción del Cliente</div>
@@ -45,7 +45,7 @@ import '@/assets/styles/components/solutions.css';
                 </div>
                 
                 <div class="counter-item" data-target="50" data-suffix="+" data-aos="zoom-in" data-aos-delay="700">
-                    <div class="counter-icon">🏢</div>
+                    <div class="counter-icon"><img src={`${import.meta.env.BASE_URL}img/icons/experiencia-ok.gif`} alt="Empresas Atendidas"></div>
                     <div class="counter-number" data-count="0">0</div>
                     <div class="counter-suffix">+</div>
                     <div class="counter-label">Empresas Atendidas</div>
@@ -55,7 +55,7 @@ import '@/assets/styles/components/solutions.css';
                 </div>
                 
                 <div class="counter-item" data-target="3" data-suffix="" data-aos="zoom-in" data-aos-delay="800">
-                    <div class="counter-icon">🔬</div>
+                    <div class="counter-icon"><img src={`${import.meta.env.BASE_URL}img/icons/laboratorios-especializados.gif`} alt="Laboratorios Especializados"></div>
                     <div class="counter-number" data-count="0">0</div>
                     <div class="counter-suffix"></div>
                     <div class="counter-label">Laboratorios Especializados</div>
@@ -99,7 +99,7 @@ import '@/assets/styles/components/solutions.css';
                     <h3 class="labs-title" data-aos="fade-down" data-aos-delay="700">Nuestros Laboratorios</h3>
                     <div class="labs-list">
                         <div class="lab-item" data-aos="fade-up" data-aos-delay="800" data-aos-duration="600">
-                            <div class="lab-icon">🎓</div>
+                            <div class="lab-icon"><img src={`${import.meta.env.BASE_URL}img/icons/lab-para-la-formacion.gif`} alt="Laboratorio para la Formación"></div>
                             <div class="lab-content">
                                 <h4 class="lab-name">Laboratorio para la Formación</h4>
                                 <p class="lab-description">Desarrollamos competencias tecnológicas y habilidades digitales.</p>
@@ -107,7 +107,7 @@ import '@/assets/styles/components/solutions.css';
                         </div>
                         
                         <div class="lab-item" data-aos="fade-up" data-aos-delay="900" data-aos-duration="600">
-                            <div class="lab-icon">🚀</div>
+                            <div class="lab-icon"><img src={`${import.meta.env.BASE_URL}img/icons/lab-de-proyectos.gif`} alt="Laboratorio de Proyectos"></div>
                             <div class="lab-content">
                                 <h4 class="lab-name">Laboratorio de Proyectos</h4>
                                 <p class="lab-description">Implementamos soluciones tecnológicas innovadoras.</p>
@@ -115,7 +115,7 @@ import '@/assets/styles/components/solutions.css';
                         </div>
                         
                         <div class="lab-item" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="600">
-                            <div class="lab-icon">🎨</div>
+                            <div class="lab-icon"><img src={`${import.meta.env.BASE_URL}img/icons/lab-creativo.gif`} alt="Laboratorio Creativo"></div>
                             <div class="lab-content">
                                 <h4 class="lab-name">Laboratorio Creativo</h4>
                                 <p class="lab-description">Creamos experiencias digitales únicas y memorables.</p>
@@ -135,4 +135,157 @@ import '@/assets/styles/components/solutions.css';
     </div>
 </section>
 
-<script type="module" src={`${import.meta.env.BASE_URL}scripts/solutions.js`}></script> 
+<script type="module" src={`${import.meta.env.BASE_URL}scripts/solutions.js`}></script>
+<script>
+  // Script inline para máxima compatibilidad móvil
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Forzar visibilidad de iconos flotantes
+    function forceIconsVisibility() {
+      const floatingIcons = document.querySelector('.floating-icons');
+      const iconItems = document.querySelectorAll('.icon-item');
+      
+      if (floatingIcons && floatingIcons instanceof HTMLElement) {
+        floatingIcons.style.cssText = `
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
+        `;
+      }
+      
+      iconItems.forEach(icon => {
+        // Solo forzar visibilidad, no transform para mantener animaciones
+        if (icon instanceof HTMLElement) {
+          icon.style.opacity = '1';
+          icon.style.visibility = 'visible';
+          icon.style.display = 'flex';
+        }
+      });
+    }
+    
+    // Ejecutar inmediatamente
+    forceIconsVisibility();
+    
+    // Ejecutar después de un pequeño delay
+    setTimeout(forceIconsVisibility, 100);
+    setTimeout(forceIconsVisibility, 500);
+    
+    // Observer para los contadores en todas las plataformas
+    function observeCounters() {
+      const countersSection = document.querySelector('.counters-section');
+      if (countersSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Forzar animación de contadores cuando sean visibles
+              setTimeout(() => {
+                const counters = document.querySelectorAll('.counter-item .counter-number');
+                counters.forEach((counter, index) => {
+                  if (counter instanceof HTMLElement) {
+                    const container = counter.closest('.counter-item');
+                    const target = parseInt(container?.getAttribute('data-target') || '0');
+                    
+                    counter.style.cssText = `
+                      display: inline-block !important;
+                      opacity: 1 !important;
+                      visibility: visible !important;
+                      font-size: 2.5rem !important;
+                      font-weight: 800 !important;
+                    `;
+                    
+                    // Animación gradual
+                    let current = 0;
+                    const increment = target / 25;
+                    const timer = setInterval(() => {
+                      current += increment;
+                      if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                      }
+                      counter.textContent = Math.floor(current).toString();
+                    }, 60);
+                  }
+                });
+              }, 200);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '50px'
+        });
+        
+        observer.observe(countersSection);
+      }
+    }
+    
+    // Ejecutar observer
+    setTimeout(observeCounters, 300);
+    
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      // Función específica para contadores en móviles
+      function animateMobileCounters() {
+        const counters = document.querySelectorAll('.counter-item .counter-number');
+        counters.forEach((counter, index) => {
+          if (counter instanceof HTMLElement) {
+            const container = counter.closest('.counter-item');
+            const target = parseInt(container?.getAttribute('data-target') || '0');
+            
+            // Forzar estilos de visibilidad
+            counter.style.cssText = `
+              display: inline-block !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+              font-size: 2.5rem !important;
+              font-weight: 800 !important;
+            `;
+            
+            // Animación simple y efectiva para móviles
+            let current = 0;
+            const increment = target / 30; // 30 pasos para la animación
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              counter.textContent = Math.floor(current).toString();
+            }, 50); // 50ms entre cada actualización
+          }
+        });
+      }
+      
+      // Cargar script móvil adicional
+      const mobileScript = document.createElement('script');
+      mobileScript.src = `${import.meta.env.BASE_URL}scripts/mobile-counters.js`;
+      mobileScript.async = true;
+      document.head.appendChild(mobileScript);
+      
+      // Ejecutar animación de contadores inmediatamente para móviles
+      setTimeout(animateMobileCounters, 500);
+      
+      // Fallback si los números siguen en 0
+      setTimeout(() => {
+        const counters = document.querySelectorAll('.counter-item .counter-number');
+        counters.forEach(counter => {
+          if (counter instanceof HTMLElement && counter.textContent === '0') {
+            const container = counter.closest('.counter-item');
+            const target = container?.getAttribute('data-target') || '0';
+            
+            counter.style.cssText = `
+              display: inline-block !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+              font-size: 2.5rem !important;
+              font-weight: 800 !important;
+            `;
+            counter.textContent = target;
+          }
+        });
+        
+        // Volver a forzar la visibilidad de los iconos después del contador
+        forceIconsVisibility();
+      }, 2000);
+    }
+  });
+</script> 

@@ -6,7 +6,6 @@
 @import './components/floating-actions.css';
 @import './components/about-us.css';
 @import './components/how-we-do-it.css';
-@import './components/our-vision.css';
 
 
 /* Importación de fuentes */
@@ -406,16 +405,11 @@ h6 {
 
 /* Configuración base para todas las animaciones */
 [data-aos] {
-  pointer-events: none;
   transition-property: transform, opacity;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 800ms;
   transform-origin: center center;
   will-change: transform, opacity;
-}
-
-[data-aos].aos-animate {
-  pointer-events: auto;
 }
 
 /* Optimización para animaciones suaves */

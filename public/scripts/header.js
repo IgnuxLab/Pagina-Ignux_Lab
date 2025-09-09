@@ -74,22 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
     const currentUrl = window.location.href;
     
-    console.log('Detectando navegación activa:', {
-      currentPath,
-      currentUrl
-    });
-    
     navLinks.forEach(link => {
       // Remover clase activa de todos los enlaces primero
       link.classList.remove('nav-link-active');
       
       const linkHref = link.getAttribute('href');
       const linkPage = link.getAttribute('data-page');
-      
-      console.log(`Verificando enlace: ${linkPage}`, {
-        linkHref,
-        linkPage
-      });
       
       let isActive = false;
       
@@ -100,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Método 1: Comparación directa de href con path actual
       if (linkHref && currentPath === linkHref) {
         isActive = true;
-        console.log(`✅ Método 1 - Coincidencia exacta: ${linkPage}`);
       }
       
       // Método 2: Comparación usando data-page - más robusta para subdirectorios
@@ -122,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
           
           if (isHomePage && isNotOtherPage) {
             isActive = true;
-            console.log(`✅ Método 2a - Página inicio: ${linkPage}`);
           }
         } else {
           // Para otras páginas: verificar si el último segmento coincide con la página
@@ -132,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
               currentPath.endsWith(`/${linkPage}`) ||
               currentPath.includes(`/${linkPage}/`)) {
             isActive = true;
-            console.log(`✅ Método 2b - Página específica: ${linkPage}`);
           }
         }
       }
@@ -152,21 +139,18 @@ document.addEventListener('DOMContentLoaded', () => {
               );
               if (isNotOtherPage) {
                 isActive = true;
-                console.log(`✅ Método 3 - URL completa home: ${linkPage}`);
               }
             } else {
               isActive = true;
-              console.log(`✅ Método 3 - URL completa: ${linkPage}`);
             }
           }
         } catch (e) {
-          console.log('Error en comparación de URL completa:', e);
+          // Error silencioso
         }
       }
       
       if (isActive) {
         link.classList.add('nav-link-active');
-        console.log(`🎯 Enlace activo final: ${linkPage || linkHref}`);
       }
     });
   }

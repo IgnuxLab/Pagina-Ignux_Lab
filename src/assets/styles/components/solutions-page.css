@@ -172,7 +172,7 @@
 	border: 2px solid rgba(255, 255, 255, 0.15);
 	backdrop-filter: blur(15px);
 	border-radius: 25px;
-	padding: 3rem;
+	padding: 3.5rem;
 	position: relative;
 	overflow: hidden;
 	transition: all 0.4s ease;
@@ -230,7 +230,6 @@
 		inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-/* ===== ICONOS DE LABORATORIO ===== */
 .lab-icon {
 	width: 80px;
 	height: 80px;
@@ -253,17 +252,20 @@
 	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* Colores específicos para cada laboratorio */
-.lab-card.formacion .lab-icon {
-	background: linear-gradient(135deg, #4CAF50, #8BC34A);
+.lab-icon img {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+	display: block;
 }
 
-.lab-card.proyectos .lab-icon {
-	background: linear-gradient(135deg, #2196F3, #03DAC6);
-}
-
-.lab-card.creativo .lab-icon {
-	background: linear-gradient(135deg, var(--color-accent), var(--color-orange));
+.lab-gif {
+	width: 80px;
+	height: 80px;
+	display: block;
+	margin: 0 auto 2rem auto;
+	object-fit: contain;
+	image-rendering: -webkit-optimize-contrast;
 }
 
 /* ===== TEXTO DE LABORATORIOS ===== */
@@ -285,7 +287,7 @@
 	font-weight: 600;
 	color: var(--color-orange);
 	margin: 0 0 1.5rem 0;
-	text-align: center;
+	text-align: left;
 	position: relative;
 	z-index: 1;
 	line-height: 1.4;
@@ -346,6 +348,10 @@
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 2.5rem;
 	}
+	
+	.lab-card {
+		padding: 3rem;
+	}
 }
 
 @media (max-width: 768px) {
@@ -378,18 +384,13 @@
 	}
 	
 	.lab-card {
-		padding: 2rem;
+		padding: 2.5rem;
 	}
 	
-	.lab-icon {
-		width: 70px;
-		height: 70px;
+	.lab-gif {
+		width: 60px;
+		height: 60px;
 		margin-bottom: 1.5rem;
-	}
-	
-	.lab-icon svg {
-		width: 35px;
-		height: 35px;
 	}
 	
 	.lab-approach {
@@ -435,16 +436,10 @@
 		border-radius: 20px;
 	}
 	
-	.lab-icon {
-		width: 60px;
-		height: 60px;
+	.lab-gif {
+		width: 50px;
+		height: 50px;
 		margin-bottom: 1rem;
-		border-radius: 15px;
-	}
-	
-	.lab-icon svg {
-		width: 30px;
-		height: 30px;
 	}
 	
 	.lab-title {

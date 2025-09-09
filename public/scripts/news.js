@@ -153,3 +153,60 @@ if (!document.querySelector('#video-animations')) {
   style.textContent = fadeInVideoCSS;
   document.head.appendChild(style);
 }
+
+// Modal de video para noticia destacada
+(function setupFeaturedVideoModal(){
+  let modal, dialog, player;
+  function openModal(src){
+    if(!modal){
+      modal = document.querySelector('#videoModal');
+      // mover modal al body para evitar issues de stacking/overflow en móviles
+      if(modal && modal.parentElement !== document.body){
+        document.body.appendChild(modal);
+      }
+      dialog = modal && modal.querySelector('.video-modal-dialog');
+      player = modal && modal.querySelector('#videoModalPlayer');
+    }
+    if(!modal || !dialog || !player) return;
+    player.src = src;
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('is-open');
+    player.currentTime = 0;
+    // Autoplay en móviles requiere mute inicialmente
+    player.muted = true;
+    player.play().then(()=>{
+      // si el usuario interactúa, puede activar sonido manualmente
+    }).catch(()=>{});
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    if(!modal || !player) return;
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', (e)=>{
+    const openBtn = e.target.closest('[data-open-video]');
+    if(openBtn){
+      const src = openBtn.getAttribute('data-video-src');
+      if(src) openModal(src);
+      return;
+    }
+    const closeBtn = e.target.closest('[data-close-video]');
+    if(closeBtn){
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){
+      const isOpen = document.querySelector('#videoModal.is-open');
+      if(isOpen) closeModal();
+    }
+  });
+})();

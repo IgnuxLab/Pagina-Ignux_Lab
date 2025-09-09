@@ -7,8 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
-  // Base path solo para producción
-  base: process.env.NODE_ENV === 'production' ? '/demo/ignuxlab/' : '/',
+  // Base path para producción en el dominio raíz
+  base: '/',
   vite: {
     resolve: {
       alias: {

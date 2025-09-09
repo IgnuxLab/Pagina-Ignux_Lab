@@ -54,11 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentUrl = window.location.href;
     const footerLinks = document.querySelectorAll('.footer-link');
     
-    console.log('Detectando navegación activa en footer:', {
-      currentPath,
-      currentUrl
-    });
-    
     footerLinks.forEach(link => {
       // Remover clase activa de todos los enlaces primero
       link.classList.remove('footer-link-active');
@@ -66,17 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const linkHref = link.getAttribute('href');
       const linkPage = link.getAttribute('data-page');
       
-      console.log(`Verificando enlace footer: ${linkPage}`, {
-        linkHref,
-        linkPage
-      });
-      
       let isActive = false;
       
       // Método 1: Comparación directa de href
       if (linkHref && currentPath === linkHref) {
         isActive = true;
-        console.log(`✅ Footer Método 1 - Coincidencia exacta: ${linkPage}`);
       }
       
       // Método 2: Comparación usando data-page para subdirectorios
@@ -111,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
               currentPath.endsWith(`/${linkPage}`) ||
               currentPath.includes(`/${linkPage}/`)) {
             isActive = true;
-            console.log(`✅ Footer Método 2b - Página específica: ${linkPage}`);
           }
         }
       }
@@ -132,21 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
               );
               if (isNotOtherPage) {
                 isActive = true;
-                console.log(`✅ Footer Método 3 - URL completa home: ${linkPage}`);
               }
             } else {
               isActive = true;
-              console.log(`✅ Footer Método 3 - URL completa: ${linkPage}`);
             }
           }
         } catch (e) {
-          console.log('Error en comparación de URL completa footer:', e);
+          // Error silencioso
         }
       }
       
       if (isActive) {
         link.classList.add('footer-link-active');
-        console.log(`🎯 Footer enlace activo final: ${linkPage || linkHref}`);
       }
     });
   }

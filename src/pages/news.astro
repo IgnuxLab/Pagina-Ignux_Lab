@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import VideoHero from '../components/VideoHero.astro';
 import NewsGrid from '../components/NewsGrid.astro';
 
 import '../assets/styles/components/news-page.css';
@@ -24,9 +23,6 @@ import '../assets/styles/components/news-page.css';
 				</div>
 			</section>
 			
-			<!-- Video Hero Decorativo -->
-			<VideoHero />
-			<div class="section-separator"></div>
 			
 			<!-- Grid de Noticias -->
 			<NewsGrid />
@@ -35,6 +31,7 @@ import '../assets/styles/components/news-page.css';
 
 		<Footer />
 	</div>
-</Layout>
 
-<script type="module" src={`${import.meta.env.BASE_URL}scripts/news.js`}></script>
+    <!-- Scripts específicos de la página de noticias -->
+    <script type="module" src={`${import.meta.env.BASE_URL}scripts/news.js`}></script>
+</Layout>
