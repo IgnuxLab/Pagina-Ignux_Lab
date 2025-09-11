@@ -172,11 +172,23 @@ if (!document.querySelector('#video-animations')) {
     modal.setAttribute('aria-hidden', 'false');
     modal.classList.add('is-open');
     player.currentTime = 0;
-    // Autoplay en móviles requiere mute inicialmente
-    player.muted = true;
-    player.play().then(()=>{
-      // si el usuario interactúa, puede activar sonido manualmente
-    }).catch(()=>{});
+    
+    // Configurar audio del video
+    setupVideoAudio();
+    
+    // Respetar la configuración muted del video (por defecto está configurado como false en el HTML)
+    // Solo en móviles forzar mute inicialmente para autoplay
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if(isMobile && player.autoplay) {
+      player.muted = true;
+      player.play().then(()=>{
+        // El usuario puede activar sonido manualmente
+      }).catch(()=>{});
+    } else {
+      // En desktop, respetar la configuración original
+      player.play().catch(()=>{});
+    }
+    
     document.body.style.overflow = 'hidden';
   }
 
@@ -188,6 +200,47 @@ if (!document.querySelector('#video-animations')) {
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+  }
+
+  // Función para gestionar el estado del audio del video
+  function setupVideoAudio() {
+    if(!player) return;
+    
+    // Agregar controles de audio mejorados
+    player.addEventListener('loadedmetadata', () => {
+      // Asegurar que el video respete la configuración inicial
+      const shouldBeMuted = player.hasAttribute('muted') && player.getAttribute('muted') !== 'false';
+      if(!shouldBeMuted) {
+        player.muted = false;
+      }
+    });
+
+    // Permitir que el usuario controle el audio fácilmente
+    player.addEventListener('click', (e) => {
+      // Si el video está silenciado y el usuario hace clic, activar audio
+      if(player.muted && e.target === player) {
+        player.muted = false;
+        // Mostrar indicador visual temporal de que el audio se activó
+        const indicator = document.createElement('div');
+        indicator.textContent = '🔊 Audio activado';
+        indicator.style.cssText = `
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(0,0,0,0.8);
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 25px;
+          font-size: 0.9rem;
+          pointer-events: none;
+          z-index: 1000;
+        `;
+        player.parentElement.style.position = 'relative';
+        player.parentElement.appendChild(indicator);
+        setTimeout(() => indicator.remove(), 2000);
+      }
+    });
   }
 
   document.addEventListener('click', (e)=>{

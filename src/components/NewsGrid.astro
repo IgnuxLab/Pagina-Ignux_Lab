@@ -57,8 +57,31 @@ const formatDate = (dateString: string) => {
                     <div class="video-modal-backdrop" data-close-video></div>
                     <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Reproductor de video">
                         <button class="video-modal-close" type="button" data-close-video aria-label="Cerrar">×</button>
+                        <div class="video-modal-header">
+                            <h3 class="video-modal-title">{featured.title}</h3>
+                            <div class="video-modal-meta">
+                                <span class="video-date">{formatDate(featured.date)}</span>
+                                <span class="video-author">Por {featured.author}</span>
+                            </div>
+                        </div>
                         <div class="video-modal-content">
-                            <video id="videoModalPlayer" controls preload="metadata" playsinline poster={`${import.meta.env.BASE_URL}img/${featured.image}`}></video>
+                            <video 
+                                id="videoModalPlayer" 
+                                controls={featured.videoConfig?.controls !== false}
+                                preload="metadata" 
+                                playsinline 
+                                muted={featured.videoConfig?.muted !== false}
+                                autoplay={featured.videoConfig?.autoplay === true}
+                                poster={`${import.meta.env.BASE_URL}img/${featured.image}`}
+                            ></video>
+                        </div>
+                        <div class="video-modal-footer">
+                            <p class="video-description">{featured.content}</p>
+                            <div class="video-tags">
+                                {featured.tags.map((tag: string) => (
+                                    <span class="video-tag">{tag}</span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

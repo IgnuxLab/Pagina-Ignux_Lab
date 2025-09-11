@@ -5,21 +5,20 @@ import '@/assets/styles/components/about-us.css';
 <!-- Preload de la imagen principal del equipo -->
 <link rel="preload" as="image" href="/img/equipo/equipo_ai.webp" fetchpriority="high">
 
-<section class="about-us section-spacing section-depth" data-aos="fade-up">
+<section class="about-us section-spacing section-depth">
     <div class="about-container">
         <!-- Encabezado principal con título integrado -->
-        <div class="intro-section" data-aos="fade-in" data-aos-delay="200">
-            <div class="intro-content">
+        <div class="intro-section" data-aos="fade-up">
+            <div class="header-content">
                 <!-- Esquinas decorativas -->
-                <div class="corner-top-left" data-aos="fade-down-right" data-aos-delay="400"></div>
-                <div class="corner-top-right" data-aos="fade-down-left" data-aos-delay="500"></div>
-                <div class="corner-bottom-left" data-aos="fade-up-right" data-aos-delay="600"></div>
-                <div class="corner-bottom-right" data-aos="fade-up-left" data-aos-delay="700"></div>
-
-                <!-- Título dentro del contenedor -->
-                <div class="intro-title-container" data-aos="fade-down" data-aos-delay="300">
-                    <h2 class="intro-main-title">Sobre Nosotros</h2>
-                    <div class="title-accent-line" data-aos="slide-right" data-aos-delay="600"></div>
+                <div class="corner-top-left" data-aos="zoom-in" data-aos-delay="100"></div>
+                <div class="corner-top-right" data-aos="zoom-in" data-aos-delay="150"></div>
+                <div class="corner-bottom-left" data-aos="zoom-in" data-aos-delay="200"></div>
+                <div class="corner-bottom-right" data-aos="zoom-in" data-aos-delay="250"></div>
+                
+                <div class="header-title-container" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="main-title">Sobre Nosotros</h3>
+                    <div class="title-accent-line" data-aos="fade-up" data-aos-delay="500"></div>
                 </div>
             </div>
         </div>
@@ -27,7 +26,7 @@ import '@/assets/styles/components/about-us.css';
         <!-- Contenido principal organizado -->
         <div class="content-grid">
             <!-- Quiénes somos -->
-            <div class="content-card" data-aos="fade-right" data-aos-delay="400">
+            <div class="content-card" data-aos="fade-up" data-aos-delay="600">
                 <div class="card-content">
                     <h3 class="card-title">Quiénes Somos</h3>
                     <p class="card-description">
@@ -37,92 +36,12 @@ import '@/assets/styles/components/about-us.css';
             </div>
 
             <!-- Qué nos mueve -->
-            <div class="content-card" data-aos="fade-left" data-aos-delay="600">
+            <div class="content-card" data-aos="fade-up" data-aos-delay="700">
                 <div class="card-content">
                     <h3 class="card-title">Qué Nos Mueve</h3>
                     <p class="card-description">
                         Nuestro propósito es ofrecer soluciones a la medida de nuestros clientes, transformando lo cotidiano en experiencias extraordinarias que generen un impacto positivo en la sociedad.
                     </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección de galería con imagen del equipo -->
-        <div class="gallery-section">
-            <div class="gallery-header" data-aos="fade-up" data-aos-delay="800">
-                <h3 class="gallery-title">Nuestro Equipo</h3>
-                <p class="gallery-subtitle">Profesionales comprometidos con la excelencia y la innovación</p>
-            </div>
-
-            <div class="image-gallery">
-                <div class="gallery-item gallery-item-1" data-aos="fade-right" data-aos-delay="1000">
-                    <div class="image-container">
-                        <img
-                            src="/img/equipo/equipo_ai.webp"
-                            alt="Equipo IgnuxLab trabajando en proyectos de innovación tecnológica"
-                            class="gallery-image"
-                            loading="eager"
-                            fetchpriority="high"
-                            decoding="async"
-                            width="400"
-                            height="250"
-                        >
-                        <div class="image-overlay">
-                            <div class="overlay-content">
-                                <h4 class="overlay-title">Innovación Colaborativa</h4>
-                                <p class="overlay-description">
-                                    Nuestro equipo trabaja de forma integrada, combinando diferentes perspectivas
-                                    y especialidades para crear soluciones tecnológicas de vanguardia.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item gallery-item-2" data-aos="fade-up" data-aos-delay="1200">
-                    <div class="image-container">
-                        <img
-                            src="/img/varias/nosotros-1.jpg"
-                            alt="Proceso de desarrollo y metodologías ágiles en IgnuxLab"
-                            class="gallery-image"
-                            loading="lazy"
-                            decoding="async"
-                            width="400"
-                            height="250"
-                        >
-                        <div class="image-overlay">
-                            <div class="overlay-content">
-                                <h4 class="overlay-title">Metodologías Ágiles</h4>
-                                <p class="overlay-description">
-                                    Implementamos procesos eficientes y adaptativos que nos permiten entregar
-                                    resultados de calidad en tiempos optimizados.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item gallery-item-3" data-aos="fade-left" data-aos-delay="1400">
-                    <div class="image-container">
-                        <img
-                            src="/img/varias/nosotros-2.jpg"
-                            alt="Transformación digital y soluciones tecnológicas personalizadas"
-                            class="gallery-image"
-                            loading="lazy"
-                            decoding="async"
-                            width="400"
-                            height="250"
-                        >
-                        <div class="image-overlay">
-                            <div class="overlay-content">
-                                <h4 class="overlay-title">Transformación Digital</h4>
-                                <p class="overlay-description">
-                                    Acompañamos a las organizaciones en su evolución tecnológica,
-                                    creando estrategias digitales que generan valor real.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

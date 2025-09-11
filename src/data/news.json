@@ -1,67 +1,76 @@
-{
+﻿{
   "featured": {
     "id": "featured-1",
     "category": "Lanzamiento",
     "title": "Lanzamiento de la marca IGNUX LAB",
     "excerpt": "Mira el video oficial del lanzamiento de IGNUX LAB y descubre nuestra visión para impulsar la innovación con impacto.",
-    "date": "2024-01-15",
+    "date": "2025-07-31",
     "author": "Equipo IGNUX",
-    "video": "https://ignuxlab.com/video-ignux/lanzamiento-ignuxlab.mp4#t=12",
-    "image": "collaborative-process-of-multicultural-skilled-peo-AN9FZBQ.webp",
+    "video": "https://ignuxlab.com/video-ignux/lanzamiento-ignuxlab.mp4",
+    "videoConfig": {
+      "muted": false,
+      "autoplay": false,
+      "controls": true
+    },
+    "image": "equipo/equipo_ai.webp",
     "tags": ["Lanzamiento", "Innovación", "IGNUX LAB"],
     "featured": true,
     "content": "Presentamos oficialmente la marca IGNUX LAB. Este hito refleja nuestro compromiso por conectar creatividad, innovación y tecnología para generar resultados medibles y transformar organizaciones."
   },
   "stats": {
-    "published": 25,
-    "videos": 16,
+    "published": 1,
+    "videos": 1,
     "views": 500
   },
-  "recent": [
-    {
-      "id": "news-1",
-      "category": "Formación",
-      "title": "Programa de Formación en Metodologías Ágiles",
-      "excerpt": "Lanzamos nuestro nuevo programa de certificación en metodologías ágiles, diseñado para capacitar a profesionales en las mejores prácticas del sector.",
-      "date": "2024-01-10",
-      "author": "Área Formación",
-      "image": "varias/nosotros-1.jpg",
-      "tags": ["Formación", "Metodologías"]
-    },
-    {
-      "id": "news-2",
-      "category": "Consultoría",
-      "title": "Expansión del Área de Consultoría Estratégica",
-      "excerpt": "Ampliamos nuestro equipo de consultoría para ofrecer servicios especializados en transformación digital y estrategia empresarial.",
-      "date": "2024-01-05",
-      "author": "Área Consultoría",
-      "image": "soluciones.webp",
-      "tags": ["Consultoría", "Estrategia"]
-    },
-    {
-      "id": "news-3",
-      "category": "Visión",
-      "title": "Nuestra Visión para 2024: Innovación sin Límites",
-      "excerpt": "Compartimos nuestra hoja de ruta para el próximo año, centrada en la innovación disruptiva y el impacto social positivo a través de la tecnología.",
-      "date": "2023-12-28",
-      "author": "Dirección",
-      "image": "varias/vision.jpg",
-      "tags": ["Visión", "2024"]
-    },
-    {
-      "id": "news-4",
-      "category": "Equipo",
-      "title": "Crecimiento del Equipo: Nuevos Talentos se Unen",
-      "excerpt": "Damos la bienvenida a nuevos profesionales especializados que se incorporan a nuestro equipo para fortalecer nuestras capacidades de innovación.",
-      "date": "2023-12-20",
-      "author": "Recursos Humanos",
-      "image": "varias/nosotros-2.jpg",
-      "tags": ["Equipo", "Talento"]
-    }
-  ],
+  "recent": [],
+  "_commented_news": {
+    "_note": "Noticias deshabilitadas temporalmente",
+    "items": [
+      {
+        "id": "news-1",
+        "category": "Formación",
+        "title": "Programa de Formación en Metodologías Ágiles",
+        "excerpt": "Lanzamos nuestro nuevo programa de certificación en metodologías ágiles, diseñado para capacitar a profesionales en las mejores prácticas del sector.",
+        "date": "2024-01-10",
+        "author": "Área Formación",
+        "image": "varias/nosotros-1.jpg",
+        "tags": ["Formación", "Metodologías"]
+      },
+      {
+        "id": "news-2",
+        "category": "Consultoría",
+        "title": "Expansión del Área de Consultoría Estratégica",
+        "excerpt": "Ampliamos nuestro equipo de consultoría para ofrecer servicios especializados en transformación digital y estrategia empresarial.",
+        "date": "2024-01-05",
+        "author": "Área Consultoría",
+        "image": "soluciones.webp",
+        "tags": ["Consultoría", "Estrategia"]
+      },
+      {
+        "id": "news-3",
+        "category": "Visión",
+        "title": "Nuestra Visión para 2024: Innovación sin Límites",
+        "excerpt": "Compartimos nuestra hoja de ruta para el próximo año, centrada en la innovación disruptiva y el impacto social positivo a través de la tecnología.",
+        "date": "2023-12-28",
+        "author": "Dirección",
+        "image": "varias/vision.jpg",
+        "tags": ["Visión", "2024"]
+      },
+      {
+        "id": "news-4",
+        "category": "Equipo",
+        "title": "Crecimiento del Equipo: Nuevos Talentos se Unen",
+        "excerpt": "Damos la bienvenida a nuevos profesionales especializados que se incorporan a nuestro equipo para fortalecer nuestras capacidades de innovación.",
+        "date": "2023-12-20",
+        "author": "Recursos Humanos",
+        "image": "varias/nosotros-2.jpg",
+        "tags": ["Equipo", "Talento"]
+      }
+    ]
+  },
   "metadata": {
     "last_updated": "2024-01-15T10:30:00Z",
-    "version": "1.0",
-    "total_news": 5
+    "version": "1.2",
+    "total_news": 1
   }
 }
