@@ -1,0 +1,16 @@
+---
+# Archivo robots.txt para SEO
+---
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ignuxlab.com/sitemap.xml
+
+# Páginas específicas a no indexar (si es necesario)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay para bots respetuosos
+Crawl-delay: 1

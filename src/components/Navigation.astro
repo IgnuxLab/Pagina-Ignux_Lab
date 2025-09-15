@@ -1,0 +1,229 @@
+---
+// Componente de navegación que usa el sistema de rutas
+import { MAIN_NAVIGATION, getBreadcrumbs } from '@config/routes';
+
+const breadcrumbs = getBreadcrumbs(Astro.url.pathname);
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navigation" role="navigation" aria-label="Navegación principal">
+  <!-- Navegación principal -->
+  <ul class="nav-list">
+    {MAIN_NAVIGATION.map(route => (
+      <li class="nav-item">
+        <a 
+          href={route.path}
+          class={`nav-link ${currentPath === route.path ? 'active' : ''}`}
+          aria-current={currentPath === route.path ? 'page' : undefined}
+        >
+          {route.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <!-- Breadcrumbs -->
+  {breadcrumbs.length > 1 && (
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        {breadcrumbs.map((crumb, index) => (
+          <li class="breadcrumb-item">
+            {index === breadcrumbs.length - 1 ? (
+              <span class="breadcrumb-current" aria-current="page">
+                {crumb.name}
+              </span>
+            ) : (
+              <a href={crumb.path} class="breadcrumb-link">
+                {crumb.name}
+              </a>
+            )}
+            {index < breadcrumbs.length - 1 && (
+              <svg 
+                class="breadcrumb-separator" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )}
+</nav>
+
+<style>
+  .navigation {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 0;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-item {
+    margin: 0;
+  }
+
+  .nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: #667eea;
+    background: #f7fafc;
+  }
+
+  .nav-link.active {
+    color: #667eea;
+    background: #edf2f7;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 2px;
+    background: #667eea;
+    border-radius: 50%;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb-link {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+  }
+
+  .breadcrumb-current {
+    color: #2d3748;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .breadcrumb-separator {
+    color: #a0aec0;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-list {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1.5rem;
+      width: 100%;
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .breadcrumb-list {
+      font-size: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  // Funcionalidad adicional para la navegación
+  
+  // Agregar clase activa basada en la ruta actual
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+  
+  // Smooth scroll para enlaces internos
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+  
+  // Indicador de carga para navegación
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('http')) {
+        // Agregar indicador de carga
+        link.style.opacity = '0.7';
+        link.style.pointerEvents = 'none';
+        
+        // Remover indicador después de un tiempo
+        setTimeout(() => {
+          link.style.opacity = '';
+          link.style.pointerEvents = '';
+        }, 1000);
+      }
+    });
+  });
+</script>

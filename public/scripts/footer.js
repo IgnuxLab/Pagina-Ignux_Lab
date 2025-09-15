@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
           
           if (isHomePage && isNotOtherPage) {
             isActive = true;
-            console.log(`✅ Footer Método 2a - Página inicio: ${linkPage}`);
           }
         } else {
           // Para otras páginas: verificar si la página está en la ruta

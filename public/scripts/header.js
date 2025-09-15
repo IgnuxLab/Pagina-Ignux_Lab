@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Extraer la base path de la URL actual para manejar subdirectorios
       const pathSegments = currentPath.split('/').filter(segment => segment.length > 0);
-      const basePath = linkHref && linkHref !== '/' ? linkHref.split('/').filter(segment => segment.length > 0) : [];
       
       // Método 1: Comparación directa de href con path actual
       if (linkHref && currentPath === linkHref) {

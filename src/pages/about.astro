@@ -509,7 +509,6 @@ import '../assets/styles/components/team-section.css';
         
         // Abrir modal con información detallada
         function openDetailModal(memberId: string) {
-            console.log('Opening modal for:', memberId); // Debug
             const member = (teamData as any)[memberId];
             if (!member) {
                 console.error('Member not found:', memberId);
@@ -553,25 +552,6 @@ import '../assets/styles/components/team-section.css';
                         <p class="bio-text">${member.fullBio}</p>
                     </div>
                     
-                    <div class="modal-section">
-                        <h4 class="section-title">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                            </svg>
-                            Formación Académica
-                        </h4>
-                        <ul class="education-list">
-                            ${member.education.map((edu: any) => `
-                                <li class="education-item">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20,6 9,17 4,12"/>
-                                    </svg>
-                                    ${edu}
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
                     
                     <div class="modal-section">
                         <h4 class="section-title">
@@ -604,7 +584,7 @@ import '../assets/styles/components/team-section.css';
                 console.log('Modal opened, classes:', modal.className);
                 
                 // Force reflow para asegurar que se apliquen los estilos
-                modal.offsetHeight;
+                (modal as HTMLElement).offsetHeight;
                 
                 // Verificar si el modal es visible
                 setTimeout(() => {
@@ -710,7 +690,7 @@ import '../assets/styles/components/team-section.css';
         
         detailButtons.forEach((button, index) => {
             console.log(`Setting up button ${index}:`, button); // Debug
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function(this: HTMLElement, e) {
                 console.log('Direct button click event:', this); // Debug
                 e.preventDefault();
                 e.stopPropagation();

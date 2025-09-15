@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ignuxlab.com/sitemap.xml
+
+# Crawl-delay para bots respetuosos
+Crawl-delay: 1

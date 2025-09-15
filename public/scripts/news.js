@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeEnhancedAnimations();
   optimizePerformance();
   
-  console.log('🎬 Sistema de noticias con video mejorado inicializado correctamente');
 });
 
 // Agregar estilos dinámicos para la animación del video

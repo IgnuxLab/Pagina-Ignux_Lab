@@ -1,19 +1,21 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  // Base path para producción en el dominio raíz
+  output: 'server',
+  adapter: node({
+    mode: 'standalone'
+  }),
+  site: 'https://ignuxlab.com',
   base: '/',
   vite: {
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, './src')
-      }
+    define: {
+      // Variables de entorno para desarrollo y producción
+      'import.meta.env.RESEND_API_KEY': JSON.stringify('re_YJUTY3Lo_3XCrkHrudzycYPbnGzJSkYjd'),
+      'import.meta.env.CONTACT_EMAIL': JSON.stringify('programador3@ainteractivo.com'),
+      'import.meta.env.FROM_EMAIL': JSON.stringify('noreply@ignuxlab.com'),
+      'import.meta.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }
   }
 });
