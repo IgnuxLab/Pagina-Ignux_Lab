@@ -120,3 +120,5 @@ RewriteRule ^_astro/(.*)$ /_astro/$1 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(about|solutions|news|contact)/?$ $1/index.html [L]
+
+

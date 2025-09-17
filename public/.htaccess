@@ -37,3 +37,5 @@ Redirect 301 /contact-us /contact
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
+
+

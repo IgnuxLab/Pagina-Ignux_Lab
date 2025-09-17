@@ -6,7 +6,7 @@
     "excerpt": "Mira el video oficial del lanzamiento de IGNUX LAB y descubre nuestra visión para impulsar la innovación con impacto.",
     "date": "2025-07-31",
     "author": "Equipo IGNUX",
-    "video": "https://ignuxlab.com/video-ignux/lanzamiento-ignuxlab.mp4",
+    "video": "/videos/lanzamiento.mp4",
     "videoConfig": {
       "muted": false,
       "autoplay": false,

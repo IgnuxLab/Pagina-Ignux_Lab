@@ -577,19 +577,6 @@
 	position: relative;
 }
 
-.map-title::after {
-	content: '';
-	position: absolute;
-	bottom: -15px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100px;
-	height: 3px;
-	background: linear-gradient(90deg, var(--color-accent), var(--color-orange));
-	border-radius: 2px;
-	box-shadow: 0 0 15px rgba(216, 35, 255, 0.4);
-}
-
 .map-subtitle {
 	font-family: var(--font-body);
 	font-size: clamp(1.1rem, 2vw, 1.3rem);
