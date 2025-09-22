@@ -90,9 +90,16 @@ const formatDate = (dateString: string) => {
             <!-- Noticias Recientes -->
             {recent.map((news: any, index: number) => (
                 <article class="news-card" data-aos="slide-up" data-aos-delay={600 + (index * 80)} data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                    <div class="news-image">
+                    <div class="news-image" {...(news.type === 'instagram_post' ? { 'style': 'cursor: pointer;' } : {})} 
+                         {...(news.type === 'instagram_post' ? { 'onclick': `window.open('${news.instagram_url}', '_blank', 'noopener,noreferrer')` } : {})}>
                         <img src={`${import.meta.env.BASE_URL}img/${news.image}`} alt={news.title} loading="lazy">
                         <div class="news-category">{news.category}</div>
+                        {news.type === 'instagram_post' && (
+                            <div class="instagram-overlay">
+                                <span class="instagram-icon">📷</span>
+                                <span class="instagram-text">Ver en Instagram</span>
+                            </div>
+                        )}
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
@@ -108,6 +115,13 @@ const formatDate = (dateString: string) => {
                                 <span class="tag">{tag}</span>
                             ))}
                         </div>
+                        {news.type === 'instagram_post' && (
+                            <a href={news.instagram_url} target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                <span class="instagram-link-icon">📱</span>
+                                <span>Ver post en Instagram</span>
+                                <span class="external-icon">↗</span>
+                            </a>
+                        )}
                     </div>
                 </article>
             ))}

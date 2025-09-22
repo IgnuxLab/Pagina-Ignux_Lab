@@ -668,4 +668,103 @@
     }
 }
 
+/* ===== ESTILOS PARA POSTS DE INSTAGRAM ===== */
+
+.instagram-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.news-card:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.instagram-text {
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #E4405F, #833AB4, #C13584);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(196, 53, 132, 0.3);
+}
+
+.instagram-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(196, 53, 132, 0.4);
+}
+
+.instagram-link-icon {
+    font-size: 1rem;
+}
+
+.external-icon {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Estilos responsivos para Instagram */
+@media (max-width: 768px) {
+    .instagram-icon {
+        font-size: 2rem;
+    }
+    
+    .instagram-text {
+        font-size: 0.8rem;
+    }
+    
+    .instagram-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .instagram-text {
+        font-size: 0.75rem;
+    }
+    
+    .instagram-link {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.75rem;
+        gap: 0.4rem;
+    }
+}
+
 
