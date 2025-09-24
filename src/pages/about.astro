@@ -412,21 +412,11 @@ import '../assets/styles/components/team-section.css';
      * Team Toggle Functionality & Detail Modal
      */
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM Content Loaded - initializing team functionality'); // Debug
-        
         const teamCards = document.querySelectorAll('.team-card');
         const modal = document.querySelector('#teamModal');
         const modalContent = document.querySelector('.team-modal-content');
         const closeBtn = document.querySelector('.team-modal-close');
         const backdrop = document.querySelector('.team-modal-backdrop');
-        
-        console.log('Found elements:', {
-            teamCards: teamCards.length,
-            modal: !!modal,
-            modalContent: !!modalContent,
-            closeBtn: !!closeBtn,
-            backdrop: !!backdrop
-        }); // Debug
         
         // Información detallada de los miembros del equipo
         const teamData = {
@@ -460,7 +450,7 @@ import '../assets/styles/components/team-section.css';
             camilo: {
                 name: "Camilo Castro",
                 role: "Gerente General",
-                image: "Camilo_Castro.webp",
+                image: "Camilo-Castro.webp",
                 fullBio: "Ingeniero con especialización y maestría en Gerencia, apasionado por el liderazgo de equipos de alto desempeño. Con más de 20 años de trayectoria, ha impulsado la innovación en los sectores público y privado, generando resultados de alto impacto.",
                 education: [
                     "Ingeniería",
@@ -487,8 +477,6 @@ import '../assets/styles/components/team-section.css';
         
         // Toggle team card overlay
         function toggleTeamCard(card: Element) {
-            console.log('Toggling card:', card); // Debug
-            
             // Close all other active cards first
             teamCards.forEach(otherCard => {
                 if (otherCard !== card) {
@@ -500,10 +488,8 @@ import '../assets/styles/components/team-section.css';
             const isActive = card.classList.contains('active');
             if (isActive) {
                 card.classList.remove('active');
-                console.log('Removed active class'); // Debug
             } else {
                 card.classList.add('active');
-                console.log('Added active class'); // Debug
             }
         }
         
@@ -571,7 +557,6 @@ import '../assets/styles/components/team-section.css';
             
             if (modalContent) {
                 modalContent.innerHTML = modalHTML;
-                console.log('Modal content set');
             } else {
                 console.error('Modal content element not found');
                 return;
@@ -581,18 +566,9 @@ import '../assets/styles/components/team-section.css';
                 modal.classList.add('is-open');
                 modal.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
-                console.log('Modal opened, classes:', modal.className);
                 
                 // Force reflow para asegurar que se apliquen los estilos
                 (modal as HTMLElement).offsetHeight;
-                
-                // Verificar si el modal es visible
-                setTimeout(() => {
-                    const computedStyle = window.getComputedStyle(modal);
-                    console.log('Modal display:', computedStyle.display);
-                    console.log('Modal opacity:', computedStyle.opacity);
-                    console.log('Modal z-index:', computedStyle.zIndex);
-                }, 100);
             } else {
                 console.error('Modal element not found');
             }
@@ -610,12 +586,9 @@ import '../assets/styles/components/team-section.css';
             const imageContainer = card.querySelector('.team-image-container');
             const banner = card.querySelector('.team-banner');
             
-            console.log(`Setting up card ${index}`); // Debug
-            
             // Click on image container
             if (imageContainer) {
                 imageContainer.addEventListener('click', function(e) {
-                    console.log('Image clicked on card', index); // Debug
                     e.preventDefault();
                     e.stopPropagation();
                     toggleTeamCard(card);
@@ -628,7 +601,6 @@ import '../assets/styles/components/team-section.css';
             // Click on banner
             if (banner) {
                 banner.addEventListener('click', function(e) {
-                    console.log('Banner clicked on card', index); // Debug
                     e.preventDefault();
                     e.stopPropagation();
                     toggleTeamCard(card);
@@ -641,15 +613,11 @@ import '../assets/styles/components/team-section.css';
         
         // Event listeners para los botones "Ver más detalles"
         document.addEventListener('click', function(e) {
-            console.log('Document click detected on:', e.target); // Debug
-            
             const detailBtn = (e.target as HTMLElement).closest('.team-info-btn');
             if (detailBtn) {
-                console.log('Detail button clicked:', detailBtn); // Debug
                 e.preventDefault();
                 e.stopPropagation();
                 const memberId = detailBtn.getAttribute('data-member');
-                console.log('Member ID:', memberId); // Debug
                 if (memberId) {
                     openDetailModal(memberId);
                 }
@@ -659,7 +627,6 @@ import '../assets/styles/components/team-section.css';
             // Cerrar modal
             if ((e.target as HTMLElement).closest('.team-modal-close') || 
                 (e.target as HTMLElement).classList.contains('team-modal-backdrop')) {
-                console.log('Close modal clicked'); // Debug
                 closeDetailModal();
                 return;
             }
@@ -670,7 +637,6 @@ import '../assets/styles/components/team-section.css';
             const target = e.target as HTMLElement;
             const clickedCard = target?.closest('.team-card');
             if (!clickedCard) {
-                console.log('Clicking outside, closing all'); // Debug
                 teamCards.forEach(card => {
                     card.classList.remove('active');
                 });
@@ -686,45 +652,16 @@ import '../assets/styles/components/team-section.css';
         
         // Event listeners adicionales para los botones de detalles
         const detailButtons = document.querySelectorAll('.team-info-btn');
-        console.log('Found detail buttons:', detailButtons.length); // Debug
         
         detailButtons.forEach((button, index) => {
-            console.log(`Setting up button ${index}:`, button); // Debug
             button.addEventListener('click', function(this: HTMLElement, e) {
-                console.log('Direct button click event:', this); // Debug
                 e.preventDefault();
                 e.stopPropagation();
                 const memberId = this.getAttribute('data-member');
-                console.log('Member ID from button:', memberId); // Debug
                 if (memberId) {
                     openDetailModal(memberId);
                 }
             });
         });
-        
-        console.log('Team toggle and modal initialized with', teamCards.length, 'cards'); // Debug
-        
-        // Test modal después de 2 segundos para debug
-        setTimeout(() => {
-            console.log('Testing modal functionality...'); // Debug
-            const testButton = document.querySelector('[data-member="sofia"]');
-            if (testButton) {
-                console.log('Found Sofia button:', testButton); // Debug
-            } else {
-                console.log('Sofia button not found'); // Debug
-            }
-        }, 2000);
-        
-        // Función global para testing
-        (window as any).testModal = function(memberId: string) {
-            console.log('Manual test for member:', memberId);
-            openDetailModal(memberId);
-        };
-        
-        (window as any).checkModal = function() {
-            console.log('Modal element:', modal);
-            console.log('Modal content:', modalContent);
-            console.log('Modal classes:', modal?.className);
-        };
     });
 </script>

@@ -165,12 +165,34 @@ if (!document.querySelector('#video-animations')) {
       }
       dialog = modal && modal.querySelector('.video-modal-dialog');
       player = modal && modal.querySelector('#videoModalPlayer');
+      
+      // Asegurarse que el modal tenga z-index suficiente para estar por encima del cursor
+      if(modal) modal.style.zIndex = "10000";
+      if(dialog) dialog.style.zIndex = "10001";
     }
     if(!modal || !dialog || !player) return;
+    
+    // Desactivar temporalmente el cursor personalizado
+    document.body.style.cursor = 'auto';
+    
+    // Ocultar elementos del cursor personalizado
+    const cursorElements = document.querySelectorAll('.cursor-dot, .cursor-outline, .cursor-particles');
+    cursorElements.forEach(el => {
+      if(el) el.style.opacity = '0';
+    });
+    
+    // Almacenar el elemento con foco actual para restaurarlo después
+    window.previouslyFocusedElement = document.activeElement;
+    
     player.src = src;
-    modal.setAttribute('aria-hidden', 'false');
     modal.classList.add('is-open');
     player.currentTime = 0;
+    
+    // Hacer el contenido de fondo inerte para tecnologías asistivas
+    const mainContent = document.querySelector('main') || document.body;
+    if (mainContent && mainContent !== modal.parentElement) {
+      mainContent.setAttribute('inert', '');
+    }
     
     // Configurar audio del video
     setupVideoAudio();
@@ -189,6 +211,12 @@ if (!document.querySelector('#video-animations')) {
     }
     
     document.body.style.overflow = 'hidden';
+    
+    // Enfocar el botón de cerrar para accesibilidad
+    const closeButton = modal.querySelector('.video-modal-close');
+    if (closeButton) {
+      closeButton.focus();
+    }
   }
 
   function closeModal(){
@@ -197,8 +225,30 @@ if (!document.querySelector('#video-animations')) {
     player.removeAttribute('src');
     player.load();
     modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    
+    // Remover el atributo inert del contenido de fondo
+    const mainContent = document.querySelector('main') || document.body;
+    if (mainContent) {
+      mainContent.removeAttribute('inert');
+    }
+    
+    // Reactivar el cursor personalizado con un pequeño retraso para permitir transiciones
+    setTimeout(() => {
+      document.body.style.cursor = 'none';
+      
+      // Mostrar elementos del cursor personalizado nuevamente
+      const cursorElements = document.querySelectorAll('.cursor-dot, .cursor-outline, .cursor-particles');
+      cursorElements.forEach(el => {
+        if(el) el.style.opacity = '';
+      });
+    }, 300);
+    
+    // Restaurar el foco al elemento que lo tenía antes de abrir el modal
+    if (window.previouslyFocusedElement && typeof window.previouslyFocusedElement.focus === 'function') {
+      window.previouslyFocusedElement.focus();
+      window.previouslyFocusedElement = null;
+    }
   }
 
   // Función para gestionar el estado del audio del video

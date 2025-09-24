@@ -75,6 +75,9 @@ import '../assets/styles/components/contact-page.css';
 									          placeholder="Describe tu idea, objetivos, timeline, presupuesto estimado, o cualquier detalle que consideres importante..."></textarea>
 								</div>
 
+								<!-- Campo honeypot para prevenir spam -->
+								<input type="text" name="website" id="website" style="display:none !important; visibility:hidden !important; opacity:0 !important; position:absolute !important; left:-9999px !important;" tabindex="-1" autocomplete="off" />
+								
 								<button type="submit" class="form-submit">
 									<span class="submit-text">Enviar mensaje</span>
 									<svg class="submit-icon" viewBox="0 0 24 24" fill="currentColor">

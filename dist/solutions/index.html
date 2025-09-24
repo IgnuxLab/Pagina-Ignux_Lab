@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><meta name="generator" content="Astro v5.12.9"><title>Soluciones | Ignuxlab</title><!-- AOS CSS --><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"><link rel="stylesheet" href="/_astro/about.BPe6i-jG.css">
+<!DOCTYPE html><html lang="es" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><meta name="generator" content="Astro v5.12.9"><title>Soluciones | Ignuxlab</title><!-- AOS CSS --><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"><link rel="stylesheet" href="/_astro/about.DKf7OsUs.css">
 <link rel="stylesheet" href="/_astro/about.YGfi3Mb7.css">
 <link rel="stylesheet" href="/_astro/solutions.BHEq1dyn.css"></head> <body data-astro-cid-sckkx6r4> <!-- Fondo de partículas en movimiento --> <div class="particles-background" data-astro-cid-sckkx6r4> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> <div class="particle" data-astro-cid-sckkx6r4></div> </div>  <div class="page-container"> <header class="header"> <div class="header-container"> <div class="logo-container"> <a href="/" class="logo-link"> <img src="/img/logo.webp" alt="IGNUXLab Logo" class="logo-image"> </a> </div> <nav class="navigation" id="navigation"> <ul class="nav-list"> <li class="nav-item"> <a href="/" class="nav-link" data-page="home">Inicio</a> </li> <li class="nav-item"> <a href="/about" class="nav-link" data-page="about">Sobre nosotros</a> </li> <li class="nav-item"> <a href="/solutions" class="nav-link" data-page="solutions">Soluciones</a> </li> <li class="nav-item"> <a href="/news" class="nav-link" data-page="news">Noticias</a> </li> <li class="nav-item"> <a href="/contact" class="nav-link" data-page="contact">Cont&aacute;ctanos</a> </li> </ul> </nav> <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"> <span class="hamburger-line"></span> <span class="hamburger-line"></span> <span class="hamburger-line"></span> </button> </div> </header> <script type="module" src="/scripts/header.js"></script> <main class="solutions-main"> <section class="hero-banner"> <div class="hero-content"> <h1 class="hero-title">Nuestras Soluciones</h1> <div class="breadcrumb"> <a href="/" class="breadcrumb-link">Inicio</a> <span class="separator">/</span> <span class="breadcrumb-active">Soluciones</span> </div> </div> </section> <!-- Contenido principal de soluciones --> <section class="solutions-content"> <div class="container"> <!-- Introducción --> <div class="solutions-intro"> <p class="solutions-vision">
 Tres laboratorios, una sola visión: <strong>crear, aprender y transformar</strong> a través de la innovación
@@ -57,5 +57,234 @@ Mantente al día con las últimas innovaciones, insights exclusivos y proyectos 
 						window.AOS.refresh();
 					}
 				}, 300);
+			});
+		</script> <!-- Script de cursor personalizado innovador --> <script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Verificar si estamos en un dispositivo táctil
+				if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+					return; // No ejecutar en dispositivos móviles
+				}
+
+				// Crear elementos del cursor
+				const cursorDot = document.createElement('div');
+				cursorDot.className = 'cursor-dot';
+				document.body.appendChild(cursorDot);
+
+				const cursorOutline = document.createElement('div');
+				cursorOutline.className = 'cursor-outline';
+				document.body.appendChild(cursorOutline);
+				
+				// Crear contenedor de partículas
+				const cursorParticles = document.createElement('div');
+				cursorParticles.className = 'cursor-particles';
+				document.body.appendChild(cursorParticles);
+				
+				// Crear partículas con colores vibrantes
+				const particleCount = 7; // Aumentar el número de partículas
+				const colors = ['#ff00ff', '#00ffff', '#ffcc00', '#ff3399', '#00ccff', '#ff6600', '#cc33ff'];
+				
+				for (let i = 0; i < particleCount; i++) {
+					const particle = document.createElement('div');
+					particle.className = 'cursor-particle';
+					cursorParticles.appendChild(particle);
+					
+					// Posicionar partículas en forma de órbita
+					const angle = (i / particleCount) * Math.PI * 2;
+					const radius = 15 + Math.random() * 15; // Radio más variado
+					
+					particle.style.left = `${Math.cos(angle) * radius + 35}px`;
+					particle.style.top = `${Math.sin(angle) * radius + 35}px`;
+					
+					// Tamaño aleatorio para cada partícula
+					const size = 2 + Math.random() * 4;
+					particle.style.width = `${size}px`;
+					particle.style.height = `${size}px`;
+					
+					// Asignar colores vibrantes a las partículas
+					particle.style.backgroundColor = colors[i % colors.length];
+					
+					// Añadir animación de color cambiante
+					particle.style.animation = `color-shift ${3 + Math.random() * 2}s infinite alternate`;
+					
+					// Añadir brillo específico para cada partícula
+					particle.style.boxShadow = `0 0 10px ${colors[i % colors.length]}`;
+				}
+
+				// Variables para efecto de suavizado
+				let mouseX = 0;
+				let mouseY = 0;
+				let dotX = 0;
+				let dotY = 0;
+				let outlineX = 0;
+				let outlineY = 0;
+				let particlesX = 0;
+				let particlesY = 0;
+				
+				// Función para actualizar la posición con movimiento suavizado
+				function updateCursorPosition(e) {
+					// Guardar posición actual del ratón
+					mouseX = e.clientX;
+					mouseY = e.clientY;
+				}
+				
+				// Función de animación para suavizar el movimiento
+				function animateCursor() {
+					// Calcular movimiento suavizado para el punto central (más rápido)
+					const dotEase = 0.3;
+					dotX += (mouseX - dotX) * dotEase;
+					dotY += (mouseY - dotY) * dotEase;
+					
+					// Calcular movimiento suavizado para el contorno (más lento)
+					const outlineEase = 0.15;
+					outlineX += (mouseX - outlineX) * outlineEase;
+					outlineY += (mouseY - outlineY) * outlineEase;
+					
+					// Calcular movimiento suavizado para las partículas (aún más lento)
+					const particlesEase = 0.1;
+					particlesX += (mouseX - particlesX) * particlesEase;
+					particlesY += (mouseY - particlesY) * particlesEase;
+					
+					// Aplicar las posiciones
+					cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+					cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
+					cursorParticles.style.transform = `translate(${particlesX}px, ${particlesY}px) translate(-50%, -50%) rotate(${particlesX * 0.05}deg)`;
+					
+					// Continuar la animación
+					requestAnimationFrame(animateCursor);
+				}
+
+				// Detectar tipo de contenido para efectos específicos
+				function setupCursorEffects() {
+					// Elementos interactivos (enlaces, botones)
+					const interactiveElements = document.querySelectorAll('a, button, [role="button"], input[type="submit"], .clickable');
+					
+					interactiveElements.forEach(el => {
+						el.addEventListener('mouseenter', () => {
+							cursorDot.classList.add('link-hover');
+							cursorOutline.classList.add('link-hover');
+						});
+						
+						el.addEventListener('mouseleave', () => {
+							cursorDot.classList.remove('link-hover');
+							cursorOutline.classList.remove('link-hover');
+						});
+					});
+					
+					// Efectos para texto
+					const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, li');
+					
+					textElements.forEach(el => {
+						el.addEventListener('mouseenter', () => {
+							cursorDot.classList.add('text-hover');
+							cursorOutline.classList.add('text-hover');
+						});
+						
+						el.addEventListener('mouseleave', () => {
+							cursorDot.classList.remove('text-hover');
+							cursorOutline.classList.remove('text-hover');
+						});
+					});
+					
+					// Efectos para clic
+					document.addEventListener('mousedown', () => {
+						cursorDot.classList.add('cursor-clicking');
+						cursorOutline.classList.add('cursor-clicking');
+					});
+					
+					document.addEventListener('mouseup', () => {
+						cursorDot.classList.remove('cursor-clicking');
+						cursorOutline.classList.remove('cursor-clicking');
+					});
+				}
+
+				// Controlar cursor fuera de la ventana
+				document.addEventListener('mouseleave', () => {
+					cursorDot.style.opacity = '0';
+					cursorOutline.style.opacity = '0';
+					cursorParticles.style.opacity = '0';
+				});
+				
+				document.addEventListener('mouseenter', () => {
+					cursorDot.style.opacity = '1';
+					cursorOutline.style.opacity = '1';
+					cursorParticles.style.opacity = '0.7';
+				});
+				
+				// Desactivar temporalmente el cursor en modales de video
+				const toggleCursorForModal = () => {
+					// Observer que detecta cuando el modal está visible
+					const modalObserver = new MutationObserver((mutations) => {
+						mutations.forEach((mutation) => {
+							if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+								const videoModal = document.querySelector('#videoModal');
+								if (videoModal && videoModal.classList.contains('is-open')) {
+									// Desactivar el cursor personalizado cuando el modal está abierto
+									cursorDot.style.opacity = '0';
+									cursorOutline.style.opacity = '0';
+									cursorParticles.style.opacity = '0';
+									document.body.style.cursor = 'auto';
+								} else {
+									// Reactivar el cursor personalizado cuando el modal está cerrado
+									cursorDot.style.opacity = '1';
+									cursorOutline.style.opacity = '1';
+									cursorParticles.style.opacity = '0.7';
+									document.body.style.cursor = 'none';
+								}
+							}
+						});
+					});
+					
+					// Buscar y observar el modal de video
+					const videoModal = document.querySelector('#videoModal');
+					if (videoModal) {
+						modalObserver.observe(videoModal, { attributes: true });
+					}
+				};
+				
+				// Iniciar la observación del modal (con un pequeño retraso para asegurar que DOM esté listo)
+				setTimeout(toggleCursorForModal, 1000);
+
+				// Registrar eventos
+				document.addEventListener('mousemove', updateCursorPosition);
+				
+				// Configurar efectos de cursor
+				setupCursorEffects();
+				
+				// Iniciar animación
+				animateCursor();
+				
+				// Asegurarse de que el cursor sea visible al principio
+				setTimeout(() => {
+					cursorDot.style.opacity = '1';
+					cursorOutline.style.opacity = '1';
+					cursorParticles.style.opacity = '0.7';
+				}, 100);
+				
+				// Función para simular magnetismo en elementos importantes
+				function setupMagnetism() {
+					const magnetElements = document.querySelectorAll('.hero-cta, nav a, .floating-actions a');
+					
+					magnetElements.forEach(el => {
+						el.addEventListener('mousemove', function(e) {
+							const rect = this.getBoundingClientRect();
+							const centerX = rect.left + rect.width / 2;
+							const centerY = rect.top + rect.height / 2;
+							const distanceX = e.clientX - centerX;
+							const distanceY = e.clientY - centerY;
+							const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+							const maxDistance = Math.min(rect.width, rect.height) * 0.5;
+							
+							if (distance < maxDistance) {
+								// Crear efecto magnético suave
+								const pull = 0.3;
+								cursorDot.style.transform = `translate(${e.clientX - distanceX * pull}px, ${e.clientY - distanceY * pull}px) translate(-50%, -50%)`;
+								cursorOutline.style.transform = `translate(${e.clientX - distanceX * pull * 0.5}px, ${e.clientY - distanceY * pull * 0.5}px) translate(-50%, -50%)`;
+							}
+						});
+					});
+				}
+				
+				// Aplicar efecto de magnetismo después de un breve retraso
+				setTimeout(setupMagnetism, 1000);
 			});
 		</script> </body> </html> 
