@@ -85,9 +85,6 @@ function getRedirects(): Record<string, string> {
 export function handle404(context: any): Response {
   const { url, locals, request } = context;
   
-  // Log del error 404 para análisis
-  console.log(`404 Error: ${url.pathname} - Referer: ${request.headers.get('referer') || 'Direct'}`);
-  
   // Crear respuesta 404 personalizada con validación de URL
   try {
     const notFoundUrl = new URL('/404', url.origin);
@@ -196,6 +193,6 @@ export function logRequest(context: any, response: Response): void {
 
   // Log solo en desarrollo o para errores
   if (import.meta.env.DEV || response.status >= 400) {
-    console.log('Request:', JSON.stringify(logData, null, 2));
+    // Los logs se manejaran en un sistema de logging externo en producción
   }
 }

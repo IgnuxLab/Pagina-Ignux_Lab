@@ -259,10 +259,64 @@
     font-family: var(--font-body);
     font-size: clamp(0.9rem, 2vw, 1rem);
     line-height: 1.6;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1rem 0;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(1.6em * 4);
+    transition: all 0.3s ease;
+}
+
+.overlay-description.full-bio-loaded {
+    -webkit-line-clamp: 6;
+    max-height: calc(1.6em * 6);
+}
+
+/* Botón Ver más */
+.view-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(216, 35, 255, 0.2);
+    border: 1px solid rgba(216, 35, 255, 0.4);
+    border-radius: 20px;
+    color: var(--color-orange);
+    font-family: var(--font-body);
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.team-card:hover .view-more-btn {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.view-more-btn:hover {
+    background: rgba(216, 35, 255, 0.3);
+    border-color: rgba(216, 35, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(216, 35, 255, 0.3);
+}
+
+.view-more-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.view-more-btn:hover svg {
+    transform: translateX(3px);
 }
 
 /* ===== SKILLS TAGS ===== */

@@ -1,132 +1,428 @@
 ---
-import newsData from '@/data/news.json';
-import '@/assets/styles/components/news-grid.css';
+import newsData from "@/data/news.json";
+import "@/assets/styles/components/news-grid.css";
 
 const { featured, recent } = newsData;
 
 const formatDate = (dateString: string) => {
-	const date = new Date(dateString);
-	return date.toLocaleDateString('es-ES', { 
-		year: 'numeric', 
-		month: 'long', 
-		day: 'numeric' 
-	});
+  const date = new Date(dateString);
+  return date.toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 };
 ---
 
-<section class="news-grid-section section-spacing section-depth" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
-    <div class="news-container">
-        <div class="section-header" data-aos="fade-down" data-aos-delay="150" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-            <h2 class="section-title">Últimas Noticias</h2>
-            <p class="section-subtitle">
-                Mantente al día con nuestros proyectos e innovaciones más recientes
-            </p>
-        </div>
-        
-        <div class="news-grid" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
-            <!-- Noticia Destacada Original -->
-            <article class="news-card featured" data-aos="slide-up" data-aos-delay="450" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                <div class="news-image" {...(featured.video ? { 'data-open-video': true, 'data-video-src': featured.video } : {})}>
-                    <img src={`${import.meta.env.BASE_URL}img/${featured.image}`} alt={featured.title} loading="lazy" />
-                    {featured.video && (
-                        <button type="button" class="play-overlay" data-open-video data-video-src={featured.video} aria-label="Reproducir video de lanzamiento">
-                            <span class="play-icon">▶</span>
-                        </button>
-                    )}
-                    <div class="news-category">{featured.category}</div>
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">{formatDate(featured.date)}</span>
-                        <span class="news-author">{featured.author}</span>
-                    </div>
-                    <h3 class="news-title">{featured.title}</h3>
-                    <p class="news-excerpt">
-                        {featured.excerpt}
-                    </p>
-                    <div class="news-tags">
-                        {featured.tags.map((tag: string) => (
-                            <span class="tag">{tag}</span>
-                        ))}
-                    </div>
-                </div>
-            </article>
-
-            {featured.video && (
-                <div id="videoModal" class="video-modal">
-                    <div class="video-modal-backdrop" data-close-video></div>
-                    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Reproductor de video">
-                        <button class="video-modal-close" type="button" data-close-video aria-label="Cerrar">×</button>
-                        <div class="video-modal-header">
-                            <h3 class="video-modal-title">{featured.title}</h3>
-                            <div class="video-modal-meta">
-                                <span class="video-date">{formatDate(featured.date)}</span>
-                                <span class="video-author">Por {featured.author}</span>
-                            </div>
-                        </div>
-                        <div class="video-modal-content">
-                            <video 
-                                id="videoModalPlayer" 
-                                controls={featured.videoConfig?.controls !== false}
-                                preload="metadata" 
-                                playsinline 
-                                muted={featured.videoConfig?.muted !== false}
-                                autoplay={featured.videoConfig?.autoplay === true}
-                                poster={`${import.meta.env.BASE_URL}img/${featured.image}`}
-                            ></video>
-                        </div>
-                        <div class="video-modal-footer">
-                            <p class="video-description">{featured.content}</p>
-                            <div class="video-tags">
-                                {featured.tags.map((tag: string) => (
-                                    <span class="video-tag">{tag}</span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            <!-- Noticias Recientes -->
-            {recent.map((news: any, index: number) => (
-                <article class="news-card" data-aos="slide-up" data-aos-delay={600 + (index * 80)} data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                    <div class="news-image" {...(news.type === 'instagram_post' ? { 'style': 'cursor: pointer;' } : {})} 
-                         {...(news.type === 'instagram_post' ? { 'onclick': `window.open('${news.instagram_url}', '_blank', 'noopener,noreferrer')` } : {})}>
-                        <img src={`${import.meta.env.BASE_URL}img/${news.image}`} alt={news.title} loading="lazy">
-                        <div class="news-category">{news.category}</div>
-                        {news.type === 'instagram_post' && (
-                            <div class="instagram-overlay">
-                                <span class="instagram-icon">📷</span>
-                                <span class="instagram-text">Ver en Instagram</span>
-                            </div>
-                        )}
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-date">{formatDate(news.date)}</span>
-                            <span class="news-author">{news.author}</span>
-                        </div>
-                        <h3 class="news-title">{news.title}</h3>
-                        <p class="news-excerpt">
-                            {news.excerpt}
-                        </p>
-                        <div class="news-tags">
-                            {news.tags.map((tag: string) => (
-                                <span class="tag">{tag}</span>
-                            ))}
-                        </div>
-                        {news.type === 'instagram_post' && (
-                            <a href={news.instagram_url} target="_blank" rel="noopener noreferrer" class="instagram-link">
-                                <span class="instagram-link-icon">📱</span>
-                                <span>Ver post en Instagram</span>
-                                <span class="external-icon">↗</span>
-                            </a>
-                        )}
-                    </div>
-                </article>
-            ))}
-        </div>
+<section
+  class="news-grid-section section-spacing section-depth"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+  data-aos-easing="ease-out-cubic"
+>
+  <div class="news-container">
+    <div
+      class="section-header"
+      data-aos="fade-down"
+      data-aos-delay="150"
+      data-aos-duration="800"
+      data-aos-easing="ease-out-cubic"
+    >
+      <h2 class="section-title">Últimas Noticias</h2>
+      <p class="section-subtitle">
+        Mantente al día con nuestros proyectos e innovaciones más recientes
+      </p>
     </div>
+
+    <div
+      class="news-grid"
+      data-aos="fade-up"
+      data-aos-delay="300"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+    >
+      <!-- Noticia Destacada Original -->
+      <article
+        class="news-card featured"
+        data-aos="slide-up"
+        data-aos-delay="450"
+        data-aos-duration="800"
+        data-aos-easing="ease-out-cubic"
+      >
+        <div
+          class="news-image"
+          {...featured.video
+            ? { "data-open-video": true, "data-video-src": featured.video }
+            : {}}
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}img/${featured.image}`}
+            alt={featured.title}
+            loading="lazy"
+          />
+          {
+            featured.video && (
+              <button
+                type="button"
+                class="play-overlay"
+                data-open-video
+                data-video-src={featured.video}
+                aria-label="Reproducir video de lanzamiento"
+              >
+                <span class="play-icon">▶</span>
+              </button>
+            )
+          }
+          <div class="news-category">{featured.category}</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">{formatDate(featured.date)}</span>
+            <span class="news-author">{featured.author}</span>
+          </div>
+          <h3 class="news-title">{featured.title}</h3>
+          <p class="news-excerpt">
+            {featured.excerpt}
+          </p>
+          <div class="news-tags">
+            {featured.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+          </div>
+        </div>
+      </article>
+
+      {
+        featured.video && (
+          <div id="videoModal" class="video-modal">
+            <div class="video-modal-backdrop" data-close-video />
+            <div
+              class="video-modal-dialog"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Reproductor de video"
+            >
+              <button
+                class="video-modal-close"
+                type="button"
+                data-close-video
+                aria-label="Cerrar"
+              >
+                ×
+              </button>
+              <div class="video-modal-header">
+                <h3 class="video-modal-title">{featured.title}</h3>
+                <div class="video-modal-meta">
+                  <span class="video-date">{formatDate(featured.date)}</span>
+                  <span class="video-author">Por {featured.author}</span>
+                </div>
+              </div>
+              <div class="video-modal-content">
+                <video
+                  id="videoModalPlayer"
+                  controls={featured.videoConfig?.controls !== false}
+                  preload="metadata"
+                  playsinline
+                  muted={featured.videoConfig?.muted !== false}
+                  autoplay={featured.videoConfig?.autoplay === true}
+                  poster={`${import.meta.env.BASE_URL}img/${featured.image}`}
+                />
+              </div>
+              <div class="video-modal-footer">
+                <p class="video-description">{featured.content}</p>
+                <div class="video-tags">
+                  {featured.tags.map((tag: string) => (
+                    <span class="video-tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
+
+      <!-- Noticias Recientes -->
+      {
+        recent.map((news: any, index: number) => (
+          <article
+            class="news-card"
+            data-aos="slide-up"
+            data-aos-delay={600 + index * 80}
+            data-aos-duration="800"
+            data-aos-easing="ease-out-cubic"
+          >
+            <div
+              class="news-image"
+              {...(news.video
+                ? { "data-open-video": true, "data-video-src": news.video }
+                : {})}
+              {...(news.video ? { "data-video-id": news.id } : {})}
+              {...(!news.video && !news.type && news.content
+                ? {
+                    "data-open-content": true,
+                    "data-content-id": news.id,
+                    style: "cursor: pointer;",
+                    role: "button",
+                    tabindex: "0",
+                  }
+                : {})}
+              {...(news.type === "instagram_post" && !news.video
+                ? { style: "cursor: pointer;" }
+                : {})}
+              {...(news.type === "instagram_post" && !news.video
+                ? {
+                    onclick: `window.open('${news.instagram_url}', '_blank', 'noopener,noreferrer')`,
+                  }
+                : {})}
+              {...(!news.video && !news.type && news.content
+                ? {
+                    onkeydown: `if(event.key==='Enter'||event.key===' '){event.preventDefault();const modal=document.querySelector('.content-modal[data-content-id=\\'${news.id}\\']');if(modal){modal.classList.add('is-open');document.body.style.overflow='hidden';}}`,
+                  }
+                : {})}
+            >
+              {news.video ? (
+                <video
+                  src={`${import.meta.env.BASE_URL}${news.video}`}
+                  muted
+                  playsinline
+                  preload="metadata"
+                  class="news-video-thumbnail"
+                  aria-label={news.title}
+                  {...(news.image
+                    ? { poster: `${import.meta.env.BASE_URL}img/${news.image}` }
+                    : {})}
+                />
+              ) : (
+                <img
+                  src={`${import.meta.env.BASE_URL}img/${news.image}`}
+                  alt={news.title}
+                  loading="lazy"
+                />
+              )}
+              {news.video && (
+                <button
+                  type="button"
+                  class="play-overlay"
+                  data-open-video
+                  data-video-src={news.video}
+                  data-video-id={news.id}
+                  aria-label={`Reproducir video: ${news.title}`}
+                >
+                  <span class="play-icon">▶</span>
+                </button>
+              )}
+              <div class="news-category">{news.category}</div>
+              {news.type === "instagram_post" && !news.video && (
+                <div class="instagram-overlay">
+                  <span class="instagram-icon">📷</span>
+                  <span class="instagram-text">Ver en Instagram</span>
+                </div>
+              )}
+              {!news.video && !news.type && news.content && (
+                <div class="content-overlay">
+                  <span class="content-icon">📄</span>
+                  <span class="content-text">Ver más</span>
+                </div>
+              )}
+            </div>
+            <div class="news-content">
+              <div class="news-meta">
+                <span class="news-date">{formatDate(news.date)}</span>
+                <span class="news-author">{news.author}</span>
+              </div>
+              <h3 class="news-title">{news.title}</h3>
+              <p class="news-excerpt" set:html={news.excerpt} />
+              <div class="news-tags">
+                {news.tags.map((tag: string) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+              {news.type === "instagram_post" && (
+                <a
+                  href={news.instagram_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="instagram-link"
+                >
+                  <span class="instagram-link-icon">📱</span>
+                  <span>Ver post en Instagram</span>
+                  <span class="external-icon">↗</span>
+                </a>
+              )}
+            </div>
+          </article>
+        ))
+      }
+
+      {/* Modales de video para posts recientes */}
+      {
+        recent.map(
+          (news: any) =>
+            news.video && (
+              <div class="video-modal" data-video-id={news.id}>
+                <div class="video-modal-backdrop" data-close-video />
+                <div
+                  class="video-modal-dialog"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="Reproductor de video"
+                >
+                  <button
+                    class="video-modal-close"
+                    type="button"
+                    data-close-video
+                    aria-label="Cerrar"
+                  >
+                    ×
+                  </button>
+                  <div class="video-modal-header">
+                    <h3 class="video-modal-title">{news.title}</h3>
+                    <div class="video-modal-meta">
+                      <span class="video-date">{formatDate(news.date)}</span>
+                      <span class="video-author">Por {news.author}</span>
+                    </div>
+                  </div>
+                  <div class="video-modal-content">
+                    <video
+                      class="video-player"
+                      data-video-id={news.id}
+                      controls={news.videoConfig?.controls !== false}
+                      preload="metadata"
+                      playsinline
+                      muted={news.videoConfig?.muted !== false}
+                      autoplay={news.videoConfig?.autoplay === true}
+                      {...(news.image
+                        ? {
+                            poster: `${import.meta.env.BASE_URL}img/${news.image}`,
+                          }
+                        : {})}
+                    />
+                  </div>
+                  <div class="video-modal-footer">
+                    <p class="video-description" set:html={news.content} />
+                    <div class="video-tags">
+                      {news.tags.map((tag: string) => (
+                        <span class="video-tag">{tag}</span>
+                      ))}
+                    </div>
+                    {news.type === "instagram_post" && (
+                      <a
+                        href={news.instagram_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="instagram-link"
+                      >
+                        <span class="instagram-link-icon">📱</span>
+                        <span>Ver post completo en Instagram</span>
+                        <span class="external-icon">↗</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ),
+        )
+      }
+
+      {/* Modales de contenido para posts sin video ni Instagram */}
+      {
+        recent.map(
+          (news: any) =>
+            !news.video &&
+            !news.type &&
+            news.content && (
+              <div class="content-modal" data-content-id={news.id}>
+                <div class="content-modal-backdrop" data-close-content />
+                <div
+                  class="content-modal-dialog"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="Contenido completo"
+                >
+                  <button
+                    class="content-modal-close"
+                    type="button"
+                    data-close-content
+                    aria-label="Cerrar"
+                  >
+                    ×
+                  </button>
+                  <div class="content-modal-header">
+                    <h3 class="content-modal-title">{news.title}</h3>
+                    <div class="content-modal-meta">
+                      <span class="content-date">{formatDate(news.date)}</span>
+                      <span class="content-author">Por {news.author}</span>
+                    </div>
+                  </div>
+                  <div class="content-modal-body">
+                    {news.images && news.images.length > 1 ? (
+                      <div class="content-image-carousel">
+                        <div class="carousel-container">
+                          {news.images.map((img: string, imgIndex: number) => (
+                            <div
+                              class={`carousel-image-slide ${imgIndex === 0 ? "active" : ""}`}
+                              data-slide-index={imgIndex}
+                            >
+                              <img
+                                src={`${import.meta.env.BASE_URL}img/${img}`}
+                                alt={`${news.title} - Imagen ${imgIndex + 1}`}
+                                class="content-modal-image"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        <div class="carousel-controls-images">
+                          <button
+                            class="carousel-prev-image"
+                            aria-label="Imagen anterior"
+                          >
+                            ‹
+                          </button>
+                          <div class="carousel-indicators-images">
+                            {news.images.map((_: string, imgIndex: number) => (
+                              <button
+                                class={`carousel-indicator-image ${imgIndex === 0 ? "active" : ""}`}
+                                data-slide-to={imgIndex}
+                                aria-label={`Ir a imagen ${imgIndex + 1}`}
+                              />
+                            ))}
+                          </div>
+                          <button
+                            class="carousel-next-image"
+                            aria-label="Siguiente imagen"
+                          >
+                            ›
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <img
+                        src={`${import.meta.env.BASE_URL}img/${news.image}`}
+                        alt={news.title}
+                        class="content-modal-image"
+                      />
+                    )}
+                    <div class="content-modal-text" set:html={news.content} />
+                  </div>
+                  <div class="content-modal-footer">
+                    <div class="content-tags">
+                      {news.tags.map((tag: string) => (
+                        <span class="content-tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ),
+        )
+      }
+    </div>
+  </div>
 </section>
+
+<script>
+  // Forzar recarga del script de noticias con versión para evitar problemas de caché
+  const script = document.createElement("script");
+  script.src = `${import.meta.env.BASE_URL}scripts/news.js?v=${Date.now()}`;
+  document.head.appendChild(script);
+</script>
 
 <style></style>

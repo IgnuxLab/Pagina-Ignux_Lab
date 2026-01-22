@@ -54,6 +54,7 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
 }
 
 .news-card {
@@ -66,6 +67,9 @@
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .news-card:hover {
@@ -98,11 +102,26 @@
     height: 250px;
 }
 
-.news-image img {
+.news-image img,
+.news-image video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.news-video-thumbnail {
+    display: block;
+    pointer-events: none;
+    background: #000;
+}
+
+.news-video-thumbnail::-webkit-media-controls {
+    display: none !important;
+}
+
+.news-video-thumbnail::-webkit-media-controls-enclosure {
+    display: none !important;
 }
 
 /* ===== Botón Overlay de Reproducción ===== */
@@ -147,7 +166,8 @@
 
 .play-overlay:hover .play-icon { transform: scale(1.06); }
 
-.news-card:hover .news-image img {
+.news-card:hover .news-image img,
+.news-card:hover .news-image video {
     transform: scale(1.08);
 }
 
@@ -337,6 +357,9 @@
 
 .news-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .news-meta {
@@ -395,6 +418,7 @@
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 1.5rem 0;
+    flex: 1;
 }
 
 .news-card.featured .news-excerpt {
@@ -405,6 +429,7 @@
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
 .tag {
@@ -710,6 +735,283 @@
     opacity: 1;
 }
 
+.content-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.news-card:hover .content-overlay {
+    opacity: 1;
+}
+
+.content-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.content-text {
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Modal de contenido */
+.content-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.content-modal.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.content-modal.is-open .content-modal-dialog {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.content-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}
+
+.content-modal-dialog {
+    position: relative;
+    background: rgba(22, 20, 38, 0.98);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(216, 35, 255, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.content-modal-header {
+    padding: 1.5rem 4rem 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+    position: relative;
+}
+
+.content-modal-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+    padding-right: 0;
+    word-wrap: break-word;
+}
+
+.content-modal-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+.content-date, .content-author {
+    color: #a0a0a0;
+}
+
+.content-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.content-modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+
+.content-modal-text {
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.content-modal-text strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.content-modal-footer {
+    padding: 1rem 1.5rem 1.5rem;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.content-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.content-tag {
+    background: rgba(159, 122, 234, 0.15);
+    color: #9f7aea;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(159, 122, 234, 0.2);
+}
+
+.content-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer !important;
+    font-size: 24px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    transition: all 0.2s ease;
+    z-index: 11;
+    backdrop-filter: blur(10px);
+}
+
+.content-modal-close:hover {
+    background: rgba(255,0,0,0.6);
+    transform: scale(1.1);
+    border-color: rgba(255,0,0,0.4);
+}
+
+/* Carrusel de imágenes en modal de contenido */
+.content-image-carousel {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-image-slide {
+    display: none;
+    width: 100%;
+}
+
+.carousel-image-slide.active {
+    display: block;
+    animation: fadeInImage 0.5s ease-in-out;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.carousel-controls-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carousel-prev-image,
+.carousel-next-image {
+    width: 40px;
+    height: 40px;
+    background: rgba(216, 35, 255, 0.2);
+    border: 1px solid rgba(216, 35, 255, 0.4);
+    border-radius: 50%;
+    color: var(--color-orange);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.carousel-prev-image:hover,
+.carousel-next-image:hover {
+    background: rgba(216, 35, 255, 0.3);
+    border-color: rgba(216, 35, 255, 0.6);
+    transform: scale(1.1);
+}
+
+.carousel-indicators-images {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-indicator-image {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(216, 35, 255, 0.3);
+    border: 1px solid rgba(216, 35, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-indicator-image.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: scale(1.2);
+}
+
+.carousel-indicator-image:hover {
+    background: rgba(216, 35, 255, 0.5);
+}
+
 .instagram-icon {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -728,7 +1030,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: auto;
     padding: 0.75rem 1rem;
     background: linear-gradient(135deg, #E4405F, #833AB4, #C13584);
     color: white;
@@ -740,6 +1042,8 @@
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 15px rgba(196, 53, 132, 0.3);
+    width: 100%;
+    justify-content: center;
 }
 
 .instagram-link:hover {

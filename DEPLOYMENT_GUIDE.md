@@ -1,15 +1,15 @@
 # Guía de Deployment - IgnuxLab
 
-## 🚀 Configuración Multi-Entorno
+## 🚀 Configuración de Producción
 
-Este proyecto está configurado para funcionar tanto en **desarrollo local** como en **producción** con diferentes rutas base.
+Este proyecto está configurado para funcionar en **desarrollo local** y en **producción** en el dominio raíz.
 
 ### 📁 Estructura de Entornos
 
 | Entorno | Base Path | URL de Acceso |
 |---------|-----------|---------------|
-| **Desarrollo** | `/` | `http://localhost:4325/` |
-| **Producción** | `/demo/ignuxlab/` | `https://ignuxlab.com/demo/ignuxlab/` |
+| **Desarrollo** | `/` | `http://localhost:3000/` |
+| **Producción** | `/` | `https://ignuxlab.com/` |
 
 ## 🛠️ Comandos Disponibles
 
@@ -42,41 +42,58 @@ npm run preview:prod
 ### astro.config.mjs
 ```javascript
 export default defineConfig({
-  // Base path condicional según el entorno
-  base: process.env.NODE_ENV === 'production' ? '/demo/ignuxlab/' : '/',
+  // Base path para producción en el dominio raíz
+  base: '/',
+  site: 'https://ignuxlab.com',
   // ... resto de configuración
 });
 ```
 
-### Rutas de Assets
-Los componentes usan `import.meta.env.BASE_URL` para rutas dinámicas:
+### Organización de Archivos en Servidor
+Los archivos se organizan en una carpeta `ignuxlab/` dentro de `public_html/`, pero el sitio funciona en la raíz del dominio gracias a la configuración de `.htaccess`.
 
-```javascript
-// ✅ Correcto - Se adapta automáticamente al entorno
-<img src={`${import.meta.env.BASE_URL}img/logo.webp`} alt="Logo">
-
-// ❌ Incorrecto - Ruta fija
-<img src="/img/logo.webp" alt="Logo">
-```
-
-## 📦 Deployment
+## 📦 Deployment en cPanel
 
 ### 1. Generar Build
 ```bash
 npm run build
 ```
 
-### 2. Subir Archivos
-Subir el contenido de la carpeta `./dist/` al servidor en la ruta:
+### 2. Subir Archivos al Servidor
+
+#### Paso 2.1: Subir contenido de `dist/` a carpeta `ignuxlab/`
+- Subir **todo el contenido** de la carpeta `./dist/` a `public_html/ignuxlab/`
+- Esto incluye: `index.html`, `_astro/`, `img/`, `scripts/`, `videos/`, etc.
+
+#### Paso 2.2: Subir `.htaccess` a la carpeta `ignuxlab/`
+- Copiar el archivo `public/.htaccess` a `public_html/ignuxlab/.htaccess`
+
+#### Paso 2.3: Subir `.htaccess` a la raíz de `public_html`
+- Copiar el archivo `.htaccess.public_html` a `public_html/.htaccess`
+- Este archivo redirige todo el tráfico de la raíz a la carpeta `ignuxlab/`
+
+### 3. Estructura Final en cPanel
 ```
-/demo/ignuxlab/
+public_html/
+├── .htaccess              ← Redirige a /ignuxlab/ (desde .htaccess.public_html)
+├── ignuxlab/              ← Carpeta con tu sitio
+│   ├── .htaccess          ← Configuración del sitio (desde public/.htaccess)
+│   ├── index.html
+│   ├── _astro/
+│   ├── img/
+│   ├── scripts/
+│   ├── videos/
+│   └── ...
+└── (otros archivos/carpetas)
 ```
 
-### 3. Verificar
+### 4. Verificar
 El sitio estará disponible en:
 ```
-https://ignuxlab.com/demo/ignuxlab/
+https://ignuxlab.com/
 ```
+
+**Nota:** Aunque los archivos están en `public_html/ignuxlab/`, el sitio funciona en la raíz del dominio gracias a la configuración de `.htaccess`.
 
 ## ✅ Verificación
 
@@ -87,26 +104,36 @@ https://ignuxlab.com/demo/ignuxlab/
 - ✅ Navegación entre páginas operativa
 
 ### En Producción
-- ✅ CSS con rutas `/demo/ignuxlab/_astro/*.css`
-- ✅ Imágenes con rutas `/demo/ignuxlab/img/*`
-- ✅ Videos con rutas `/demo/ignuxlab/videos/*`
+- ✅ CSS con rutas `/_astro/*.css`
+- ✅ Imágenes con rutas `/img/*`
+- ✅ Videos con rutas `/videos/*`
 - ✅ Sin errores 404 en assets
+- ✅ URLs limpias sin mostrar la carpeta `ignuxlab` en la URL
 
 ## 🔧 Troubleshooting
 
 ### Si hay errores 404 en assets:
-1. Verificar que `base` en `astro.config.mjs` coincida con la ruta del servidor
-2. Confirmar que todos los componentes usan `import.meta.env.BASE_URL`
+1. Verificar que ambos archivos `.htaccess` estén en su lugar:
+   - `public_html/.htaccess` (redirige a ignuxlab)
+   - `public_html/ignuxlab/.htaccess` (configuración del sitio)
+2. Confirmar que `base: '/'` en `astro.config.mjs`
 3. Ejecutar `npm run build` después de cambios en configuración
+4. Verificar permisos de archivos en el servidor (644 para archivos, 755 para carpetas)
+
+### Si el sitio no carga:
+1. Verificar que `mod_rewrite` esté habilitado en el servidor
+2. Revisar los logs de error de Apache en cPanel
+3. Confirmar que la carpeta `ignuxlab/` existe y contiene todos los archivos
 
 ### Para probar producción localmente:
 ```bash
 npm run build
-npm run preview:prod
+npm run preview
 ```
 
 ## 📂 Estructura de Archivos
 
+### En el Proyecto Local
 ```
 dist/
 ├── _astro/                 # CSS y JS optimizados
@@ -116,9 +143,25 @@ dist/
 │   └── clientes/          # Logos de clientes
 ├── videos/                # Videos
 │   └── hero.mp4
+├── scripts/               # JavaScript
 ├── about/index.html       # Página sobre nosotros
 ├── solutions/index.html   # Página soluciones
+├── news/index.html        # Página noticias
 ├── contact/index.html     # Página contacto
 ├── index.html            # Página principal
-└── favicon.svg           # Icono del sitio
+├── 404.html              # Página de error
+└── robots.txt            # SEO
 ```
+
+### Archivos de Configuración para Deployment
+```
+.htaccess.public_html      # Subir a public_html/.htaccess
+public/.htaccess          # Subir a public_html/ignuxlab/.htaccess
+```
+
+## 📝 Notas Importantes
+
+- **Mantén `base: '/'` en `astro.config.mjs`** - No cambies esto
+- **Los archivos se organizan en `ignuxlab/`** pero el sitio funciona en la raíz
+- **Las URLs se mantienen limpias** - No se muestra `/ignuxlab/` en las URLs
+- **Compatible con cPanel** - Funciona con la configuración estándar de cPanel
