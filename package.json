@@ -15,5 +15,8 @@
     "aos": "^2.3.4",
     "astro": "^5.12.9",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "terser": "^5.46.2"
   }
 }
