@@ -14,9 +14,8 @@
     "@astrojs/node": "^9.4.3",
     "aos": "^2.3.4",
     "astro": "^5.12.9",
-    "typescript": "^5.9.2"
-  },
-  "devDependencies": {
-    "terser": "^5.46.2"
+    "resend": "^6.1.0",
+    "typescript": "^5.9.2",
+    "zod": "^3.25.76"
   }
 }

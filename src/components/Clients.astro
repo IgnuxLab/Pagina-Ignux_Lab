@@ -1,114 +1,262 @@
 ---
-import '@/assets/styles/components/clients.css';
+import "@/assets/styles/components/clients.css";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <section class="clients section-spacing section-depth" data-aos="fade-up">
-    <div class="section-container">
-        <!-- Header de la sección -->
-        <div class="clients-header" data-aos="fade-down" data-aos-delay="200">
-            <div class="clients-header-content">
-                <h2 class="clients-title" data-aos="fade-right" data-aos-delay="300">Nuestra experiencia</h2>
-                <p class="clients-description" data-aos="fade-left" data-aos-delay="400">
-                    A lo largo de 25 años IGNUX LAB ha trabajado con diferentes aliados, dentro de los cuales están
-                </p>
-            </div>
-        </div>
-        
-        <!-- Carrusel infinito de clientes -->
-        <div class="clients-carousel" data-aos="fade-up" data-aos-delay="500">
-            <div class="carousel-track" id="carouselTrack">
-                <!-- Primera serie de slides -->
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="600">
-                    <img src={`${baseUrl}img/clientes/client-1.webp`} alt="Cliente 1" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="650">
-                    <img src={`${baseUrl}img/clientes/client-2.webp`} alt="Cliente 2" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="700">
-                    <img src={`${baseUrl}img/clientes/client-3.webp`} alt="Cliente 3" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="750">
-                    <img src={`${baseUrl}img/clientes/client-4.webp`} alt="Cliente 4" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="800">
-                    <img src={`${baseUrl}img/clientes/client-5.webp`} alt="Cliente 5" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="850">
-                    <img src={`${baseUrl}img/clientes/client-6.webp`} alt="Cliente 6" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="900">
-                    <img src={`${baseUrl}img/clientes/client-7.webp`} alt="Cliente 7" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="950">
-                    <img src={`${baseUrl}img/clientes/client-8.webp`} alt="Cliente 8" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="1000">
-                    <img src={`${baseUrl}img/clientes/client-9.webp`} alt="Cliente 9" loading="lazy">
-                </div>
-                <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="1050">
-                    <img src={`${baseUrl}img/clientes/client-10.webp`} alt="Cliente 10" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-11.webp`} alt="Cliente 11" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-12.webp`} alt="Cliente 12" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-13.webp`} alt="Cliente 13" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-14.webp`} alt="Cliente 14" loading="lazy">
-                </div>
-                
-                <!-- Segunda serie duplicada para efecto infinito -->
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-1.webp`} alt="Cliente 1" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-2.webp`} alt="Cliente 2" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-3.webp`} alt="Cliente 3" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-4.webp`} alt="Cliente 4" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-5.webp`} alt="Cliente 5" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-6.webp`} alt="Cliente 6" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-7.webp`} alt="Cliente 7" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-8.webp`} alt="Cliente 8" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-9.webp`} alt="Cliente 9" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-10.webp`} alt="Cliente 10" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-11.webp`} alt="Cliente 11" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-12.webp`} alt="Cliente 12" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-13.webp`} alt="Cliente 13" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                    <img src={`${baseUrl}img/clientes/client-14.webp`} alt="Cliente 14" loading="lazy">
-                </div>
-            </div>
-        </div>
+  <div class="section-container">
+    <!-- Header de la sección -->
+    <div class="clients-header" data-aos="fade-down" data-aos-delay="200">
+      <div class="clients-header-content">
+        <h2 class="clients-title" data-aos="fade-right" data-aos-delay="300">
+          Nuestra experiencia
+        </h2>
+        <p
+          class="clients-description"
+          data-aos="fade-left"
+          data-aos-delay="400"
+        >
+          A lo largo de 25 años IGNUX LAB ha trabajado con diferentes aliados,
+          dentro de los cuales están
+        </p>
+      </div>
     </div>
+
+    <!-- Carrusel infinito de clientes -->
+    <div class="clients-carousel" data-aos="fade-up" data-aos-delay="500">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Primera serie de slides -->
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="600">
+          <img
+            src={`${baseUrl}img/clientes/client-1.webp`}
+            alt="Cliente 1"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="650">
+          <img
+            src={`${baseUrl}img/clientes/client-2.webp`}
+            alt="Cliente 2"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="700">
+          <img
+            src={`${baseUrl}img/clientes/client-3.webp`}
+            alt="Cliente 3"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="750">
+          <img
+            src={`${baseUrl}img/clientes/client-4.webp`}
+            alt="Cliente 4"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="800">
+          <img
+            src={`${baseUrl}img/clientes/client-5.webp`}
+            alt="Cliente 5"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="850">
+          <img
+            src={`${baseUrl}img/clientes/client-6.webp`}
+            alt="Cliente 6"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="900">
+          <img
+            src={`${baseUrl}img/clientes/client-7.webp`}
+            alt="Cliente 7"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="950">
+          <img
+            src={`${baseUrl}img/clientes/client-8.webp?v=2`}
+            alt="Cliente 8"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="1000">
+          <img
+            src={`${baseUrl}img/clientes/client-9.webp`}
+            alt="Cliente 9"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide" data-aos="zoom-in" data-aos-delay="1050">
+          <img
+            src={`${baseUrl}img/clientes/client-10.webp`}
+            alt="Cliente 10"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-11.webp`}
+            alt="Cliente 11"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-12.webp`}
+            alt="Cliente 12"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-13.webp`}
+            alt="Cliente 13"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-14.webp`}
+            alt="Cliente 14"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-15.webp`}
+            alt="Cliente 15"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-16.webp`}
+            alt="Cliente 16"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Segunda serie duplicada para efecto infinito -->
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-1.webp`}
+            alt="Cliente 1"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-2.webp`}
+            alt="Cliente 2"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-3.webp`}
+            alt="Cliente 3"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-4.webp`}
+            alt="Cliente 4"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-5.webp`}
+            alt="Cliente 5"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-6.webp`}
+            alt="Cliente 6"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-7.webp`}
+            alt="Cliente 7"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-8.webp?v=2`}
+            alt="Cliente 8"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-9.webp`}
+            alt="Cliente 9"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-10.webp`}
+            alt="Cliente 10"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-11.webp`}
+            alt="Cliente 11"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-12.webp`}
+            alt="Cliente 12"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-13.webp`}
+            alt="Cliente 13"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-14.webp`}
+            alt="Cliente 14"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-15.webp`}
+            alt="Cliente 15"
+            loading="lazy"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src={`${baseUrl}img/clientes/client-16.webp`}
+            alt="Cliente 16"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<script type="module" src={`${import.meta.env.BASE_URL}scripts/clients.js`}></script>
+<script type="module" src={`${import.meta.env.BASE_URL}scripts/clients.js`}
+></script>

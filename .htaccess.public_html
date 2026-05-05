@@ -1,0 +1,60 @@
+# ===========================================
+# IGNUX Lab - Redirección desde raíz a carpeta
+# Este archivo debe subirse a: public_html/.htaccess
+# ===========================================
+
+# Habilitar mod_rewrite
+RewriteEngine On
+
+# ===========================================
+# REDIRECCIÓN A CARPETA IGNUXLAB
+# ===========================================
+
+# Redirigir todo el tráfico a la carpeta ignuxlab
+# sin cambiar la URL visible en el navegador
+RewriteCond %{REQUEST_URI} !^/ignuxlab/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /ignuxlab/$1 [L]
+
+# Si se accede directamente a la raíz, redirigir a ignuxlab
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^(.*)$ /ignuxlab/ [L]
+
+# Permitir acceso directo a archivos en la raíz si existen
+# (por ejemplo, robots.txt, favicon, etc.)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ - [L]
+
+# ===========================================
+# SEGURIDAD BÁSICA
+# ===========================================
+
+# Prevenir acceso a archivos sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql|conf)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Proteger directorios del sistema
+RedirectMatch 403 ^/\.git
+RedirectMatch 403 ^/node_modules
+RedirectMatch 403 ^/src
+RedirectMatch 403 ^/package\.json
+RedirectMatch 403 ^/package-lock\.json
+RedirectMatch 403 ^/tsconfig\.json
+RedirectMatch 403 ^/astro\.config\.mjs
+
+# Headers de seguridad básicos
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# ===========================================
+# FORZAR HTTPS (Opcional - descomentar si es necesario)
+# ===========================================
+
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

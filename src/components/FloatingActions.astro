@@ -3,453 +3,591 @@
 ---
 
 <div class="floating-actions">
-    <!-- Botón flotante izquierdo - Scroll to top -->
-    <button class="floating-button scroll-top" id="scrollTopBtn" aria-label="Ir arriba" data-aos="fade-left" data-aos-delay="2000" data-aos-anchor-placement="top-bottom">
-        <div class="button-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4L12 20M12 4L6 10M12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        <div class="button-glow"></div>
-        <div class="button-ripple"></div>
-    </button>
-
-    <!-- Botón flotante derecho - Toggle chatbot -->
-    <button class="floating-button chatbot-toggle" id="chatbotToggleBtn" aria-label="Abrir chatbot" data-aos="fade-left" data-aos-delay="2200" data-aos-anchor-placement="top-bottom">
-        <div class="button-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        <div class="button-glow"></div>
-        <div class="button-ripple"></div>
-    </button>
-
-    <!-- Panel del chatbot -->
-    <div class="chatbot-panel" id="chatbotPanel">
-        <div class="chatbot-header" data-aos="fade-down" data-aos-delay="300">
-            <div class="chatbot-avatar" data-aos="zoom-in" data-aos-delay="400">
-                <div class="avatar-icon">🤖</div>
-            </div>
-            <div class="chatbot-info" data-aos="fade-left" data-aos-delay="500">
-                <h4 class="chatbot-name">IGNUX Assistant</h4>
-                <p class="chatbot-status">En línea</p>
-            </div>
-            <button class="close-chatbot" id="closeChatbotBtn" aria-label="Cerrar chatbot" data-aos="fade-left" data-aos-delay="600">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-        
-        <div class="chatbot-messages" id="chatbotMessages" data-aos="fade-up" data-aos-delay="700">
-            <div class="message bot-message">
-                <div class="message-content">
-                    <p>¡Hola! Soy el asistente virtual de IGNUX LAB. ¿En qué puedo ayudarte hoy?</p>
-                </div>
-                <div class="message-time">Ahora</div>
-            </div>
-        </div>
-        
-        <div class="chatbot-input">
-            <input type="text" id="chatbotInput" placeholder="Escribe tu mensaje..." maxlength="500">
-            <button class="send-message" id="sendMessageBtn" aria-label="Enviar mensaje">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
+  <!-- Botón flotante izquierdo - Scroll to top -->
+  <button
+    class="floating-button scroll-top"
+    id="scrollTopBtn"
+    aria-label="Ir arriba"
+    data-aos="fade-left"
+    data-aos-delay="2000"
+    data-aos-anchor-placement="top-bottom"
+  >
+    <div class="button-icon">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 4L12 20M12 4L6 10M12 4L18 10"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
     </div>
+    <div class="button-glow"></div>
+    <div class="button-ripple"></div>
+  </button>
+
+  <!-- Botón flotante derecho - Toggle chatbot -->
+  <button
+    class="floating-button chatbot-toggle"
+    id="chatbotToggleBtn"
+    aria-label="Abrir chatbot"
+    data-aos="fade-left"
+    data-aos-delay="2200"
+    data-aos-anchor-placement="top-bottom"
+  >
+    <div class="button-icon">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <div class="button-glow"></div>
+    <div class="button-ripple"></div>
+  </button>
+
+  <!-- Panel del chatbot -->
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header" data-aos="fade-down" data-aos-delay="300">
+      <div class="chatbot-avatar" data-aos="zoom-in" data-aos-delay="400">
+        <div class="avatar-icon">🤖</div>
+      </div>
+      <div class="chatbot-info" data-aos="fade-left" data-aos-delay="500">
+        <h4 class="chatbot-name">IGNUX Assistant</h4>
+        <p class="chatbot-status">En línea</p>
+      </div>
+      <button
+        class="close-chatbot"
+        id="closeChatbotBtn"
+        aria-label="Cerrar chatbot"
+        data-aos="fade-left"
+        data-aos-delay="600"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 6L6 18M6 6L18 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div
+      class="chatbot-messages"
+      id="chatbotMessages"
+      data-aos="fade-up"
+      data-aos-delay="700"
+    >
+      <div class="message bot-message">
+        <div class="message-content">
+          <p>
+            ¡Hola! Soy el asistente virtual de IGNUX LAB. ¿En qué puedo ayudarte
+            hoy?
+          </p>
+        </div>
+        <div class="message-time">Ahora</div>
+      </div>
+    </div>
+
+    <div class="chatbot-input">
+      <input
+        type="text"
+        id="chatbotInput"
+        placeholder="Escribe tu mensaje..."
+        maxlength="500"
+      />
+      <button
+        class="send-message"
+        id="sendMessageBtn"
+        aria-label="Enviar mensaje"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>
 
 <script>
-    // Funcionalidad del componente
-    document.addEventListener('DOMContentLoaded', () => {
-        // Obtener elementos del DOM con verificación de tipos
-        const scrollTopBtn = document.getElementById('scrollTopBtn') as HTMLButtonElement | null;
-        const chatbotToggleBtn = document.getElementById('chatbotToggleBtn') as HTMLButtonElement | null;
-        const chatbotPanel = document.getElementById('chatbotPanel') as HTMLDivElement | null;
-        const closeChatbotBtn = document.getElementById('closeChatbotBtn') as HTMLButtonElement | null;
-        const chatbotMessages = document.getElementById('chatbotMessages') as HTMLDivElement | null;
-        const chatbotInput = document.getElementById('chatbotInput') as HTMLInputElement | null;
-        const sendMessageBtn = document.getElementById('sendMessageBtn') as HTMLButtonElement | null;
-        
-        // Verificar que todos los elementos existen antes de continuar
-        if (!scrollTopBtn || !chatbotToggleBtn || !chatbotPanel || !closeChatbotBtn || 
-            !chatbotMessages || !chatbotInput || !sendMessageBtn) {
-            console.error('No se pudieron encontrar todos los elementos necesarios para FloatingActions');
-            return;
-        }
-        
-        let isChatbotOpen = false;
+  // Funcionalidad del componente
+  document.addEventListener("DOMContentLoaded", () => {
+    // Obtener elementos del DOM con verificación de tipos
+    const scrollTopBtn = document.getElementById(
+      "scrollTopBtn",
+    ) as HTMLButtonElement | null;
+    const chatbotToggleBtn = document.getElementById(
+      "chatbotToggleBtn",
+    ) as HTMLButtonElement | null;
+    const chatbotPanel = document.getElementById(
+      "chatbotPanel",
+    ) as HTMLDivElement | null;
+    const closeChatbotBtn = document.getElementById(
+      "closeChatbotBtn",
+    ) as HTMLButtonElement | null;
+    const chatbotMessages = document.getElementById(
+      "chatbotMessages",
+    ) as HTMLDivElement | null;
+    const chatbotInput = document.getElementById(
+      "chatbotInput",
+    ) as HTMLInputElement | null;
+    const sendMessageBtn = document.getElementById(
+      "sendMessageBtn",
+    ) as HTMLButtonElement | null;
 
-        // Función para scroll to top optimizada para móviles
-        function scrollToTop(e: Event) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Debug: Log para verificar que se ejecuta la función
-            console.log('ScrollToTop ejecutándose desde:', e.type);
-            
-            // Efecto visual inmediato de clic
-            if (scrollTopBtn) {
-                scrollTopBtn.classList.add('clicked');
-                setTimeout(() => {
-                    if (scrollTopBtn) {
-                        scrollTopBtn.classList.remove('clicked');
-                    }
-                }, 300);
-            }
-            
-            // Múltiples métodos de scroll para máxima compatibilidad móvil
-            const scrollElements = [
-                document.documentElement,
-                document.body,
-                window
-            ];
-            
-            // Método 1: Scroll suave si está soportado
-            const supportsSmooth = 'scrollBehavior' in document.documentElement.style;
-            
-            if (supportsSmooth) {
-                try {
-                    window.scrollTo({
-                        top: 0,
-                        left: 0,
-                        behavior: 'smooth'
-                    });
-                    return;
-                } catch (error) {
-                    console.warn('Smooth scroll falló, usando fallback');
-                }
-            }
-            
-            // Método 2: Scroll animado manual para mejor compatibilidad móvil
-            const startPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            const startTime = performance.now();
-            const duration = 800; // Duración en ms
-            
-            function animateScroll(currentTime: number) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                
-                // Función de easing suave
-                const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-                const currentPosition = startPosition * (1 - easeOutCubic);
-                
-                // Aplicar scroll a todos los elementos posibles
-                scrollElements.forEach(element => {
-                    if (element === window) {
-                        try {
-                            (element as Window).scrollTo(0, currentPosition);
-                        } catch (e) {
-                            // Ignorar errores
-                        }
-                    } else {
-                        try {
-                            (element as HTMLElement).scrollTop = currentPosition;
-                        } catch (e) {
-                            // Ignorar errores
-                        }
-                    }
-                });
-                
-                if (progress < 1) {
-                    requestAnimationFrame(animateScroll);
-                } else {
-                    // Asegurar que llegamos a 0
-                    scrollElements.forEach(element => {
-                        if (element === window) {
-                            try {
-                                (element as Window).scrollTo(0, 0);
-                            } catch (e) {
-                                // Ignorar errores
-                            }
-                        } else {
-                            try {
-                                (element as HTMLElement).scrollTop = 0;
-                            } catch (e) {
-                                // Ignorar errores
-                            }
-                        }
-                    });
-                    console.log('Scroll to top completado');
-                }
-            }
-            
-            requestAnimationFrame(animateScroll);
-        }
+    // Verificar que todos los elementos existen antes de continuar
+    if (
+      !scrollTopBtn ||
+      !chatbotToggleBtn ||
+      !chatbotPanel ||
+      !closeChatbotBtn ||
+      !chatbotMessages ||
+      !chatbotInput ||
+      !sendMessageBtn
+    ) {
+      console.error(
+        "No se pudieron encontrar todos los elementos necesarios para FloatingActions",
+      );
+      return;
+    }
 
-        // Event listeners optimizados para móviles
-        let touchStartTime = 0;
-        let touchMoved = false;
-        
-        // Click para desktop
-        scrollTopBtn.addEventListener('click', scrollToTop);
-        
-        // Touch events para móviles
-        scrollTopBtn.addEventListener('touchstart', (e: TouchEvent) => {
-            touchStartTime = Date.now();
-            touchMoved = false;
-            
-            // Efecto visual inmediato
-            scrollTopBtn.classList.add('clicked');
-            
-            // Prevenir scroll accidental
-            e.stopPropagation();
-        }, { passive: false });
-        
-        scrollTopBtn.addEventListener('touchmove', (e: TouchEvent) => {
-            touchMoved = true;
-            // Remover efecto visual si hay movimiento
-            scrollTopBtn.classList.remove('clicked');
-        });
-        
-        scrollTopBtn.addEventListener('touchend', (e: TouchEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const touchDuration = Date.now() - touchStartTime;
-            
-            // Solo ejecutar si fue un tap rápido sin movimiento
-            if (!touchMoved && touchDuration < 500) {
-                console.log('Touch tap detectado en scroll button');
-                scrollToTop(e);
-            } else {
-                // Remover efecto visual si no fue un tap válido
-                scrollTopBtn.classList.remove('clicked');
-            }
-        }, { passive: false });
-        
-        // Prevenir context menu en móviles
-        scrollTopBtn.addEventListener('contextmenu', (e: Event) => {
-            e.preventDefault();
-        });
+    let isChatbotOpen = false;
 
-        // Toggle chatbot
-        chatbotToggleBtn.addEventListener('click', (e: Event) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            if (!isChatbotOpen) {
-                openChatbot();
-            }
-            
-            // Efecto de clic
-            chatbotToggleBtn.classList.add('clicked');
-            setTimeout(() => {
-                chatbotToggleBtn.classList.remove('clicked');
-            }, 300);
-        });
+    // Función para scroll to top optimizada para móviles
+    function scrollToTop(e: Event) {
+      e.preventDefault();
+      e.stopPropagation();
 
-        // Cerrar chatbot
-        closeChatbotBtn.addEventListener('click', (e: Event) => {
-            e.preventDefault();
-            e.stopPropagation();
-            closeChatbot();
-        });
-
-        // Abrir chatbot
-        function openChatbot(): void {
-            if (!chatbotPanel || !chatbotToggleBtn || !chatbotInput) return;
-            
-            chatbotPanel.classList.add('active');
-            chatbotToggleBtn.classList.add('active');
-            isChatbotOpen = true;
-            chatbotInput.focus();
-        }
-
-        // Cerrar chatbot
-        function closeChatbot(): void {
-            if (!chatbotPanel || !chatbotToggleBtn) return;
-            
-            chatbotPanel.classList.remove('active');
-            chatbotToggleBtn.classList.remove('active');
-            isChatbotOpen = false;
-        }
-
-        // Enviar mensaje
-        function sendMessage(): void {
-            if (!chatbotInput) return;
-            
-            const message = chatbotInput.value.trim();
-            if (message) {
-                addUserMessage(message);
-                chatbotInput.value = '';
-                
-                // Simular respuesta del bot
-                setTimeout(() => {
-                    const botResponse = generateBotResponse(message);
-                    addBotMessage(botResponse);
-                }, 1000);
-                
-                scrollToBottom();
-            }
-        }
-
-        // Agregar mensaje del usuario
-        function addUserMessage(message: string): void {
-            if (!chatbotMessages) return;
-            
-            const messageElement = document.createElement('div');
-            messageElement.className = 'message user-message';
-            messageElement.innerHTML = `
-                <div class="message-content">
-                    <p>${escapeHtml(message)}</p>
-                </div>
-                <div class="message-time">${getCurrentTime()}</div>
-            `;
-            chatbotMessages.appendChild(messageElement);
-            scrollToBottom();
-        }
-
-        // Agregar mensaje del bot
-        function addBotMessage(message: string): void {
-            if (!chatbotMessages) return;
-            
-            const messageElement = document.createElement('div');
-            messageElement.className = 'message bot-message';
-            messageElement.innerHTML = `
-                <div class="message-content">
-                    <p>${escapeHtml(message)}</p>
-                </div>
-                <div class="message-time">${getCurrentTime()}</div>
-            `;
-            chatbotMessages.appendChild(messageElement);
-            scrollToBottom();
-        }
-
-        // Generar respuesta del bot
-        function generateBotResponse(userMessage: string): string {
-            const message = userMessage.toLowerCase();
-            
-            if (message.includes('hola') || message.includes('buenos días') || message.includes('buenas')) {
-                return '¡Hola! Es un placer saludarte. ¿En qué puedo ayudarte hoy?';
-            } else if (message.includes('servicios') || message.includes('soluciones')) {
-                return 'En IGNUX LAB ofrecemos desarrollo web, aplicaciones móviles, consultoría tecnológica y soluciones de IA. ¿Te gustaría conocer más sobre alguno en particular?';
-            } else if (message.includes('precio') || message.includes('costo') || message.includes('tarifa')) {
-                return 'Los precios varían según el proyecto y los requerimientos específicos. Te recomiendo contactarnos directamente para una cotización personalizada.';
-            } else if (message.includes('contacto') || message.includes('contactar')) {
-                return 'Puedes contactarnos a través de nuestro formulario web, por correo electrónico o por teléfono. ¿Cuál prefieres?';
-            } else if (message.includes('tiempo') || message.includes('duración') || message.includes('entrega')) {
-                return 'El tiempo de desarrollo depende de la complejidad del proyecto. Proyectos pequeños pueden tomar 2-4 semanas, mientras que proyectos complejos pueden tomar 2-6 meses.';
-            } else if (message.includes('gracias') || message.includes('thanks')) {
-                return '¡De nada! Estoy aquí para ayudarte. ¿Hay algo más en lo que pueda asistirte?';
-            } else {
-                return 'Entiendo tu consulta. Para darte la mejor respuesta posible, te sugiero contactar directamente con nuestro equipo de especialistas. ¿Te gustaría que te ayude con algo más?';
-            }
-        }
-
-        // Función para escapar HTML y prevenir XSS
-        function escapeHtml(text: string): string {
-            const map: Record<string, string> = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
-            return text.replace(/[&<>"']/g, (m: string) => map[m]);
-        }
-
-        // Obtener hora actual
-        function getCurrentTime(): string {
-            const now = new Date();
-            return now.toLocaleTimeString('es-ES', { 
-                hour: '2-digit', 
-                minute: '2-digit' 
-            });
-        }
-
-        // Scroll al fondo del chat
-        function scrollToBottom(): void {
-            if (!chatbotMessages) return;
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-
-        // Event listeners
-        sendMessageBtn.addEventListener('click', sendMessage);
-        
-        chatbotInput.addEventListener('keypress', (e: KeyboardEvent) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
-
-        // Cerrar chatbot al hacer clic fuera
-        document.addEventListener('click', (e: Event) => {
-            const target = e.target as Node;
-            if (target && !chatbotToggleBtn.contains(target) && !chatbotPanel.contains(target)) {
-                if (isChatbotOpen) {
-                    closeChatbot();
-                }
-            }
-        });
-
-        // Función mejorada para detectar dispositivos móviles
-        function isMobileDevice(): boolean {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-                   ('ontouchstart' in window) ||
-                   (navigator.maxTouchPoints > 0) ||
-                   window.innerWidth <= 768;
-        }
-        
-        // Función para verificar scroll y mostrar/ocultar botón
-        function checkScrollAndShowButton() {
-            if (!scrollTopBtn) return;
-            
-            const isMobile = isMobileDevice();
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            
-            // Threshold diferente para móviles vs desktop
-            const threshold = isMobile ? 200 : 300;
-            
-            
-            // Mostrar botón solo cuando se hace scroll hacia abajo más allá del threshold
-            if (currentScroll > threshold) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        }
-
-        // Debounce function para optimizar el scroll listener
-        function debounce(func: Function, wait: number) {
-            let timeout: number;
-            return function executedFunction(...args: any[]) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = window.setTimeout(later, wait);
-            };
-        }
-
-        // Mostrar/ocultar botón scroll to top según scroll con debounce
-        const debouncedScrollHandler = debounce(() => {
-            checkScrollAndShowButton();
-        }, 10);
-        
-        window.addEventListener('scroll', debouncedScrollHandler, { passive: true });
-        
-        // Event listener para resize/orientación
-        window.addEventListener('resize', debounce(() => {
-            checkScrollAndShowButton();
-        }, 100));
-        
-        // Event listener para cambio de orientación en móviles
-        window.addEventListener('orientationchange', () => {
-            setTimeout(() => {
-                checkScrollAndShowButton();
-            }, 100);
-        });
-        
-        // Verificar estado inicial (sin mostrar automáticamente)
+      // Efecto visual inmediato de clic
+      if (scrollTopBtn) {
+        scrollTopBtn.classList.add("clicked");
         setTimeout(() => {
-            checkScrollAndShowButton();
-        }, 100);
-        
+          if (scrollTopBtn) {
+            scrollTopBtn.classList.remove("clicked");
+          }
+        }, 300);
+      }
+
+      // Múltiples métodos de scroll para máxima compatibilidad móvil
+      const scrollElements = [document.documentElement, document.body, window];
+
+      // Método 1: Scroll suave si está soportado
+      const supportsSmooth = "scrollBehavior" in document.documentElement.style;
+
+      if (supportsSmooth) {
+        try {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+          return;
+        } catch (error) {
+          console.warn("Smooth scroll falló, usando fallback");
+        }
+      }
+
+      // Método 2: Scroll animado manual para mejor compatibilidad móvil
+      const startPosition =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      const startTime = performance.now();
+      const duration = 800; // Duración en ms
+
+      function animateScroll(currentTime: number) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Función de easing suave
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        const currentPosition = startPosition * (1 - easeOutCubic);
+
+        // Aplicar scroll a todos los elementos posibles
+        scrollElements.forEach((element) => {
+          if (element === window) {
+            try {
+              (element as Window).scrollTo(0, currentPosition);
+            } catch (e) {
+              // Ignorar errores
+            }
+          } else {
+            try {
+              (element as HTMLElement).scrollTop = currentPosition;
+            } catch (e) {
+              // Ignorar errores
+            }
+          }
+        });
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          // Asegurar que llegamos a 0
+          scrollElements.forEach((element) => {
+            if (element === window) {
+              try {
+                (element as Window).scrollTo(0, 0);
+              } catch (e) {
+                // Ignorar errores
+              }
+            } else {
+              try {
+                (element as HTMLElement).scrollTop = 0;
+              } catch (e) {
+                // Ignorar errores
+              }
+            }
+          });
+        }
+      }
+
+      requestAnimationFrame(animateScroll);
+    }
+
+    // Event listeners optimizados para móviles
+    let touchStartTime = 0;
+    let touchMoved = false;
+
+    // Click para desktop
+    scrollTopBtn.addEventListener("click", scrollToTop);
+
+    // Touch events para móviles
+    scrollTopBtn.addEventListener(
+      "touchstart",
+      (e: TouchEvent) => {
+        touchStartTime = Date.now();
+        touchMoved = false;
+
+        // Efecto visual inmediato
+        scrollTopBtn.classList.add("clicked");
+
+        // Prevenir scroll accidental
+        e.stopPropagation();
+      },
+      { passive: false },
+    );
+
+    scrollTopBtn.addEventListener("touchmove", (e: TouchEvent) => {
+      touchMoved = true;
+      // Remover efecto visual si hay movimiento
+      scrollTopBtn.classList.remove("clicked");
     });
+
+    scrollTopBtn.addEventListener(
+      "touchend",
+      (e: TouchEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const touchDuration = Date.now() - touchStartTime;
+
+        // Solo ejecutar si fue un tap rápido sin movimiento
+        if (!touchMoved && touchDuration < 500) {
+          scrollToTop(e);
+        } else {
+          // Remover efecto visual si no fue un tap válido
+          scrollTopBtn.classList.remove("clicked");
+        }
+      },
+      { passive: false },
+    );
+
+    // Prevenir context menu en móviles
+    scrollTopBtn.addEventListener("contextmenu", (e: Event) => {
+      e.preventDefault();
+    });
+
+    // Toggle chatbot
+    chatbotToggleBtn.addEventListener("click", (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!isChatbotOpen) {
+        openChatbot();
+      }
+
+      // Efecto de clic
+      chatbotToggleBtn.classList.add("clicked");
+      setTimeout(() => {
+        chatbotToggleBtn.classList.remove("clicked");
+      }, 300);
+    });
+
+    // Cerrar chatbot
+    closeChatbotBtn.addEventListener("click", (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeChatbot();
+    });
+
+    // Abrir chatbot
+    function openChatbot(): void {
+      if (!chatbotPanel || !chatbotToggleBtn || !chatbotInput) return;
+
+      chatbotPanel.classList.add("active");
+      chatbotToggleBtn.classList.add("active");
+      isChatbotOpen = true;
+      chatbotInput.focus();
+    }
+
+    // Cerrar chatbot
+    function closeChatbot(): void {
+      if (!chatbotPanel || !chatbotToggleBtn) return;
+
+      chatbotPanel.classList.remove("active");
+      chatbotToggleBtn.classList.remove("active");
+      isChatbotOpen = false;
+    }
+
+    // Enviar mensaje
+    function sendMessage(): void {
+      if (!chatbotInput) return;
+
+      const message = chatbotInput.value.trim();
+      if (message) {
+        addUserMessage(message);
+        chatbotInput.value = "";
+
+        // Simular respuesta del bot
+        setTimeout(() => {
+          const botResponse = generateBotResponse(message);
+          addBotMessage(botResponse);
+        }, 1000);
+
+        scrollToBottom();
+      }
+    }
+
+    // Agregar mensaje del usuario
+    function addUserMessage(message: string): void {
+      if (!chatbotMessages) return;
+
+      const messageElement = document.createElement("div");
+      messageElement.className = "message user-message";
+      messageElement.innerHTML = `
+                <div class="message-content">
+                    <p>${escapeHtml(message)}</p>
+                </div>
+                <div class="message-time">${getCurrentTime()}</div>
+            `;
+      chatbotMessages.appendChild(messageElement);
+      scrollToBottom();
+    }
+
+    // Agregar mensaje del bot
+    function addBotMessage(message: string): void {
+      if (!chatbotMessages) return;
+
+      const messageElement = document.createElement("div");
+      messageElement.className = "message bot-message";
+      messageElement.innerHTML = `
+                <div class="message-content">
+                    <p>${escapeHtml(message)}</p>
+                </div>
+                <div class="message-time">${getCurrentTime()}</div>
+            `;
+      chatbotMessages.appendChild(messageElement);
+      scrollToBottom();
+    }
+
+    // Generar respuesta del bot
+    function generateBotResponse(userMessage: string): string {
+      const message = userMessage.toLowerCase();
+
+      if (
+        message.includes("hola") ||
+        message.includes("buenos días") ||
+        message.includes("buenas")
+      ) {
+        return "¡Hola! Es un placer saludarte. ¿En qué puedo ayudarte hoy?";
+      } else if (
+        message.includes("servicios") ||
+        message.includes("soluciones")
+      ) {
+        return "En IGNUX LAB ofrecemos desarrollo web, aplicaciones móviles, consultoría tecnológica y soluciones de IA. ¿Te gustaría conocer más sobre alguno en particular?";
+      } else if (
+        message.includes("precio") ||
+        message.includes("costo") ||
+        message.includes("tarifa")
+      ) {
+        return "Los precios varían según el proyecto y los requerimientos específicos. Te recomiendo contactarnos directamente para una cotización personalizada.";
+      } else if (
+        message.includes("contacto") ||
+        message.includes("contactar")
+      ) {
+        return "Puedes contactarnos a través de nuestro formulario web, por correo electrónico o por teléfono. ¿Cuál prefieres?";
+      } else if (
+        message.includes("tiempo") ||
+        message.includes("duración") ||
+        message.includes("entrega")
+      ) {
+        return "El tiempo de desarrollo depende de la complejidad del proyecto. Proyectos pequeños pueden tomar 2-4 semanas, mientras que proyectos complejos pueden tomar 2-6 meses.";
+      } else if (message.includes("gracias") || message.includes("thanks")) {
+        return "¡De nada! Estoy aquí para ayudarte. ¿Hay algo más en lo que pueda asistirte?";
+      } else {
+        return "Entiendo tu consulta. Para darte la mejor respuesta posible, te sugiero contactar directamente con nuestro equipo de especialistas. ¿Te gustaría que te ayude con algo más?";
+      }
+    }
+
+    // Función para escapar HTML y prevenir XSS
+    function escapeHtml(text: string): string {
+      const map: Record<string, string> = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;",
+      };
+      return text.replace(/[&<>"']/g, (m: string) => map[m]);
+    }
+
+    // Obtener hora actual
+    function getCurrentTime(): string {
+      const now = new Date();
+      return now.toLocaleTimeString("es-ES", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    }
+
+    // Scroll al fondo del chat
+    function scrollToBottom(): void {
+      if (!chatbotMessages) return;
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Event listeners
+    sendMessageBtn.addEventListener("click", sendMessage);
+
+    chatbotInput.addEventListener("keypress", (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Cerrar chatbot al hacer clic fuera
+    document.addEventListener("click", (e: Event) => {
+      const target = e.target as Node;
+      if (
+        target &&
+        !chatbotToggleBtn.contains(target) &&
+        !chatbotPanel.contains(target)
+      ) {
+        if (isChatbotOpen) {
+          closeChatbot();
+        }
+      }
+    });
+
+    // Función mejorada para detectar dispositivos móviles
+    function isMobileDevice(): boolean {
+      return (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        ) ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.innerWidth <= 768
+      );
+    }
+
+    // Función para verificar scroll y mostrar/ocultar botón
+    function checkScrollAndShowButton() {
+      if (!scrollTopBtn) return;
+
+      const isMobile = isMobileDevice();
+      const currentScroll =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+
+      // Threshold diferente para móviles vs desktop
+      const threshold = isMobile ? 200 : 300;
+
+      // Mostrar botón solo cuando se hace scroll hacia abajo más allá del threshold
+      if (currentScroll > threshold) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+    }
+
+    // Debounce function para optimizar el scroll listener
+    function debounce(func: Function, wait: number) {
+      let timeout: number;
+      return function executedFunction(...args: any[]) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = window.setTimeout(later, wait);
+      };
+    }
+
+    // Mostrar/ocultar botón scroll to top según scroll con debounce
+    const debouncedScrollHandler = debounce(() => {
+      checkScrollAndShowButton();
+    }, 10);
+
+    window.addEventListener("scroll", debouncedScrollHandler, {
+      passive: true,
+    });
+
+    // Event listener para resize/orientación
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        checkScrollAndShowButton();
+      }, 100),
+    );
+
+    // Event listener para cambio de orientación en móviles
+    window.addEventListener("orientationchange", () => {
+      setTimeout(() => {
+        checkScrollAndShowButton();
+      }, 100);
+    });
+
+    // Verificar estado inicial (sin mostrar automáticamente)
+    setTimeout(() => {
+      checkScrollAndShowButton();
+    }, 100);
+  });
 </script>

@@ -1,4 +1,4 @@
-﻿{
+{
   "featured": {
     "id": "featured-1",
     "category": "Lanzamiento",
@@ -18,7 +18,7 @@
     "content": "Presentamos oficialmente la marca IGNUX LAB. Este hito refleja nuestro compromiso por conectar creatividad, innovación y tecnología para generar resultados medibles y transformar organizaciones."
   },
   "stats": {
-    "published": 2,
+    "published": 7,
     "videos": 1,
     "views": 750
   },
@@ -35,6 +35,72 @@
       "instagram_url": "https://www.instagram.com/p/DO6PumIkaCO/",
       "type": "instagram_post",
       "content": "🚀 En IGNUX Lab hacemos del marketing digital una experiencia creativa que conecta y genera resultados reales.\n\n💡 Contenido, redes, SEO y campañas que transforman seguidores en clientes.\n\n👉 La chispa de tus ideas comienza aquí.\n\n#MarketingDigital #IGNUXLab #EstrategiaDigital"
+    },
+    {
+      "id": "news-jovenes-en-paz",
+      "category": "Proyectos",
+      "title": "Jóvenes en Paz: emprendimiento, cultura y oportunidades desde Ignux Lab",
+      "excerpt": "Nuestros laboratorios de formación, proyectos y creativo, realizaron un evento de Jóvenes en Paz, en ciudad Bolívar. Un espacio en el que jóvenes emprendedores pudieron mostrar sus proyectos, intercambiar ideas y fortalecer sus iniciativas creativas y productivas.",
+      "date": "2026-01-21T12:00:00Z",
+      "author": "IGNUX Lab",
+      "image": "noticias/jovenesEnPaz_1.webp",
+      "images": [
+        "noticias/jovenesEnPaz_1.webp",
+        "noticias/jovenesEnPaz_2.webp",
+        "noticias/jovenesEnPaz_3.webp"
+      ],
+      "tags": ["Proyectos", "Jóvenes", "Emprendimiento", "Cultura", "Ciudad Bolívar"],
+      "content": "Nuestros laboratorios de formación, proyectos y creativo, realizaron un evento de <strong>Jóvenes en Paz</strong>, en <strong>ciudad Bolívar</strong>. Un espacio en el que jóvenes emprendedores pudieron mostrar sus proyectos, intercambiar ideas y fortalecer sus iniciativas creativas y productivas.\n\nEl evento contó con la participación del <strong>Ministerio de la Igualdad</strong>, que acompañó el diálogo sobre oportunidades, inclusión y desarrollo para las juventudes, y se vivió en un ambiente juvenil, gracias a la batucada <strong>Asociación Dragones de la cultura</strong>, que llenó el lugar de ritmo, energía y expresión cultural.\n\nEsta jornada reafirma el compromiso de <strong>Ignux Lab</strong> con la creación de espacios seguros, participativos y transformadores para las y los jóvenes de nuestro país."
+    },
+    {
+      "id": "instagram-post-2",
+      "category": "Formación",
+      "title": "Talento Tech en la Octava Feria de Empleabilidad de Montería",
+      "excerpt": "Talento Tech estuvo presente en la Octava Feria de Empleabilidad de la Gerencia de Empleo, en articulación con la Alcaldía de Montería, llevando oportunidades de formación y crecimiento al Barrio Mogambo.",
+      "date": "2026-01-21T12:00:00Z",
+      "author": "Talento Tech",
+      "image": "noticias/feria_laboral.webp",
+      "tags": ["Talento Tech", "Formación", "Empleabilidad", "Montería"],
+      "instagram_url": "https://www.instagram.com/p/DRiIOR9EdIl/?img_index=1",
+      "type": "instagram_post",
+      "content": "Talento Tech estuvo presente en la Octava Feria de Empleabilidad de la Gerencia de Empleo, en articulación con la Alcaldía de Montería, llevando oportunidades de formación y crecimiento al Barrio Mogambo.\n\nSeguimos acercando el futuro a los territorios. 💡🚀"
+    },
+    {
+      "id": "instagram-post-3",
+      "category": "Resultados",
+      "title": "Resultados que hablan por sí solos en Talento Tech",
+      "excerpt": "¡Son datos, y hay que darlos! En Talento Tech, operado por Ignux Lab y Aprendizaje Interactivo, seguimos transformando vidas a través de la formación tecnológica.",
+      "date": "2026-01-21T12:00:00Z",
+      "author": "Talento Tech",
+      "image": "noticias/miniatura.webp",
+      "tags": ["Talento Tech", "Resultados", "Formación Tecnológica", "Impacto Social"],
+      "instagram_url": "https://www.instagram.com/p/DQ5DvhCkY8w/",
+      "type": "instagram_post",
+      "content": "¡Son datos, y hay que darlos! 📊\n\nEn Talento Tech, operado por Ignux Lab y Aprendizaje Interactivo, seguimos transformando vidas a través de la formación tecnológica. 💻🚀\n\nNuestros resultados hablan por sí solos: cientos de personas se están preparando para el futuro digital, fortaleciendo sus habilidades y abriendo nuevas oportunidades laborales."
+    },
+    {
+      "id": "instagram-post-4",
+      "category": "Formación",
+      "title": "Talento Tech lleva formación tecnológica a Puerto Escondido, Córdoba",
+      "excerpt": "Desde Talento Tech seguimos acercando oportunidades de formación en tecnología a más colombianos. En la feria educativa de Puerto Escondido compartimos nuestras rutas de aprendizaje gratuitas.",
+      "date": "2026-01-21T12:00:00Z",
+      "author": "Talento Tech",
+      "image": "noticias/puerto_escondido.webp",
+      "tags": ["Talento Tech", "Formación", "Puerto Escondido", "Córdoba", "Habilidades Digitales"],
+      "instagram_url": "https://www.instagram.com/p/DQMbFJCjT-p/?img_index=1",
+      "type": "instagram_post",
+      "content": "📍Puerto Escondido, Córdoba\n\nDesde Talento Tech seguimos acercando oportunidades de formación en tecnología a más colombianos. 💻✨\n\nEn la feria educativa de Puerto Escondido, compartimos con estudiantes, docentes y comunidad nuestras rutas de aprendizaje gratuitas en habilidades digitales. 🚀\n\nPorque el talento está en todo el territorio, y estamos aquí para impulsarlo. 💙"
+    },
+    {
+      "id": "news-cortodocumental",
+      "category": "Proyectos",
+      "title": "Ignux Lab recorre el país con la producción de un cortodocumental junto a FUPAD",
+      "excerpt": "Nuestro laboratorio creativo estuvo presente en Necoclí (Antioquia), La Hormiga – Valle del Guamuez (Putumayo), El Roble (Sucre), Ataco (Tolima) y Pivijay (Magdalena), desarrollando el proceso de producción de un cortodocumental en articulación con FUPAD.",
+      "date": "2026-01-21T12:00:00Z",
+      "author": "IGNUX Lab",
+      "image": "noticias/cortodocumental.webp",
+      "tags": ["Proyectos", "Audiovisual", "FUPAD", "Impacto Social", "Comunidades"],
+      "content": "Nuestro laboratorio creativo estuvo presente en <strong>Necoclí (Antioquia)</strong>, <strong>La Hormiga – Valle del Guamuez (Putumayo)</strong>, <strong>El Roble (Sucre)</strong>, <strong>Ataco (Tolima)</strong> y <strong>Pivijay (Magdalena)</strong>, desarrollando el proceso de producción de un cortodocumental en articulación con <strong>FUPAD</strong>. A través de este recorrido territorial, <strong>Ignux Lab</strong> trabajó de la mano de las comunidades para contar historias desde el territorio, visibilizar realidades locales y fortalecer procesos de creación audiovisual con enfoque social y participativo."
     }
   ],
   "_commented_news": {
@@ -83,8 +149,8 @@
     ]
   },
   "metadata": {
-    "last_updated": "2025-01-22T12:00:00Z",
-    "version": "1.3",
-    "total_news": 2
+    "last_updated": "2026-01-21T12:00:00Z",
+    "version": "1.6",
+    "total_news": 7
   }
 }
