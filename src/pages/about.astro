@@ -1,487 +1,606 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import AboutUs from '../components/AboutUs.astro';
-import HowWeDoIt from '../components/HowWeDoIt.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import AboutUs from "../components/AboutUs.astro";
+import HowWeDoIt from "../components/HowWeDoIt.astro";
 
-import '../assets/styles/components/about.css';
-import '../assets/styles/components/team-section.css';
+import "../assets/styles/components/about.css";
+import "../assets/styles/components/team-section.css";
 ---
 
 <Layout title="Sobre Nosotros">
-	<div class="page-container">
-		<Header />
-		
-		<main class="about-main">
-			<section class="hero-banner">
-				<div class="hero-content">
-					<h1 class="hero-title">Sobre IgnuxLab</h1>
-					<div class="breadcrumb">
-						<a href={`${import.meta.env.BASE_URL}`} class="breadcrumb-link">Inicio</a>
-						<span class="separator">/</span>
-						<span class="breadcrumb-active">Sobre Nosotros</span>
-					</div>
-				</div>
-			</section>
+  <div class="page-container">
+    <Header />
 
-			<!-- Componentes separados -->
-			<AboutUs />
-			<div class="section-separator"></div>
-			<HowWeDoIt />
-			<div class="section-separator"></div>
-        
-        <!-- Sección de Equipo -->
-        <section class="team-section section-spacing section-depth">
-            <div class="team-container">
-                                    <div class="team-header">
-                        <h2 class="team-main-title">Equipo de trabajo</h2>
-                        <p class="team-subtitle">Personas creativas, comprometidas y apasionadas que hacen posible cada proyecto en IGNUX Lab</p>
-                    </div>
-                
-                <div class="team-grid">
-                    <!-- Fabian Ricardo Caro Aponte - Socio Fundador -->
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src={`${import.meta.env.BASE_URL}img/equipo/Fabian-Caro.webp`} alt="Fabian Ricardo Caro Aponte" class="team-image">
-                            <div class="team-overlay">
-                                <div class="overlay-content">
-                                    <div class="overlay-header">
-                                        <h4 class="overlay-name">Fabian Ricardo Caro Aponte</h4>
-                                        <p class="overlay-role">
-                                            <svg class="role-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                            </svg>
-                                            Socio Fundador
-                                        </p>
-                                    </div>
-                                    <div class="overlay-info">
-                                        <p class="overlay-description">Información próximamente...</p>
-                                        <div class="overlay-skills">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-banner">
-                            <h4 class="banner-name">Fabian Ricardo Caro Aponte</h4>
-                            <p class="banner-role">
-                                <svg class="role-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                                Socio Fundador
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Hemmes - Socio -->
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src={`${import.meta.env.BASE_URL}img/equipo/Hemmes.webp`} alt="Hemmes" class="team-image">
-                            <div class="team-overlay">
-                                <div class="overlay-content">
-                                    <div class="overlay-header">
-                                        <h4 class="overlay-name">Hemmes Homes SAS</h4>
-                                        <p class="overlay-role">
-                                            <svg class="role-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                                <circle cx="8.5" cy="7" r="4"/>
-                                                <path d="M20 8v6M23 11h-6"/>
-                                            </svg>
-                                            Socio
-                                        </p>
-                                    </div>
-                                    <div class="overlay-info">
-                                        <p class="overlay-description">Información próximamente...</p>
-                                        <div class="overlay-skills">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-banner">
-                            <h4 class="banner-name">Hemmes Homes SAS</h4>
-                            <p class="banner-role">
-                                <svg class="role-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="8.5" cy="7" r="4"/>
-                                    <path d="M20 8v6M23 11h-6"/>
-                                </svg>
-                                Socio
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Ebenezer - Socio -->
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src={`${import.meta.env.BASE_URL}img/equipo/Ebenezer.webp`} alt="Ebenezer" class="team-image">
-                            <div class="team-overlay">
-                                <div class="overlay-content">
-                                    <div class="overlay-header">
-                                        <h4 class="overlay-name">Ebenezer</h4>
-                                        <p class="overlay-role">
-                                            <svg class="role-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                                <circle cx="8.5" cy="7" r="4"/>
-                                                <path d="M20 8v6M23 11h-6"/>
-                                            </svg>
-                                            Socio
-                                        </p>
-                                    </div>
-                                    <div class="overlay-info">
-                                        <p class="overlay-description">Información próximamente...</p>
-                                        <div class="overlay-skills">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-banner">
-                            <h4 class="banner-name">Ebenezer</h4>
-                            <p class="banner-role">
-                                <svg class="role-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="8.5" cy="7" r="4"/>
-                                    <path d="M20 8v6M23 11h-6"/>
-                                </svg>
-                                Socio
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Camilo Castro - Gerente General -->
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src={`${import.meta.env.BASE_URL}img/equipo/Camilo-Castro.webp`} alt="Camilo Castro" class="team-image">
-                            <button class="team-info-btn" data-member="camilo" aria-label="Ver más información de Camilo Castro">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 5v14"></path>
-                                    <path d="M5 12h14"></path>
-                                </svg>
-                            </button>
-                            <div class="team-overlay">
-                                <div class="overlay-content">
-                                    <div class="overlay-header">
-                                        <h4 class="overlay-name">Camilo Castro</h4>
-                                        <p class="overlay-role">
-                                            <svg class="role-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                                <circle cx="12" cy="7" r="4"/>
-                                                <path d="M12 14v7"/>
-                                                <path d="M8 17l8 0"/>
-                                                <path d="M10 15l4 0"/>
-                                            </svg>
-                                            Gerente General
-                                        </p>
-                                    </div>
-                                    <div class="overlay-info">
-                                        <p class="overlay-description">Ingeniero con especialización y maestría en Gerencia, líder de equipos de alto desempeño con más de 20 años de experiencia.</p>
-                                        <div class="overlay-skills">
-                                            <span class="skill-tag">Liderazgo</span>
-                                            <span class="skill-tag">Gerencia</span>
-                                            <span class="skill-tag">Innovación</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-banner">
-                            <h4 class="banner-name">Camilo Castro</h4>
-                            <p class="banner-role">
-                                <svg class="role-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="12" cy="7" r="4"/>
-                                    <path d="M12 14v7"/>
-                                    <path d="M8 17l8 0"/>
-                                    <path d="M10 15l4 0"/>
-                                </svg>
-                                Gerente General
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Alexander Narváez - Gerente Laboratorio de Proyectos -->
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src={`${import.meta.env.BASE_URL}img/equipo/Alexander_Narvaez.webp`} alt="Alexander Narváez" class="team-image">
-                            <button class="team-info-btn" data-member="alexander" aria-label="Ver más información de Alexander Narváez">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 5v14"></path>
-                                    <path d="M5 12h14"></path>
-                                </svg>
-                            </button>
-                            <div class="team-overlay">
-                                <div class="overlay-content">
-                                    <div class="overlay-header">
-                                        <h4 class="overlay-name">Alexander Narváez</h4>
-                                        <p class="overlay-role">
-                                            <svg class="role-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="16,18 22,12 16,6"/>
-                                                <polyline points="8,6 2,12 8,18"/>
-                                            </svg>
-                                            Gerente Laboratorio de Proyectos
-                                        </p>
-                                    </div>
-                                    <div class="overlay-info">
-                                        <p class="overlay-description">Ingeniero industrial con más de 15 años de experiencia en dirección de proyectos públicos y desarrollo regional.</p>
-                                        <div class="overlay-skills">
-                                            <span class="skill-tag">Gestión de Proyectos</span>
-                                            <span class="skill-tag">Políticas Públicas</span>
-                                            <span class="skill-tag">SGR</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-banner">
-                            <h4 class="banner-name">Alexander Narváez</h4>
-                            <p class="banner-role">
-                                <svg class="role-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="16,18 22,12 16,6"/>
-                                    <polyline points="8,6 2,12 8,18"/>
-                                </svg>
-                                Gerente Laboratorio de Proyectos
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Sofía Hurtado Montes - Gerente Laboratorio Creativo -->
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src={`${import.meta.env.BASE_URL}img/equipo/Sofia-Hurtado.webp`} alt="Sofia Hurtado Montes" class="team-image">
-                            <button class="team-info-btn" data-member="sofia" aria-label="Ver más información de Sofía Hurtado Montes">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 5v14"></path>
-                                    <path d="M5 12h14"></path>
-                                </svg>
-                            </button>
-                            <div class="team-overlay">
-                                <div class="overlay-content">
-                                    <div class="overlay-header">
-                                        <h4 class="overlay-name">Sofía Hurtado Montes</h4>
-                                        <p class="overlay-role">
-                                            <svg class="role-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M9 21h6"/>
-                                                <path d="M12 17h0"/>
-                                                <path d="M12 3a6 6 0 0 0-6 6c0 1 1 2 1 3h10c0-1 1-2 1-3a6 6 0 0 0-6-6z"/>
-                                                <path d="M8 19h8"/>
-                                            </svg>
-                                            Gerente Laboratorio Creativo
-                                        </p>
-                                    </div>
-                                    <div class="overlay-info">
-                                        <p class="overlay-description">Graduada en Arte de la Universidad de los Andes con especialización en comunicaciones, marketing digital y proyectos audiovisuales.</p>
-                                        <div class="overlay-skills">
-                                            <span class="skill-tag">Arte</span>
-                                            <span class="skill-tag">Marketing Digital</span>
-                                            <span class="skill-tag">Audiovisual</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-banner">
-                            <h4 class="banner-name">Sofía Hurtado Montes</h4>
-                            <p class="banner-role">
-                                <svg class="role-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 21h6"/>
-                                    <path d="M12 17h0"/>
-                                    <path d="M12 3a6 6 0 0 0-6 6c0 1 1 2 1 3h10c0-1 1-2 1-3a6 6 0 0 0-6-6z"/>
-                                    <path d="M8 19h8"/>
-                                </svg>
-                                Gerente Laboratorio Creativo
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Daniela Arango Sánchez - Gerente Administrativo -->
-                    <div class="team-card centered">
-                        <div class="team-image-container">
-                            <img src={`${import.meta.env.BASE_URL}img/equipo/Daniela-Arango.webp`} alt="Daniela Arango Sánchez" class="team-image">
-                            <button class="team-info-btn" data-member="daniela" aria-label="Ver más información de Daniela Arango Sánchez">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 5v14"></path>
-                                    <path d="M5 12h14"></path>
-                                </svg>
-                            </button>
-                            <div class="team-overlay">
-                                <div class="overlay-content">
-                                    <div class="overlay-header">
-                                        <h4 class="overlay-name">Daniela Arango Sánchez</h4>
-                                        <p class="overlay-role">
-                                            <svg class="role-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                                <circle cx="9" cy="7" r="4"/>
-                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                            </svg>
-                                            Gerente Administrativo
-                                        </p>
-                                    </div>
-                                    <div class="overlay-info">
-                                        <p class="overlay-description">Administradora de Empresas con más de cuatro años de experiencia en gestión de procesos administrativos y recursos humanos.</p>
-                                        <div class="overlay-skills">
-                                            <span class="skill-tag">Administración</span>
-                                            <span class="skill-tag">Recursos Humanos</span>
-                                            <span class="skill-tag">Inteligencia de Negocios</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-banner">
-                            <h4 class="banner-name">Daniela Arango Sánchez</h4>
-                            <p class="banner-role">
-                                <svg class="role-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                                Gerente Administrativo
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Modal de Información del Equipo -->
-        <div id="teamModal" class="team-modal" aria-hidden="true">
-            <div class="team-modal-backdrop"></div>
-            <div class="team-modal-dialog" role="dialog" aria-modal="true">
-                <button class="team-modal-close" type="button" aria-label="Cerrar">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-                
-                <div class="team-modal-content">
-                    <!-- Contenido dinámico se insertará aquí -->
-                </div>
-            </div>
+    <main class="about-main">
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1 class="hero-title">Sobre IgnuxLab</h1>
+          <div class="breadcrumb">
+            <a href={`${import.meta.env.BASE_URL}`} class="breadcrumb-link"
+              >Inicio</a
+            >
+            <span class="separator">/</span>
+            <span class="breadcrumb-active">Sobre Nosotros</span>
+          </div>
         </div>
-		</main>
+      </section>
 
-		<Footer />
-	</div>
+      <!-- Componentes separados -->
+      <AboutUs />
+      <div class="section-separator"></div>
+      <HowWeDoIt />
+      <div class="section-separator"></div>
+
+      <!-- Sección de Equipo -->
+      <section class="team-section section-spacing section-depth">
+        <div class="team-container">
+          <div class="team-header">
+            <h2 class="team-main-title">Equipo de trabajo</h2>
+            <p class="team-subtitle">
+              Personas creativas, comprometidas y apasionadas que hacen posible
+              cada proyecto en IGNUX Lab
+            </p>
+          </div>
+
+          <div class="team-grid">
+            <!-- Fabian Ricardo Caro Aponte - Socio Fundador -->
+            <div class="team-card">
+              <div class="team-image-container">
+                <img
+                  src={`${import.meta.env.BASE_URL}img/equipo/Fabian-Caro.webp`}
+                  alt="Fabian Ricardo Caro Aponte"
+                  class="team-image"
+                />
+                <div class="team-overlay">
+                  <div class="overlay-content">
+                    <div class="overlay-header">
+                      <h4 class="overlay-name">Fabian Ricardo Caro Aponte</h4>
+                      <p class="overlay-role">
+                        <svg
+                          class="role-icon"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                          ></path>
+                        </svg>
+                        Socio Fundador
+                      </p>
+                    </div>
+                    <div class="overlay-info">
+                      <p class="overlay-description">
+                        Información próximamente...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="team-banner">
+                <h4 class="banner-name">Fabian Ricardo Caro Aponte</h4>
+                <p class="banner-role">
+                  <svg
+                    class="role-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    ></path>
+                  </svg>
+                  Socio Fundador
+                </p>
+              </div>
+            </div>
+
+            <!-- Hemmes - Socio -->
+            <div class="team-card">
+              <div class="team-image-container">
+                <img
+                  src={`${import.meta.env.BASE_URL}img/equipo/Hemmes.webp`}
+                  alt="Hemmes"
+                  class="team-image"
+                />
+                <div class="team-overlay">
+                  <div class="overlay-content">
+                    <div class="overlay-header">
+                      <h4 class="overlay-name">Hemmes Homes SAS</h4>
+                      <p class="overlay-role">
+                        <svg
+                          class="role-icon"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                          ></path>
+                          <circle cx="8.5" cy="7" r="4"></circle>
+                          <path d="M20 8v6M23 11h-6"></path>
+                        </svg>
+                        Socio
+                      </p>
+                    </div>
+                    <div class="overlay-info">
+                      <p class="overlay-description">
+                        Información próximamente...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="team-banner">
+                <h4 class="banner-name">Hemmes Homes SAS</h4>
+                <p class="banner-role">
+                  <svg
+                    class="role-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <path d="M20 8v6M23 11h-6"></path>
+                  </svg>
+                  Socio
+                </p>
+              </div>
+            </div>
+
+            <!-- Camilo Castro - Gerente General -->
+            <div class="team-card">
+              <div class="team-image-container">
+                <img
+                  src={`${import.meta.env.BASE_URL}img/equipo/Camilo-Castro.webp`}
+                  alt="Camilo Castro"
+                  class="team-image"
+                />
+                <div class="team-overlay">
+                  <div class="overlay-content">
+                    <div class="overlay-header">
+                      <h4 class="overlay-name">Camilo Castro</h4>
+                      <p class="overlay-role">
+                        <svg
+                          class="role-icon"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                          ></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                          <path d="M12 14v7"></path>
+                          <path d="M8 17l8 0"></path>
+                          <path d="M10 15l4 0"></path>
+                        </svg>
+                        Gerente General
+                      </p>
+                    </div>
+                    <div class="overlay-info">
+                      <p class="overlay-description" data-member="camilo">
+                        Ingeniero con especialización y maestría en Gerencia,
+                        líder de equipos de alto desempeño con más de 20 años de
+                        experiencia.
+                      </p>
+                      <button class="view-more-btn" data-member="camilo" aria-label="Ver perfil completo">
+                        <span>Ver más</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="team-banner">
+                <h4 class="banner-name">Camilo Castro</h4>
+                <p class="banner-role">
+                  <svg
+                    class="role-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M12 14v7"></path>
+                    <path d="M8 17l8 0"></path>
+                    <path d="M10 15l4 0"></path>
+                  </svg>
+                  Gerente General
+                </p>
+              </div>
+            </div>
+
+            <!-- Alexander Narváez - Gerente Laboratorio de Proyectos -->
+            <div class="team-card">
+              <div class="team-image-container">
+                <img
+                  src={`${import.meta.env.BASE_URL}img/equipo/Alexander_Narvaez.webp`}
+                  alt="Alexander Narváez"
+                  class="team-image"
+                />
+                <div class="team-overlay">
+                  <div class="overlay-content">
+                    <div class="overlay-header">
+                      <h4 class="overlay-name">Alexander Narváez</h4>
+                      <p class="overlay-role">
+                        <svg
+                          class="role-icon"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <polyline points="16,18 22,12 16,6"></polyline>
+                          <polyline points="8,6 2,12 8,18"></polyline>
+                        </svg>
+                        Gerente Laboratorio de Proyectos
+                      </p>
+                    </div>
+                    <div class="overlay-info">
+                      <p class="overlay-description" data-member="alexander">
+                        Ingeniero industrial con más de 15 años de experiencia
+                        en dirección de proyectos públicos y desarrollo
+                        regional.
+                      </p>
+                      <button class="view-more-btn" data-member="alexander" aria-label="Ver perfil completo">
+                        <span>Ver más</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="team-banner">
+                <h4 class="banner-name">Alexander Narváez</h4>
+                <p class="banner-role">
+                  <svg
+                    class="role-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="16,18 22,12 16,6"></polyline>
+                    <polyline points="8,6 2,12 8,18"></polyline>
+                  </svg>
+                  Gerente Laboratorio de Proyectos
+                </p>
+              </div>
+            </div>
+
+            <!-- Sofía Hurtado Montes - Gerente Laboratorio Creativo -->
+            <div class="team-card">
+              <div class="team-image-container">
+                <img
+                  src={`${import.meta.env.BASE_URL}img/equipo/Sofia-Hurtado.webp`}
+                  alt="Sofia Hurtado Montes"
+                  class="team-image"
+                />
+                <div class="team-overlay">
+                  <div class="overlay-content">
+                    <div class="overlay-header">
+                      <h4 class="overlay-name">Sofía Hurtado Montes</h4>
+                      <p class="overlay-role">
+                        <svg
+                          class="role-icon"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M9 21h6"></path>
+                          <path d="M12 17h0"></path>
+                          <path
+                            d="M12 3a6 6 0 0 0-6 6c0 1 1 2 1 3h10c0-1 1-2 1-3a6 6 0 0 0-6-6z"
+                          ></path>
+                          <path d="M8 19h8"></path>
+                        </svg>
+                        Gerente Laboratorio Creativo
+                      </p>
+                    </div>
+                    <div class="overlay-info">
+                      <p class="overlay-description" data-member="sofia">
+                        Graduada en Arte de la Universidad de los Andes con
+                        especialización en comunicaciones, marketing digital y
+                        proyectos audiovisuales.
+                      </p>
+                      <button class="view-more-btn" data-member="sofia" aria-label="Ver perfil completo">
+                        <span>Ver más</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="team-banner">
+                <h4 class="banner-name">Sofía Hurtado Montes</h4>
+                <p class="banner-role">
+                  <svg
+                    class="role-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 21h6"></path>
+                    <path d="M12 17h0"></path>
+                    <path
+                      d="M12 3a6 6 0 0 0-6 6c0 1 1 2 1 3h10c0-1 1-2 1-3a6 6 0 0 0-6-6z"
+                    ></path>
+                    <path d="M8 19h8"></path>
+                  </svg>
+                  Gerente Laboratorio Creativo
+                </p>
+              </div>
+            </div>
+
+            <!-- Daniela Arango Sánchez - Gerente Administrativa y Financiera -->
+            <div class="team-card centered">
+              <div class="team-image-container">
+                <img
+                  src={`${import.meta.env.BASE_URL}img/equipo/Daniela-Arango.webp`}
+                  alt="Daniela Arango Sánchez"
+                  class="team-image"
+                />
+                <div class="team-overlay">
+                  <div class="overlay-content">
+                    <div class="overlay-header">
+                      <h4 class="overlay-name">Daniela Arango Sánchez</h4>
+                      <p class="overlay-role">
+                        <svg
+                          class="role-icon"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                          ></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Gerente Administrativa y Financiera
+                      </p>
+                    </div>
+                    <div class="overlay-info">
+                      <p class="overlay-description" data-member="daniela">
+                        Administradora de Empresas con más de cuatro años de
+                        experiencia en gestión de procesos administrativos y
+                        recursos humanos.
+                      </p>
+                      <button class="view-more-btn" data-member="daniela" aria-label="Ver perfil completo">
+                        <span>Ver más</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="team-banner">
+                <h4 class="banner-name">Daniela Arango Sánchez</h4>
+                <p class="banner-role">
+                  <svg
+                    class="role-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Gerente Administrativa y Financiera
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal de Información del Equipo -->
+      <div id="teamModal" class="team-modal" aria-hidden="true">
+        <div class="team-modal-backdrop"></div>
+        <div class="team-modal-dialog" role="dialog" aria-modal="true">
+          <button class="team-modal-close" type="button" aria-label="Cerrar">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="team-modal-content">
+            <!-- Contenido dinámico se insertará aquí -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
 </Layout>
 
 <script>
-    /**
-     * Team Toggle Functionality & Detail Modal
-     */
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM Content Loaded - initializing team functionality'); // Debug
-        
-        const teamCards = document.querySelectorAll('.team-card');
-        const modal = document.querySelector('#teamModal');
-        const modalContent = document.querySelector('.team-modal-content');
-        const closeBtn = document.querySelector('.team-modal-close');
-        const backdrop = document.querySelector('.team-modal-backdrop');
-        
-        console.log('Found elements:', {
-            teamCards: teamCards.length,
-            modal: !!modal,
-            modalContent: !!modalContent,
-            closeBtn: !!closeBtn,
-            backdrop: !!backdrop
-        }); // Debug
-        
-        // Información detallada de los miembros del equipo
-        const teamData = {
-            sofia: {
-                name: "Sofía Hurtado Montes",
-                role: "Gerente Laboratorio Creativo",
-                image: "Sofia-Hurtado.webp",
-                fullBio: "Graduada del pregrado en Arte de la Universidad de los Andes, con opción en Escritura Creativa. Magíster en Artes Plásticas, Electrónicas y del Tiempo de la misma institución. Ha complementado su formación con cursos de actualización en universidades de París y del Reino Unido. Cuenta con seis años de experiencia en comunicaciones, marketing digital y proyectos audiovisuales.",
-                education: [
-                    "Pregrado en Arte - Universidad de los Andes",
-                    "Opción en Escritura Creativa",
-                    "Magíster en Artes Plásticas, Electrónicas y del Tiempo - Universidad de los Andes",
-                    "Cursos de actualización - Universidades de París y Reino Unido"
-                ],
-                experience: "6 años",
-                specialties: ["Comunicaciones", "Marketing Digital", "Proyectos Audiovisuales", "Arte", "Escritura Creativa"]
-            },
-            alexander: {
-                name: "Alexander Narváez",
-                role: "Gerente Laboratorio de Proyectos",
-                image: "Alexander_Narvaez.webp",
-                fullBio: "Ingeniero industrial con más de 15 años de experiencia en la dirección de proyectos financiados con recursos públicos, especialmente del Sistema General de Regalías (SGR). Especialista en Gestión de Proyectos de Ingeniería y Magíster en Gobierno y Políticas Públicas. Se ha desempeñado como gerente, asesor, coordinador y profesional de seguimiento en entidades y proyectos de alto impacto en desarrollo regional, innovación, ciencia y tecnología. Cuenta con amplia experiencia en procesos de interventoría, formulación, seguimiento y evaluación de proyectos públicos.",
-                education: [
-                    "Ingeniería Industrial",
-                    "Especialista en Gestión de Proyectos de Ingeniería",
-                    "Magíster en Gobierno y Políticas Públicas"
-                ],
-                experience: "15+ años",
-                specialties: ["Gestión de Proyectos SGR", "Políticas Públicas", "Desarrollo Regional", "Innovación", "Ciencia y Tecnología", "Interventoría", "Evaluación de Proyectos"]
-            },
-            camilo: {
-                name: "Camilo Castro",
-                role: "Gerente General",
-                image: "Camilo_Castro.webp",
-                fullBio: "Ingeniero con especialización y maestría en Gerencia, apasionado por el liderazgo de equipos de alto desempeño. Con más de 20 años de trayectoria, ha impulsado la innovación en los sectores público y privado, generando resultados de alto impacto.",
-                education: [
-                    "Ingeniería",
-                    "Especialización en Gerencia",
-                    "Maestría en Gerencia"
-                ],
-                experience: "20+ años",
-                specialties: ["Liderazgo", "Equipos de Alto Desempeño", "Innovación", "Gestión Empresarial", "Sector Público", "Sector Privado"]
-            },
-            daniela: {
-                name: "Daniela Arango Sánchez",
-                role: "Gerente Administrativo",
-                image: "Daniela-Arango.webp",
-                fullBio: "Administradora de Empresas con más de cuatro años de experiencia en la gestión de procesos administrativos y de recursos humanos en los sectores educativo y tecnológico. Ha complementado su formación con estudios en inteligencia de negocios y en sistemas de gestión de calidad, lo que le ha permitido fortalecer y optimizar procesos organizacionales.",
-                education: [
-                    "Administración de Empresas",
-                    "Estudios en Inteligencia de Negocios",
-                    "Sistemas de Gestión de Calidad"
-                ],
-                experience: "4+ años",
-                specialties: ["Procesos Administrativos", "Recursos Humanos", "Sector Educativo", "Sector Tecnológico", "Inteligencia de Negocios", "Gestión de Calidad"]
-            }
-        };
-        
-        // Toggle team card overlay
-        function toggleTeamCard(card: Element) {
-            console.log('Toggling card:', card); // Debug
-            
-            // Close all other active cards first
-            teamCards.forEach(otherCard => {
-                if (otherCard !== card) {
-                    otherCard.classList.remove('active');
-                }
-            });
-            
-            // Toggle current card
-            const isActive = card.classList.contains('active');
-            if (isActive) {
-                card.classList.remove('active');
-                console.log('Removed active class'); // Debug
-            } else {
-                card.classList.add('active');
-                console.log('Added active class'); // Debug
-            }
+  /**
+   * Team Toggle Functionality & Detail Modal
+   */
+  document.addEventListener("DOMContentLoaded", function () {
+    const teamCards = document.querySelectorAll(".team-card");
+    const modal = document.querySelector("#teamModal");
+    const modalContent = document.querySelector(".team-modal-content");
+    const closeBtn = document.querySelector(".team-modal-close");
+    const backdrop = document.querySelector(".team-modal-backdrop");
+
+    // Información detallada de los miembros del equipo
+    const teamData = {
+      sofia: {
+        name: "Sofía Hurtado Montes",
+        role: "Gerente Laboratorio Creativo",
+        image: "Sofia-Hurtado.webp",
+        fullBio:
+          "Graduada del pregrado en Arte de la Universidad de los Andes, con opción en Escritura Creativa. Magíster en Artes Plásticas, Electrónicas y del Tiempo de la misma institución. Ha complementado su formación con cursos de actualización en universidades de París y del Reino Unido. Cuenta con siete años de experiencia en comunicaciones, marketing digital y proyectos audiovisuales.",
+        education: [
+          "Pregrado en Arte - Universidad de los Andes",
+          "Opción en Escritura Creativa",
+          "Magíster en Artes Plásticas, Electrónicas y del Tiempo - Universidad de los Andes",
+          "Cursos de actualización - Universidades de París y Reino Unido",
+        ],
+        experience: "7 años",
+        specialties: [
+          "Comunicaciones",
+          "Marketing Digital",
+          "Proyectos Audiovisuales",
+          "Arte",
+          "Escritura Creativa",
+        ],
+      },
+      alexander: {
+        name: "Alexander Narváez",
+        role: "Gerente Laboratorio de Proyectos",
+        image: "Alexander_Narvaez.webp",
+        fullBio:
+          "Especialista en Gestión de Proyectos de Ingeniería y Magíster en Gobierno y Políticas Públicas. Ingeniero industrial con más de 15 años de experiencia en la dirección de proyectos financiados con recursos públicos, especialmente del Sistema General de Regalías (SGR). Se ha desempeñado como gerente, asesor, coordinador y profesional de seguimiento en entidades y proyectos de alto impacto en desarrollo regional, innovación, ciencia y tecnología. Cuenta con amplia experiencia en procesos de interventoría, formulación, seguimiento y evaluación de proyectos públicos.",
+        education: [
+          "Ingeniería Industrial",
+          "Especialista en Gestión de Proyectos de Ingeniería",
+          "Magíster en Gobierno y Políticas Públicas",
+        ],
+        experience: "15+ años",
+        specialties: [
+          "Gestión de Proyectos SGR",
+          "Políticas Públicas",
+          "Desarrollo Regional",
+          "Innovación",
+          "Ciencia y Tecnología",
+          "Interventoría",
+          "Evaluación de Proyectos",
+        ],
+      },
+      camilo: {
+        name: "Camilo Castro",
+        role: "Gerente General",
+        image: "Camilo-Castro.webp",
+        fullBio:
+          "Ingeniero con especialización y maestría en Gerencia, apasionado por el liderazgo de equipos de alto desempeño. Con más de 20 años de trayectoria, ha impulsado la innovación en los sectores público y privado, generando resultados de alto impacto.",
+        education: [
+          "Ingeniería",
+          "Especialización en Gerencia",
+          "Maestría en Gerencia",
+        ],
+        experience: "20+ años",
+        specialties: [
+          "Liderazgo",
+          "Equipos de Alto Desempeño",
+          "Innovación",
+          "Gestión Empresarial",
+          "Sector Público",
+          "Sector Privado",
+        ],
+      },
+      daniela: {
+        name: "Daniela Arango Sánchez",
+        role: "Gerente Administrativa y Financiera",
+        image: "Daniela-Arango.webp",
+        fullBio:
+          "Administradora de Empresas con más de cuatro años de experiencia en la gestión de procesos administrativos y de recursos humanos en los sectores educativo y tecnológico. Ha complementado su formación con estudios en inteligencia de negocios y en sistemas de gestión de calidad, lo que le ha permitido fortalecer y optimizar procesos organizacionales.",
+        education: [
+          "Administración de Empresas",
+          "Estudios en Inteligencia de Negocios",
+          "Sistemas de Gestión de Calidad",
+        ],
+        experience: "4+ años",
+        specialties: [
+          "Procesos Administrativos",
+          "Recursos Humanos",
+          "Sector Educativo",
+          "Sector Tecnológico",
+          "Inteligencia de Negocios",
+          "Gestión de Calidad",
+        ],
+      },
+    };
+
+    // Toggle team card overlay
+    function toggleTeamCard(card: Element) {
+      // Close all other active cards first
+      teamCards.forEach((otherCard) => {
+        if (otherCard !== card) {
+          otherCard.classList.remove("active");
         }
-        
-        // Abrir modal con información detallada
-        function openDetailModal(memberId: string) {
-            const member = (teamData as any)[memberId];
-            if (!member) {
-                console.error('Member not found:', memberId);
-                return;
-            }
-            
-            // Usar la misma lógica de rutas que en las tarjetas
-            const baseUrl = import.meta.env.BASE_URL || '';
-            const imgSrc = `${baseUrl}img/equipo/${member.image}`;
-            
-            const modalHTML = `
+      });
+
+      // Toggle current card
+      const isActive = card.classList.contains("active");
+      if (isActive) {
+        card.classList.remove("active");
+      } else {
+        card.classList.add("active");
+      }
+    }
+
+    // Abrir modal con información detallada
+    function openDetailModal(memberId: string) {
+      const member = (teamData as any)[memberId];
+      if (!member) {
+        console.error("Member not found:", memberId);
+        return;
+      }
+
+      // Usar la misma lógica de rutas que en las tarjetas
+      const baseUrl = import.meta.env.BASE_URL || "";
+      const imgSrc = `${baseUrl}img/equipo/${member.image}`;
+
+      const modalHTML = `
                 <div class="modal-header">
                     <div class="modal-avatar">
                         <img src="${imgSrc}" alt="${member.name}" />
@@ -523,170 +642,148 @@ import '../assets/styles/components/team-section.css';
                             Especialidades
                         </h4>
                         <div class="specialties-grid">
-                            ${member.specialties.map((specialty: any) => `
+                            ${member.specialties
+                              .map(
+                                (specialty: any) => `
                                 <span class="specialty-tag">${specialty}</span>
-                            `).join('')}
+                            `,
+                              )
+                              .join("")}
                         </div>
                     </div>
                 </div>
             `;
-            
-            if (modalContent) {
-                modalContent.innerHTML = modalHTML;
-                console.log('Modal content set');
-            } else {
-                console.error('Modal content element not found');
-                return;
-            }
-            
-            if (modal) {
-                modal.classList.add('is-open');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-                console.log('Modal opened, classes:', modal.className);
-                
-                // Force reflow para asegurar que se apliquen los estilos
-                (modal as HTMLElement).offsetHeight;
-                
-                // Verificar si el modal es visible
-                setTimeout(() => {
-                    const computedStyle = window.getComputedStyle(modal);
-                    console.log('Modal display:', computedStyle.display);
-                    console.log('Modal opacity:', computedStyle.opacity);
-                    console.log('Modal z-index:', computedStyle.zIndex);
-                }, 100);
-            } else {
-                console.error('Modal element not found');
-            }
+
+      if (modalContent) {
+        modalContent.innerHTML = modalHTML;
+      } else {
+        console.error("Modal content element not found");
+        return;
+      }
+
+      if (modal) {
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+        // Force reflow para asegurar que se apliquen los estilos
+        (modal as HTMLElement).offsetHeight;
+      } else {
+        console.error("Modal element not found");
+      }
+    }
+
+    // Cerrar modal
+    function closeDetailModal() {
+      modal?.classList.remove("is-open");
+      modal?.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // Cargar fullBio completo en el overlay al hacer hover
+    function loadFullBioOnHover() {
+      const descriptions = document.querySelectorAll('.overlay-description[data-member]');
+      
+      descriptions.forEach((description) => {
+        const memberId = (description as HTMLElement).getAttribute('data-member');
+        if (!memberId) return;
+        
+        const member = (teamData as any)[memberId];
+        if (!member || !member.fullBio) return;
+        
+        const card = description.closest('.team-card');
+        if (!card) return;
+        
+        // Cargar el fullBio completo cuando se hace hover
+        card.addEventListener('mouseenter', () => {
+          (description as HTMLElement).textContent = member.fullBio;
+          description.classList.add('full-bio-loaded');
+        });
+      });
+    }
+
+    // Inicializar carga de fullBio
+    loadFullBioOnHover();
+
+    // Event listeners para botones "Ver más" - debe ejecutarse primero
+    document.addEventListener('click', (e) => {
+      const viewMoreBtn = (e.target as HTMLElement).closest('.view-more-btn');
+      if (viewMoreBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const memberId = viewMoreBtn.getAttribute('data-member');
+        if (memberId) {
+          openDetailModal(memberId);
         }
-        
-        // Cerrar modal
-        function closeDetailModal() {
-            modal?.classList.remove('is-open');
-            modal?.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        }
-        
-        // Event listeners para las tarjetas del equipo
-        teamCards.forEach((card, index) => {
-            const imageContainer = card.querySelector('.team-image-container');
-            const banner = card.querySelector('.team-banner');
-            
-            console.log(`Setting up card ${index}`); // Debug
-            
-            // Click on image container
-            if (imageContainer) {
-                imageContainer.addEventListener('click', function(e) {
-                    console.log('Image clicked on card', index); // Debug
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleTeamCard(card);
-                });
-                
-                // Always add cursor pointer for mobile
-                (imageContainer as HTMLElement).style.cursor = 'pointer';
-            }
-            
-            // Click on banner
-            if (banner) {
-                banner.addEventListener('click', function(e) {
-                    console.log('Banner clicked on card', index); // Debug
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleTeamCard(card);
-                });
-                
-                // Always add cursor pointer for mobile
-                (banner as HTMLElement).style.cursor = 'pointer';
-            }
+        return false;
+      }
+    }, true); // Usar capture phase para ejecutarse primero
+
+    // Event listeners para las tarjetas del equipo
+    teamCards.forEach((card, index) => {
+      const imageContainer = card.querySelector(".team-image-container");
+      const banner = card.querySelector(".team-banner");
+
+      // Click on image container
+      if (imageContainer) {
+        imageContainer.addEventListener("click", function (e) {
+          // No hacer toggle si se hace click en el botón "Ver más"
+          const viewMoreBtn = (e.target as HTMLElement).closest('.view-more-btn');
+          if (viewMoreBtn) {
+            return;
+          }
+          e.preventDefault();
+          e.stopPropagation();
+          toggleTeamCard(card);
         });
-        
-        // Event listeners para los botones "Ver más detalles"
-        document.addEventListener('click', function(e) {
-            console.log('Document click detected on:', e.target); // Debug
-            
-            const detailBtn = (e.target as HTMLElement).closest('.team-info-btn');
-            if (detailBtn) {
-                console.log('Detail button clicked:', detailBtn); // Debug
-                e.preventDefault();
-                e.stopPropagation();
-                const memberId = detailBtn.getAttribute('data-member');
-                console.log('Member ID:', memberId); // Debug
-                if (memberId) {
-                    openDetailModal(memberId);
-                }
-                return;
-            }
-            
-            // Cerrar modal
-            if ((e.target as HTMLElement).closest('.team-modal-close') || 
-                (e.target as HTMLElement).classList.contains('team-modal-backdrop')) {
-                console.log('Close modal clicked'); // Debug
-                closeDetailModal();
-                return;
-            }
-            
-            // Close overlay when clicking outside (only on mobile screens)
-            if (window.innerWidth > 768) return; // Only on mobile
-            
-            const target = e.target as HTMLElement;
-            const clickedCard = target?.closest('.team-card');
-            if (!clickedCard) {
-                console.log('Clicking outside, closing all'); // Debug
-                teamCards.forEach(card => {
-                    card.classList.remove('active');
-                });
-            }
+
+        // Always add cursor pointer for mobile
+        (imageContainer as HTMLElement).style.cursor = "pointer";
+      }
+
+      // Click on banner
+      if (banner) {
+        banner.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleTeamCard(card);
         });
-        
-        // Cerrar modal con Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal?.classList.contains('is-open')) {
-                closeDetailModal();
-            }
-        });
-        
-        // Event listeners adicionales para los botones de detalles
-        const detailButtons = document.querySelectorAll('.team-info-btn');
-        console.log('Found detail buttons:', detailButtons.length); // Debug
-        
-        detailButtons.forEach((button, index) => {
-            console.log(`Setting up button ${index}:`, button); // Debug
-            button.addEventListener('click', function(this: HTMLElement, e) {
-                console.log('Direct button click event:', this); // Debug
-                e.preventDefault();
-                e.stopPropagation();
-                const memberId = this.getAttribute('data-member');
-                console.log('Member ID from button:', memberId); // Debug
-                if (memberId) {
-                    openDetailModal(memberId);
-                }
-            });
-        });
-        
-        console.log('Team toggle and modal initialized with', teamCards.length, 'cards'); // Debug
-        
-        // Test modal después de 2 segundos para debug
-        setTimeout(() => {
-            console.log('Testing modal functionality...'); // Debug
-            const testButton = document.querySelector('[data-member="sofia"]');
-            if (testButton) {
-                console.log('Found Sofia button:', testButton); // Debug
-            } else {
-                console.log('Sofia button not found'); // Debug
-            }
-        }, 2000);
-        
-        // Función global para testing
-        (window as any).testModal = function(memberId: string) {
-            console.log('Manual test for member:', memberId);
-            openDetailModal(memberId);
-        };
-        
-        (window as any).checkModal = function() {
-            console.log('Modal element:', modal);
-            console.log('Modal content:', modalContent);
-            console.log('Modal classes:', modal?.className);
-        };
+
+        // Always add cursor pointer for mobile
+        (banner as HTMLElement).style.cursor = "pointer";
+      }
     });
+
+    // Event listeners para cerrar modal
+    document.addEventListener("click", function (e) {
+
+      // Cerrar modal
+      if (
+        (e.target as HTMLElement).closest(".team-modal-close") ||
+        (e.target as HTMLElement).classList.contains("team-modal-backdrop")
+      ) {
+        closeDetailModal();
+        return;
+      }
+
+      // Close overlay when clicking outside (only on mobile screens)
+      if (window.innerWidth > 768) return; // Only on mobile
+
+      const target = e.target as HTMLElement;
+      const clickedCard = target?.closest(".team-card");
+      if (!clickedCard) {
+        teamCards.forEach((card) => {
+          card.classList.remove("active");
+        });
+      }
+    });
+
+    // Cerrar modal con Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal?.classList.contains("is-open")) {
+        closeDetailModal();
+      }
+    });
+
+  });
 </script>

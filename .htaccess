@@ -116,6 +116,11 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^_astro/(.*)$ /_astro/$1 [L]
 
+# Servir scripts y archivos estáticos de public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(scripts|img|videos)/(.*)$ /$1/$2 [L]
+
 # Manejar rutas de Astro
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
